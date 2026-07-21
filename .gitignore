@@ -1,0 +1,29 @@
+# Node
+node_modules/
+npm-debug.log*
+package-lock.json
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# System
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Edytory
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Tymczasowe / cache
+*.tmp
+*.bak
+*.log
+tmp/
+scratchpad/

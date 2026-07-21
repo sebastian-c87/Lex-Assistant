@@ -1,0 +1,58 @@
+{
+  "DU/2024/18": {
+    "label": "Kodeks spolek handlowych (tekst jednolity)",
+    "category": "ksh",
+    "changeDate": "2026-06-03T14:55:34",
+    "status": "obowiązujący",
+    "lastFetched": "2026-07-21T19:37:20.079Z",
+    "file": "akty\\ksh\\kodeks_spolek_handlowych_tekst_jednolity_.html"
+  },
+  "DU/2024/581": {
+    "label": "Ustawa o prawach pacjenta i Rzeczniku Praw Pacjenta (tekst jednolity)",
+    "category": "prawo_medyczne",
+    "changeDate": "2026-07-02T09:55:37",
+    "status": "obowiązujący",
+    "lastFetched": "2026-07-21T19:37:20.432Z",
+    "file": "akty\\prawo_medyczne\\ustawa_o_prawach_pacjenta_i_rzeczniku_praw_pacjenta_tekst_jednolity_.html"
+  },
+  "DU/2024/917": {
+    "label": "Ustawa o ochronie zdrowia psychicznego (tekst jednolity)",
+    "category": "prawo_medyczne",
+    "changeDate": "2026-03-12T10:11:37",
+    "status": "obowiązujący",
+    "lastFetched": "2026-07-21T19:37:21.006Z",
+    "file": "akty\\prawo_medyczne\\ustawa_o_ochronie_zdrowia_psychicznego_tekst_jednolity_.html"
+  },
+  "DU/2025/1461": {
+    "label": "Ustawa o swiadczeniach opieki zdrowotnej finansowanych ze srodkow publicznych (tekst jednolity)",
+    "category": "prawo_medyczne",
+    "changeDate": "2026-06-16T00:00:00",
+    "status": "obowiązujący",
+    "lastFetched": "2026-07-21T19:37:21.516Z",
+    "file": "akty\\prawo_medyczne\\ustawa_o_swiadczeniach_opieki_zdrowotnej_finansowanych_ze_srodkow_publicznych_tekst_jednolity_.pdf"
+  },
+  "DU/2026/187": {
+    "label": "Ustawa o zawodzie psychologa oraz samorzadzie zawodowym psychologow -- NOWA ustawa, podpisana 12.02.2026, wchodzi w zycie glownie 19.05.2028",
+    "category": "prawo_medyczne",
+    "changeDate": "2026-02-20T13:41:49",
+    "status": "obowiązujący",
+    "lastFetched": "2026-07-21T19:37:22.341Z",
+    "file": "akty\\prawo_medyczne\\ustawa_o_zawodzie_psychologa_oraz_samorzadzie_zawodowym_psychologow_--_nowa_ustawa_podpisana_12_02_2026_wchodzi_w_zycie_glownie_19_05_2028.pdf"
+  },
+  "DU/2019/1026": {
+    "label": "Ustawa o zawodzie psychologa i samorzadzie zawodowym psychologow -- STARA ustawa z 2001, t.j. z 2019, obowiazuje do 2028-05-19",
+    "category": "prawo_medyczne",
+    "changeDate": "2026-03-12T10:17:57",
+    "status": "obowiązujący",
+    "lastFetched": "2026-07-21T19:38:31.092Z",
+    "file": "akty\\prawo_medyczne\\ustawa_o_zawodzie_psychologa_i_samorzadzie_zawodowym_psychologow_--_stara_ustawa_z_2001_t_j_z_2019_obowiazuje_do_2028-05-19.html"
+  },
+  "DU/2026/156": {
+    "label": "Ustawa o dzialalnosci leczniczej (t.j. z 5.02.2026)",
+    "category": "prawo_medyczne",
+    "changeDate": "2026-02-13T08:21:55",
+    "status": "obowiązujący",
+    "lastFetched": "2026-07-21T19:59:15.262Z",
+    "file": "akty\\prawo_medyczne\\ustawa_o_dzialalnosci_leczniczej_t_j_z_5_02_2026_.pdf"
+  }
+}
