@@ -30,7 +30,7 @@ Uporządkowany zbiór pułapek i wskazówek. Każdy punkt ma link do rozwinięci
 ## Rejestracja
 
 - [ ] **KRS przed RPWDL** — kolejność ma znaczenie ([07](07-rejestracja-rpwdl-i-krs.md))
-- [ ] **CRBR w 7 dni od wpisu KRS** — sankcja do 1 mln PLN
+- [ ] **CRBR w 14 dni od wpisu KRS** — sankcja do 1 mln PLN. ⚠️ [NIEWERYFIKOWANE — sprawdź art. 60 ust. 1 ustawy AML; źródła rządowe podają 14 dni dla podmiotów rejestrowanych po 10.11.2022, wcześniejsza wersja tego pliku podawała 7 dni]
 - [ ] **Lokal gotowy przed wnioskiem RPWDL** — potwierdzasz spełnianie art. 17 u.dz.l.
 - [ ] **OC obowiązkowe wykupione przed wpisem** (art. 17 ust. 1 pkt 4 u.dz.l.)
 - [ ] **Kadry z prawem wykonywania zawodu** — do 2028 tylko dyplom magistra; od 2028 wpis do Rejestru ([10](10-psycholog-2026-2028.md))
@@ -54,7 +54,7 @@ Uporządkowany zbiór pułapek i wskazówek. Każdy punkt ma link do rozwinięci
 
 ### Zmiany rejestrowe
 - [ ] Każda zmiana w składzie zarządu, kapitału, siedziby — zgłoszenie do KRS w 7 dni
-- [ ] Każda zmiana w danych RPWDL (adres, rodzaje świadczeń, zakres) — zgłoszenie do wojewody (⚠️ WERYFIKACJA terminu)
+- [ ] Każda zmiana w danych RPWDL (adres, rodzaje świadczeń, zakres) — zgłoszenie do wojewody **w 14 dni** od powstania zmiany; kara do 10× minimalnego wynagrodzenia z rygorem natychmiastowej wykonalności (art. 107 ust. 1–2 u.dz.l.) ✅ [VER: ELI DU/2026/156, 2026-07-21]
 - [ ] Aktualizacja CRBR przy każdej zmianie beneficjenta rzeczywistego
 
 ## Podczas działalności — kwestie medyczne / RODO

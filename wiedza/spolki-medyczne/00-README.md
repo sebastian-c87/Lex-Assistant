@@ -32,6 +32,7 @@
 | 10 | [Zawód psychologa: 2026–2028 okres przejściowy](10-psycholog-2026-2028.md) | Kaskada wejścia w życie DU/2026/187; co obowiązuje kiedy |
 | 11 | [Tajemnica psychologiczna vs medyczna](11-tajemnica-zawodowa.md) | Trzy tajemnice: psychologa (u.psy 2001 art. 14), medyczna (u.p.p. art. 13–14), RODO |
 | 12 | [Checklist i najczęstsze kruczki](12-checklist-i-kruczki.md) | Uporządkowana lista pułapek i wskazówek |
+| 13 | [Mapa instytucji krok po kroku](13-mapa-instytucji-krok-po-kroku.md) | **Pełna lista 27 urzędów/instytucji/serwisów** dla kazusu „2 psychologów z JDG → sp. z o.o. 50/50": fazy 0–19, opłaty, zakupy, ścieżka krytyczna, kalendarz cykliczny, rejestr długu weryfikacyjnego |
 
 ## Konwencje w tej bazie wiedzy
 
