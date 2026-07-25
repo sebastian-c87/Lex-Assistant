@@ -4,48 +4,232 @@
     "year": 2024,
     "pos": 18,
     "category": "ksh",
-    "label": "Kodeks spolek handlowych (tekst jednolity)"
+    "label": "Kodeks spolek handlowych (tekst jednolity)",
+    "expectTitle": "Kodeks spółek handlowych"
   },
   {
     "publisher": "DU",
     "year": 2026,
     "pos": 156,
     "category": "prawo_medyczne",
-    "label": "Ustawa o dzialalnosci leczniczej (t.j. z 5.02.2026)"
+    "label": "Ustawa o dzialalnosci leczniczej (t.j. z 5.02.2026)",
+    "expectTitle": "o działalności leczniczej"
   },
   {
     "publisher": "DU",
     "year": 2024,
     "pos": 581,
     "category": "prawo_medyczne",
-    "label": "Ustawa o prawach pacjenta i Rzeczniku Praw Pacjenta (tekst jednolity)"
+    "label": "Ustawa o prawach pacjenta i Rzeczniku Praw Pacjenta (tekst jednolity)",
+    "expectTitle": "o prawach pacjenta i Rzeczniku Praw Pacjenta"
   },
   {
     "publisher": "DU",
     "year": 2024,
     "pos": 917,
     "category": "prawo_medyczne",
-    "label": "Ustawa o ochronie zdrowia psychicznego (tekst jednolity)"
+    "label": "Ustawa o ochronie zdrowia psychicznego (tekst jednolity)",
+    "expectTitle": "o ochronie zdrowia psychicznego"
   },
   {
     "publisher": "DU",
     "year": 2025,
     "pos": 1461,
     "category": "prawo_medyczne",
-    "label": "Ustawa o swiadczeniach opieki zdrowotnej finansowanych ze srodkow publicznych (tekst jednolity)"
+    "label": "Ustawa o swiadczeniach opieki zdrowotnej finansowanych ze srodkow publicznych (tekst jednolity)",
+    "expectTitle": "o świadczeniach opieki zdrowotnej finansowanych ze środków publicznych"
   },
   {
     "publisher": "DU",
     "year": 2019,
     "pos": 1026,
     "category": "prawo_medyczne",
-    "label": "Ustawa o zawodzie psychologa i samorzadzie zawodowym psychologow -- STARA ustawa z 2001, t.j. z 2019, obowiazuje do 2028-05-19"
+    "label": "Ustawa o zawodzie psychologa i samorzadzie zawodowym psychologow -- STARA ustawa z 2001, t.j. z 2019, obowiazuje do 2028-05-19",
+    "expectTitle": "o zawodzie psychologa i samorządzie zawodowym psychologów"
   },
   {
     "publisher": "DU",
     "year": 2026,
     "pos": 187,
     "category": "prawo_medyczne",
-    "label": "Ustawa o zawodzie psychologa oraz samorzadzie zawodowym psychologow -- NOWA ustawa, podpisana 12.02.2026, wchodzi w zycie glownie 19.05.2028"
+    "label": "Ustawa o zawodzie psychologa oraz samorzadzie zawodowym psychologow -- NOWA ustawa, podpisana 12.02.2026, wchodzi w zycie glownie 19.05.2028",
+    "expectTitle": "o zawodzie psychologa oraz samorządzie zawodowym psychologów"
+  },
+
+  {
+    "search": "Kodeks karny",
+    "category": "prawo_karne",
+    "label": "Kodeks karny (tekst jednolity)",
+    "expectTitle": "Kodeks karny",
+    "why": "art. 233 par. 6 KK (falszywe oswiadczenie do RPWDL), art. 266 KK (tajemnica), art. 240 KK (obowiazek denuncjacji), art. 189a, art. 207 KK (weryfikacja kadr przy maloletnich)"
+  },
+  {
+    "search": "Kodeks postępowania karnego",
+    "category": "prawo_karne",
+    "label": "Kodeks postepowania karnego (tekst jednolity)",
+    "expectTitle": "Kodeks postępowania karnego",
+    "why": "zwolnienie z tajemnicy zawodowej przez sad/prokurature - procedura zadan wobec gabinetu"
+  },
+  {
+    "search": "Kodeks cywilny",
+    "category": "prawo_cywilne",
+    "label": "Kodeks cywilny (tekst jednolity)",
+    "expectTitle": "Kodeks cywilny",
+    "why": "umowy, odpowiedzialnosc kontraktowa i deliktowa, najem lokalu gabinetu, przedawnienie roszczen pacjentow"
+  },
+  {
+    "search": "Kodeks postępowania administracyjnego",
+    "category": "prawo_administracyjne",
+    "label": "Kodeks postepowania administracyjnego (tekst jednolity)",
+    "expectTitle": "Kodeks postępowania administracyjnego",
+    "why": "decyzje wojewody w sprawie RPWDL, kara z art. 107 u.dz.l., odwolania; u.dz.l. art. 107 ust. 5 odsyla wprost do KPA"
+  },
+  {
+    "search": "Kodeks pracy",
+    "category": "prawo_pracy",
+    "label": "Kodeks pracy (tekst jednolity)",
+    "expectTitle": "Kodeks pracy",
+    "why": "art. 229 (medycyna pracy), art. 237(3) i nast. (BHP), art. 120 (odpowiedzialnosc pracownika - odeslanie z art. 25 ust. 4 u.dz.l.), zatrudnianie psychologow"
+  },
+  {
+    "search": "o podatku od towarów i usług",
+    "category": "podatki",
+    "label": "Ustawa o podatku od towarow i uslug (VAT) (tekst jednolity)",
+    "expectTitle": "o podatku od towarów i usług",
+    "why": "art. 43 ust. 1 pkt 18-19a (zwolnienie dla uslug opieki medycznej - kluczowe i sporne dla opinii/diagnoz na zamowienie), art. 106ga i nast. (KSeF), art. 96b (biala lista)"
+  },
+  {
+    "search": "Ordynacja podatkowa",
+    "category": "podatki",
+    "label": "Ordynacja podatkowa (tekst jednolity)",
+    "expectTitle": "Ordynacja podatkowa",
+    "why": "art. 14b-14f (interpretacje indywidualne KIS - rekomendowane dla VAT i kasy fiskalnej), art. 117ba (odpowiedzialnosc solidarna przy platnosci poza biala liste)"
+  },
+  {
+    "search": "o podatku od czynności cywilnoprawnych",
+    "category": "podatki",
+    "label": "Ustawa o podatku od czynnosci cywilnoprawnych (PCC) (tekst jednolity)",
+    "expectTitle": "o podatku od czynności cywilnoprawnych",
+    "why": "PCC 0,5% od kapitalu zakladowego, notariusz jako platnik, PCC-3 przy S24, obnizenie podstawy o koszty notariusza i KRS"
+  },
+  {
+    "search": "o podatku dochodowym od osób prawnych",
+    "category": "podatki",
+    "label": "Ustawa o podatku dochodowym od osob prawnych (CIT) (tekst jednolity)",
+    "expectTitle": "o podatku dochodowym od osób prawnych",
+    "why": "CIT spolki, rozdzial 6b (ryczalt od dochodow spolek - estonski CIT), opodatkowanie dywidendy"
+  },
+  {
+    "search": "o systemie ubezpieczeń społecznych",
+    "category": "ubezpieczenia_spoleczne",
+    "label": "Ustawa o systemie ubezpieczen spolecznych (tekst jednolity)",
+    "expectTitle": "o systemie ubezpieczeń społecznych",
+    "why": "art. 6 ust. 1 pkt 5 w zw. z art. 8 ust. 6 pkt 4 (wspolnik JEDNOosobowej sp. z o.o. - kluczowe dla ustalenia, ze wspolnicy 50/50 nie podlegaja), art. 36 (terminy zgloszen)"
+  },
+  {
+    "search": "o pracowniczych planach kapitałowych",
+    "category": "ubezpieczenia_spoleczne",
+    "label": "Ustawa o pracowniczych planach kapitalowych (PPK) (tekst jednolity)",
+    "expectTitle": "o pracowniczych planach kapitałowych",
+    "why": "terminy umowy o zarzadzanie i o prowadzenie PPK po zatrudnieniu pierwszej osoby"
+  },
+  {
+    "search": "o Krajowym Rejestrze Sądowym",
+    "category": "rejestry_i_procedury",
+    "label": "Ustawa o Krajowym Rejestrze Sadowym (tekst jednolity)",
+    "expectTitle": "o Krajowym Rejestrze Sądowym",
+    "why": "KSH art. 164 par. 2 odsyla wprost do tej ustawy; terminy zglaszania zmian, obowiazek ogloszen w MSiG (uchylony dla wnioskow od 29.11.2025 - do potwierdzenia)"
+  },
+  {
+    "search": "o kosztach sądowych w sprawach cywilnych",
+    "category": "rejestry_i_procedury",
+    "label": "Ustawa o kosztach sadowych w sprawach cywilnych (tekst jednolity)",
+    "expectTitle": "o kosztach sądowych w sprawach cywilnych",
+    "why": "oplata za wpis spolki do KRS (500 zl / 250 zl S24) - jedyne wiarygodne zrodlo kwoty"
+  },
+  {
+    "search": "o doręczeniach elektronicznych",
+    "category": "rejestry_i_procedury",
+    "label": "Ustawa o doreczeniach elektronicznych (tekst jednolity)",
+    "expectTitle": "o doręczeniach elektronicznych",
+    "why": "obowiazek adresu do e-Doreczen (ADE) dla podmiotow KRS, skutek doreczenia; KSH art. 166 par. 1 pkt 5 juz wymaga adresu do doreczen elektronicznych czlonkow zarzadu"
+  },
+  {
+    "search": "o przeciwdziałaniu praniu pieniędzy",
+    "category": "rejestry_i_procedury",
+    "label": "Ustawa o przeciwdzialaniu praniu pieniedzy i finansowaniu terroryzmu (tekst jednolity)",
+    "expectTitle": "o przeciwdziałaniu praniu pieniędzy",
+    "why": "CRBR: art. 58-60 (kto beneficjentem, TERMIN 7 vs 14 dni - sprzecznosc w naszej bazie), art. 153 (kara do 1 mln zl). PRIORYTET 1 dlugu weryfikacyjnego"
+  },
+  {
+    "search": "o rachunkowości",
+    "category": "rejestry_i_procedury",
+    "label": "Ustawa o rachunkowosci (tekst jednolity)",
+    "expectTitle": "o rachunkowości",
+    "why": "art. 2 (obowiazek pelnych ksiag dla sp. z o.o.), sprawozdanie finansowe i terminy zlozenia do KRS"
+  },
+  {
+    "search": "Prawo budowlane",
+    "category": "budownictwo_i_sanepid",
+    "label": "Prawo budowlane (tekst jednolity)",
+    "expectTitle": "Prawo budowlane",
+    "why": "art. 71 ust. 2 i 2b (zgloszenie zmiany sposobu uzytkowania lokalu na gabinet, 30 dni na sprzeciw) - pozycja na sciezce krytycznej przed RPWDL"
+  },
+  {
+    "search": "o Państwowej Inspekcji Sanitarnej",
+    "category": "budownictwo_i_sanepid",
+    "label": "Ustawa o Panstwowej Inspekcji Sanitarnej (tekst jednolity)",
+    "expectTitle": "o Państwowej Inspekcji Sanitarnej",
+    "why": "opinia sanitarna o lokalu, nadzor zapobiegawczy i podstawa oplat"
+  },
+  {
+    "search": "o odpadach",
+    "category": "budownictwo_i_sanepid",
+    "label": "Ustawa o odpadach (tekst jednolity)",
+    "expectTitle": "o odpadach",
+    "why": "BDO: obowiazek wpisu, ewidencja, karta przekazania odpadow - rozstrzygniecie czy gabinet psychologiczny wytwarza odpady medyczne"
+  },
+  {
+    "search": "o systemie informacji w ochronie zdrowia",
+    "category": "prawo_medyczne",
+    "label": "Ustawa o systemie informacji w ochronie zdrowia (tekst jednolity)",
+    "expectTitle": "o systemie informacji w ochronie zdrowia",
+    "why": "EDM, System P1/SIM, raportowanie zdarzen medycznych. u.p.p. art. 24 ust. 1 odsyla wprost do tej ustawy - luka w naszej bazie"
+  },
+  {
+    "search": "o ochronie danych osobowych",
+    "category": "ochrona_danych",
+    "label": "Ustawa o ochronie danych osobowych (UODO 2018) (tekst jednolity)",
+    "expectTitle": "o ochronie danych osobowych",
+    "why": "art. 10 (zawiadomienie o IOD - 14 dni, wylacznie elektronicznie), przepisy krajowe uzupelniajace RODO. UWAGA: samo RODO 2016/679 nie jest w ELI - EUR-Lex CELEX 02016R0679"
+  },
+  {
+    "search": "o przeciwdziałaniu zagrożeniom przestępczością na tle seksualnym",
+    "category": "ochrona_maloletnich",
+    "label": "Ustawa o przeciwdzialaniu zagrozeniom przestepczoscia na tle seksualnym i ochronie maloletnich (tzw. ustawa Kamilka) (tekst jednolity)",
+    "expectTitle": "przestępczością na tle seksualnym",
+    "why": "standardy ochrony maloletnich dla podmiotow leczniczych, weryfikacja kadr w RSPTS i KRK przed dopuszczeniem do pracy z dziecmi, sankcje. Nowelizacja z 5.08.2025 - upewnic sie ze t.j. jest po niej"
+  },
+
+  {
+    "search": "pomieszczenia i urządzenia podmiotu wykonującego działalność leczniczą",
+    "category": "rozporzadzenia",
+    "label": "Rozporzadzenie MZ w sprawie szczegolowych wymagan, jakim powinny odpowiadac pomieszczenia i urzadzenia podmiotu wykonujacego dzialalnosc lecznicza (tekst jednolity)",
+    "expectTitle": "pomieszczenia i urządzenia podmiotu wykonującego działalność leczniczą",
+    "why": "wykonawcze do art. 22 ust. 3 u.dz.l. - determinuje lokal gabinetu. Kandydat: t.j. ogloszony obwieszczeniem MZ z 17.01.2022 (Dz.U. 2022 poz. 402), akt bazowy z 26.03.2019 (Dz.U. 2019 poz. 595)"
+  },
+  {
+    "search": "obowiązkowego ubezpieczenia odpowiedzialności cywilnej podmiotu wykonującego działalność leczniczą",
+    "category": "rozporzadzenia",
+    "label": "Rozporzadzenie MF w sprawie obowiazkowego ubezpieczenia OC podmiotu wykonujacego dzialalnosc lecznicza",
+    "expectTitle": "ubezpieczenia odpowiedzialności cywilnej podmiotu wykonującego działalność leczniczą",
+    "why": "wykonawcze do art. 25 ust. 5 u.dz.l. - minimalna suma gwarancyjna (kandydat: 75 000 / 350 000 EUR dla ambulatoryjnych). Akt bazowy 29.04.2019 (Dz.U. 2019 poz. 866), zm. 4.09.2023 (Dz.U. 2023 poz. 1930)"
+  },
+  {
+    "search": "zwolnień z obowiązku prowadzenia ewidencji sprzedaży przy zastosowaniu kas rejestrujących",
+    "category": "rozporzadzenia",
+    "label": "Rozporzadzenie MF w sprawie zwolnien z obowiazku prowadzenia ewidencji sprzedazy przy zastosowaniu kas rejestrujacych",
+    "expectTitle": "kas rejestrujących",
+    "why": "czy uslugi psychologiczne wpadaja w bezwzgledny obowiazek kasy online. Kandydaci: rozp. z 17.12.2024 (Dz.U. 2024 poz. 1902) + nowelizacja z 27.03.2026 (Dz.U. 2026 poz. 420) - SPRAWDZ ktory jest aktualny"
   }
 ]

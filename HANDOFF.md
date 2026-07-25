@@ -46,6 +46,63 @@ Konsekwencje operacyjne:
 
 **W praktyce:** dla pytań o KSH / u.dz.l. / u.p.p. / u.psy 2001 / u.psy 2026 / u.o.z.p. — otwierasz `.index.json` w repo i cytujesz. Dla aktów spoza tych 6 — web_fetch na api.sejm.gov.pl/eli.
 
+## 3a. Dostęp sieciowy do ELI — warunek konieczny (Claude Code on the web)
+
+**Objaw:** każde żądanie do `api.sejm.gov.pl` / `isap.sejm.gov.pl` / `eli.gov.pl` kończy się `403`. W curl: `CONNECT tunnel failed, response 403`. W Node: `Proxy response (403) !== 200 when HTTP Tunneling`.
+
+**Przyczyna:** to **nie** awaria i **nie** błąd w kodzie. Środowisko cloud ma poziom dostępu sieciowego **Trusted** — dozwolone są tylko domeny z domyślnej allowlisty (rejestry pakietów, GitHub, chmury). `sejm.gov.pl` się na niej nie znajduje. Sandbox nie może tego zmienić od wewnątrz i nie wolno tego obchodzić.
+
+**Naprawa (do wykonania RĘCZNIE przez użytkownika, jednorazowo):**
+
+1. `claude.ai/code` → ikona chmury → edycja środowiska
+2. **Network access** → **Custom**
+3. **Allowed domains** (po jednej w linii):
+   ```
+   api.sejm.gov.pl
+   isap.sejm.gov.pl
+   eli.gov.pl
+   ```
+4. Zaznaczyć **„Also include default list of common package managers"** — inaczej odpadnie npm/GitHub
+5. Zapisać, uruchomić **nową** sesję (zmiana nie działa retroaktywnie na sesję już otwartą)
+
+Alternatywa: **Full** (dowolna domena) — szybciej, ale szerzej niż potrzeba.
+
+Allowlista jest **per środowisko**; nie ma allowlisty na poziomie organizacji. Dokumentacja: <https://code.claude.com/docs/en/claude-code-on-the-web#network-access>
+
+**Weryfikacja po zmianie:**
+```bash
+node fetch-laws.js --diag
+```
+Ma wypisać `✓ POŁĄCZENIE DZIAŁA` i tytuł aktu kontrolnego DU/2024/18.
+
+**Uwaga o samym API:** ELI API jest publiczne — **nie wymaga klucza, tokenu ani rejestracji**. Jedyną barierą jest allowlista środowiska. Dokumentacja API: <https://api.sejm.gov.pl/eli_pl.html>, OpenAPI: <https://api.sejm.gov.pl/eli/openapi/ui/>.
+
+**Dopóki hosty są zablokowane:** działaj wyłącznie na 6 aktach w `akty/` (znacznik ✅) i oznaczaj wszystko inne `⚠️ [NIEWERYFIKOWANE — egress blokuje api.sejm.gov.pl]`. Nie zastępuj weryfikacji ELI wyszukiwaniem w internecie — portale wtórne nie są bazą oficjalną (patrz KROK 2B).
+
+## 3b. Workflow config.json — wpisy przypięte i do rozwiązania
+
+`config.json` obsługuje dwie postacie wpisu:
+
+| Postać | Pola | Zachowanie |
+|---|---|---|
+| **przypięta** | `publisher`, `year`, `pos`, `category`, `label`, `expectTitle` | pobierana normalnie |
+| **do rozwiązania** | `search`, `category`, `label`, `expectTitle`, `why` | **pomijana** przy pobieraniu — numer pozycji nie jest zgadywany |
+
+`expectTitle` to **zautomatyzowany KROK 2B**: przed pobraniem skrypt porównuje tytuł aktu z ELI z tą frazą. Niezgodność = odmowa pobrania i błąd. To bramka na klasę błędu „prawdziwy numer, zły akt" (DU/2024/1571, DU/2025/540).
+
+Komendy:
+```bash
+node fetch-laws.js --diag              # test łączności + diagnostyka proxy
+node fetch-laws.js --check             # co się zmieniło (nic nie zapisuje) + walidacja tytułów
+node fetch-laws.js --resolve           # szuka w ELI adresów dla wpisów `search`, pokazuje kandydatów
+node fetch-laws.js --resolve --write   # jw. + przypina najlepsze trafienie do config.json
+node fetch-laws.js                     # pobiera / aktualizuje wpisy przypięte
+```
+
+**Kolejność przy dodawaniu nowych aktów:** `--resolve` (podgląd) → **ręcznie sprawdź kandydatów** → `--resolve --write` → `--check` → pobranie → konwersja przez `tools/html_act_to_md.py` lub `tools/pdf_act_to_md.py`.
+
+Przy `--resolve --write` skrypt ostrzega `⚠ Było N kandydatów` — wtedy weryfikacja ręczna jest obowiązkowa, bo ranking (t.j./obowiązujący/najnowszy) to heurystyka, nie dowód.
+
 ## 4. Mapa repozytorium
 
 ```
