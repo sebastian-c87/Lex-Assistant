@@ -55,7 +55,6 @@
     "label": "Ustawa o zawodzie psychologa oraz samorzadzie zawodowym psychologow -- NOWA ustawa, podpisana 12.02.2026, wchodzi w zycie glownie 19.05.2028",
     "expectTitle": "o zawodzie psychologa oraz samorządzie zawodowym psychologów"
   },
-
   {
     "search": "Kodeks karny",
     "category": "prawo_karne",
@@ -118,6 +117,13 @@
     "label": "Ustawa o podatku dochodowym od osob prawnych (CIT) (tekst jednolity)",
     "expectTitle": "o podatku dochodowym od osób prawnych",
     "why": "CIT spolki, rozdzial 6b (ryczalt od dochodow spolek - estonski CIT), opodatkowanie dywidendy"
+  },
+  {
+    "search": "o podatku dochodowym od osób fizycznych",
+    "category": "podatki",
+    "label": "Ustawa o podatku dochodowym od osob fizycznych (PIT) (tekst jednolity)",
+    "expectTitle": "o podatku dochodowym od osób fizycznych",
+    "why": "art. 30a ust. 19 (odliczenie 90%/70% podatku spolki od PIT z dywidendy przy estonskim CIT), art. 13 pkt 7-9 i art. 20 ust. 1 (kwalifikacja zrodla wynagrodzenia wspolnika - decyduje o ryzyku ukrytych zyskow przy art. 176 KSH), opodatkowanie dywidendy"
   },
   {
     "search": "o systemie ubezpieczeń społecznych",
@@ -210,7 +216,6 @@
     "expectTitle": "przestępczością na tle seksualnym",
     "why": "standardy ochrony maloletnich dla podmiotow leczniczych, weryfikacja kadr w RSPTS i KRK przed dopuszczeniem do pracy z dziecmi, sankcje. Nowelizacja z 5.08.2025 - upewnic sie ze t.j. jest po niej"
   },
-
   {
     "search": "pomieszczenia i urządzenia podmiotu wykonującego działalność leczniczą",
     "category": "rozporzadzenia",

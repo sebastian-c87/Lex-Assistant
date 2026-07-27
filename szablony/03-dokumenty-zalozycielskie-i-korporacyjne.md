@@ -134,7 +134,7 @@ Zarząd jest **obowiązany prowadzić księgę udziałów**. Wpisuje się do nie
 > | Łączna wartość nominalna | 30 000,00 zł |
 > | Zastaw / użytkowanie | nie ustanowiono |
 > | Wykonywanie prawa głosu przez zastawnika lub użytkownika | nie dotyczy (§ 14 ust. 7 umowy Spółki wyłącza) |
-> | Podstawa nabycia | objęcie udziałów w umowie Spółki z dnia 15 września 2026 r. |
+> | Podstawa nabycia | objęcie udziałów w umowie Spółki z dnia 5 sierpnia 2026 r. |
 > | Data wpisu | [___] |
 >
 > **Rejestr zmian**

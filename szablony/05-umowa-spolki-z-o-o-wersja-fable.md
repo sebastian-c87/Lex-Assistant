@@ -13,7 +13,7 @@ Legenda: `▸` = komentarz redakcyjny (nie wchodzi do aktu). Treść umowy w blo
 | Kapitał zakładowy | 50 000 zł — 100 udziałów po 500 zł |
 | Wspólnicy | Joanna Malinowska — 60 udziałów (30 000 zł); Piotr Wrona — 40 udziałów (20 000 zł) |
 | Zarząd | dwuosobowy: Joanna Malinowska (prezes), Piotr Wrona (członek zarządu) |
-| Rok obrotowy | kalendarzowy; pierwszy od zawarcia umowy do 31.12.2026 |
+| Rok obrotowy | kalendarzowy; **pierwszy wydłużony — od rozpoczęcia działalności do 31.12.2027** (start działalności: wrzesień 2026) |
 
 ---
 
@@ -42,7 +42,7 @@ Osobna kontrola przy aporcie, wynikająca z art. 14 § 1 KSH: **przedmiotem wkł
 
 > **UMOWA SPÓŁKI Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ**
 >
-> zawarta w dniu 20 października 2026 r. w Krakowie, przed notariuszem [___], Repertorium A nr [___]/2026, pomiędzy:
+> zawarta w dniu 12 sierpnia 2026 r. w Krakowie, przed notariuszem [___], Repertorium A nr [___]/2026, pomiędzy:
 >
 > 1) **Joanną Malinowską**, PESEL [___], zamieszkałą w Krakowie przy ul. Ariańskiej 7 lok. 2, 31-505 Kraków, magistrem psychologii (Uniwersytet Jagielloński, 2009),
 > 2) **Piotrem Wroną**, PESEL [___], zamieszkałym w Krakowie przy ul. Mogilskiej 21 lok. 14, 31-542 Kraków, magistrem psychologii (Uniwersytet Jagielloński, 2014),
@@ -152,7 +152,15 @@ Osobna kontrola przy aporcie, wynikająca z art. 14 § 1 KSH: **przedmiotem wkł
 > **§ 18.** 1. Wspólnicy uczestniczą w zysku przeznaczonym do podziału uchwałą Zgromadzenia Wspólników **proporcjonalnie do udziałów**.
 > 2. Zgromadzenie Wspólników może określić dzień dywidendy w ciągu dwóch miesięcy od dnia uchwały o podziale zysku.
 > 3. **Zarząd jest upoważniony do wypłaty zaliczki na poczet przewidywanej dywidendy**, jeżeli Spółka posiada środki wystarczające na wypłatę i zachowane są granice ustawowe.
-> 4. Rokiem obrotowym jest rok kalendarzowy; pierwszy rok obrotowy kończy się **31 grudnia 2026 r.**
+> 4. Rokiem obrotowym jest rok kalendarzowy. **Pierwszy rok obrotowy Spółki rozpoczyna się w dniu rozpoczęcia działalności i kończy się 31 grudnia 2027 r.**; księgi rachunkowe i sprawozdanie finansowe za okres do 31 grudnia 2026 r. łączy się z księgami i sprawozdaniem za rok 2027.
+
+▸ **Wariant wydłużony, wybrany świadomie** — spółka rozpoczyna działalność w drugiej połowie 2026 r. Rachunkowość dopuszcza wtedy połączenie pierwszego okresu z rokiem następnym, a CIT — by pierwszy rok podatkowy trwał do końca roku kalendarzowego następującego po roku rozpoczęcia działalności, **bez zawiadamiania urzędu skarbowego**. Powód główny: koszty startowe kompensują się bezpośrednio z przychodami 2027 zamiast tworzyć stratę rozliczaną na zasadach ograniczonych. Decyduje **data pierwszego zdarzenia majątkowego** (akt notarialny + wkłady w sierpniu 2026), nie data wpisu do rejestru — gdyby wypadła przed 1 lipca, wydłużenie przepada. Analiza obu wariantów z wyliczeniami: [08-rok-obrotowy-i-estonski-cit.md](08-rok-obrotowy-i-estonski-cit.md).
+
+▸ Kadencja zarządu liczona w pełnych latach obrotowych (§ 15 ust. 1) — przy kadencji czteroletniej wydłużony pierwszy rok jest neutralny.
+
+▸ ⚠️ **Jeżeli spółka wybierze estoński CIT, § 9 wymaga przebudowy.** Wynagrodzenie z tytułu powtarzających się świadczeń niepieniężnych może w reżimie ryczałtu wejść w obszar **ukrytych zysków** — wypłata, która miała być kosztem, staje się przedmiotem opodatkowania. Rozstrzygnięcie musi nastąpić **przed** aktem notarialnym, bo późniejsza zmiana § 9 wymaga zmiany umowy (u nas: większość 3/4 z § 17 ust. 3, akt notarialny, wpis), a zwiększenie świadczeń wspólnika dodatkowo jego zgody indywidualnej. Trzy możliwe architektury wypłat: plik 08, Część II pkt 4.
+
+▸ ⚠️ Warstwa rachunkowa i podatkowa **niezweryfikowana w bazie oficjalnej** — ustaw o rachunkowości i o CIT nie ma w lokalnej bazie aktów. Wykaz przepisów do potwierdzenia: plik 08, Część III.
 
 ## VII. Rozwiązanie sporów, rozwiązanie Spółki
 

@@ -13,6 +13,7 @@ Zestaw wzorów dokumentów dla spółki z ograniczoną odpowiedzialnością prow
 | 05 | [Umowa spółki — wersja niezależna (Fable)](05-umowa-spolki-z-o-o-wersja-fable.md) | Samodzielny wzór w konfiguracji **60/40** — ochrona mniejszości większością 3/4, tag-along, umorzenie automatyczne, podwyższenie bez zmiany umowy, kara umowna |
 | 06 | [Spółka w organizacji (Fable)](06-spolka-w-organizacji.md) | Faza od aktu notarialnego do wpisu: dlaczego nie ma odrębnej „umowy spółki w organizacji", firma „w organizacji", pełnomocnik z jednomyślnej uchwały, odpowiedzialność i jej wygaszanie, rejestr czynności, likwidacja |
 | 07 | [Źródła i weryfikacja 05–06 (Fable)](07-zrodla-i-weryfikacja-fable.md) | Niezależna warstwa weryfikacyjna nowej pary + różnice konstrukcyjne wobec 01–03 |
+| 08 | [Rok obrotowy i estoński CIT](08-rok-obrotowy-i-estonski-cit.md) | **Analiza decyzyjna dla startu we wrześniu 2026**: wydłużyć pierwszy rok obrotowy do 31.12.2027 czy nie; czy estoński CIT się opłaca; **konflikt ryczałtu z konstrukcją art. 176 KSH** użytą w szablonach 01 i 05 |
 
 Szablony 01–04 tworzą komplet dla konfiguracji **50/50**; szablony 05–07 są od nich niezależne (odrębna weryfikacja, konfiguracja **60/40**, inna strategia ochrony wspólników). Wspólny pozostaje tylko rdzeń ustawowy.
 
@@ -41,8 +42,8 @@ Firma, nazwiska, adresy, kwoty, liczba i wartość udziałów zostały wymyślon
 | Wspólnicy | Anna Zawadzka — 300 udziałów (30 000 zł); Marek Sikorski — 300 udziałów (30 000 zł) |
 | Zarząd | dwuosobowy: Anna Zawadzka (prezes), Marek Sikorski (wiceprezes) |
 | Rada nadzorcza | nie ustanowiono |
-| Rok obrotowy | rok kalendarzowy; pierwszy — od zawarcia umowy do 31.12.2026 |
-| Data zawarcia umowy | 15 września 2026 r. |
+| Rok obrotowy | rok kalendarzowy; **pierwszy rok wydłużony — od rozpoczęcia działalności do 31.12.2027** (start działalności: wrzesień 2026) |
+| Data zawarcia umowy | 5 sierpnia 2026 r. |
 
 **Numery PESEL i serie dokumentów tożsamości zostawiono jako pola do wypełnienia**, nie wymyślono ich. PESEL ma cyfrę kontrolną — wygenerowany „losowo" numer poprawny formalnie należałby do konkretnej żywej osoby. W dokumencie do podpisu i tak wpisuje je notariusz z okazanych dokumentów.
 

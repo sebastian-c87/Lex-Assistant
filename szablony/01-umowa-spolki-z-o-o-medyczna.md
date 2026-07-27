@@ -114,7 +114,7 @@ Wpisanie ich nie unieważnia całej umowy, ale samo postanowienie jest bezskutec
 
 > **UMOWA SPÓŁKI Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ**
 >
-> zawarta w dniu 15 września 2026 r. w Warszawie, przed notariuszem [imię i nazwisko notariusza], prowadzącym Kancelarię Notarialną w Warszawie przy ul. [___], Repertorium A numer [___]/2026,
+> zawarta w dniu 5 sierpnia 2026 r. w Warszawie, przed notariuszem [imię i nazwisko notariusza], prowadzącym Kancelarię Notarialną w Warszawie przy ul. [___], Repertorium A numer [___]/2026,
 >
 > pomiędzy:
 >
@@ -525,9 +525,19 @@ Wpisanie ich nie unieważnia całej umowy, ale samo postanowienie jest bezskutec
 > **§ 25. Rok obrotowy**
 >
 > 1. Rokiem obrotowym Spółki jest rok kalendarzowy.
-> 2. Pierwszy rok obrotowy rozpoczyna się w dniu zawarcia niniejszej umowy i kończy się **31 grudnia 2026 r.**
+> 2. **Pierwszy rok obrotowy Spółki rozpoczyna się w dniu rozpoczęcia działalności i kończy się 31 grudnia 2027 r.** Księgi rachunkowe i sprawozdanie finansowe za okres od rozpoczęcia działalności do 31 grudnia 2026 r. łączy się z księgami rachunkowymi i sprawozdaniem finansowym za rok 2027.
 
-▸ Postanowienie o pierwszym roku obrotowym warto wpisać wprost. Przepisy o rachunkowości dopuszczają połączenie pierwszego, krótkiego okresu z rokiem następnym — jeśli chcecie tego skorzystać, ust. 2 wymaga innego brzmienia. Rozstrzygnijcie to z księgowym **przed** wizytą u notariusza, bo ma wpływ na pierwsze sprawozdanie i na kadencję zarządu liczoną w pełnych latach obrotowych.
+▸ **Wariant wydłużony wybrany świadomie** — spółka rozpoczyna działalność w drugiej połowie 2026 r. (akt notarialny w sierpniu, start świadczeń po wpisie do rejestru podmiotów wykonujących działalność leczniczą we wrześniu). Przepisy o rachunkowości pozwalają wtedy połączyć księgi i sprawozdanie za okres pierwszy z rokiem następnym, a przepisy o CIT dopuszczają, by pierwszy rok podatkowy trwał do końca roku kalendarzowego następującego po roku rozpoczęcia działalności — **bez zawiadamiania urzędu skarbowego**. Pełna analiza obu wariantów z wyliczeniami: [08-rok-obrotowy-i-estonski-cit.md](08-rok-obrotowy-i-estonski-cit.md), Część I.
+
+▸ **Główny powód:** koszty startowe (adaptacja lokalu, wyposażenie, licencje na narzędzia diagnostyczne, OC, opłaty notarialne i rejestrowe) spadają w okres, w którym przychodów jeszcze nie ma — bo działalności leczniczej nie wolno rozpocząć przed wpisem do rejestru. W roku wydłużonym kompensują się bezpośrednio z przychodami 2027 zamiast tworzyć stratę rozliczaną w latach następnych na zasadach ograniczonych.
+
+▸ **Pułapka, o której trzeba pamiętać przy tej redakcji:** liczy się **data pierwszego zdarzenia wywołującego skutki majątkowe lub finansowe**, a nie data wpisu do rejestru. Spółka w organizacji powstaje z chwilą zawarcia umowy i już wtedy otwiera księgi. Jeżeli akt notarialny i wniesienie wkładów wypadłyby **przed 1 lipca**, wydłużenie przepada — wariant działa tylko przy rozpoczęciu działalności w drugiej połowie roku.
+
+▸ **Kiedy wrócić do wariantu skróconego** (ust. 2 w brzmieniu „…kończy się 31 grudnia 2026 r."): jeżeli w pierwszej połowie 2027 r. spółka będzie ubiegać się o kredyt, leasing na większą kwotę albo startować w postępowaniu wymagającym zatwierdzonego sprawozdania finansowego. W wariancie wydłużonym pierwsze sprawozdanie powstaje dopiero wiosną 2028 r.
+
+▸ Kadencja zarządu liczona jest w pełnych latach obrotowych (§ 17 ust. 3) — przy kadencji pięcioletniej wydłużony pierwszy rok jest neutralny. Przy kadencji rocznej zmieniłby moment wygaśnięcia mandatu.
+
+▸ ⚠️ **Warstwa podatkowa i rachunkowa nie jest zweryfikowana w bazie oficjalnej** (ustawy o rachunkowości i o CIT nie ma w naszej lokalnej bazie aktów). Przed podpisaniem aktu potwierdźcie brzmienie z księgowym lub doradcą podatkowym — wykaz przepisów do sprawdzenia w pliku 08, Część III.
 
 > **§ 26. Podział zysku**
 >
@@ -684,7 +694,8 @@ Klauzule niewłączone do wzoru, do rozważenia w konkretnej sytuacji. Przy każ
 - [ ] Przedmiot działalności zakreślony z zapasem (istotna zmiana wymaga 3/4 głosów)
 - [ ] Arytmetyka zgodna: liczba udziałów × wartość nominalna = kapitał; suma udziałów wspólników = całość
 - [ ] Rozstrzygnięte: wkłady pieniężne czy aport (aport wyklucza S24 i wymaga wyceny)
-- [ ] Pierwszy rok obrotowy uzgodniony z księgowym
+- [ ] **Pierwszy rok obrotowy: wariant wydłużony do 31.12.2027 czy skrócony do 31.12.2026?** — rozstrzygnięte z księgowym; pierwsze zdarzenie majątkowe musi wypaść po 30 czerwca (plik 08, Część I)
+- [ ] **Estoński CIT: tak czy nie?** — jeżeli tak, § 10 (wypłaty z art. 176 KSH) wymaga przebudowy przed aktem notarialnym; termin ZAW-RD to koniec pierwszego miesiąca pierwszego roku podatkowego (plik 08, Część II)
 
 **Klauzule klasy 2 — sprawdź, czy żadnej nie pominięto**
 
