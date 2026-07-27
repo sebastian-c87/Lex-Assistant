@@ -10,6 +10,11 @@ Zestaw wzorów dokumentów dla spółki z ograniczoną odpowiedzialnością prow
 | 02 | [Uchwały i zgromadzenie wspólników](02-uchwaly-i-zgromadzenie-wspolnikow.md) | Zasady zwoływania, kworum, większości, tryby głosowania, protokół + 12 gotowych wzorów uchwał |
 | 03 | [Dokumenty założycielskie i korporacyjne](03-dokumenty-zalozycielskie-i-korporacyjne.md) | Załączniki do wniosku KRS, lista wspólników, oświadczenia, księga udziałów, pełnomocnik z art. 210 KSH |
 | 04 | [Źródła i weryfikacja](04-zrodla-i-weryfikacja.md) | Wszystkie przepisy użyte w szablonach 01–03, ze znacznikami VER i wskazaniem, co pozostaje niezweryfikowane |
+| 05 | [Umowa spółki — wersja niezależna (Fable)](05-umowa-spolki-z-o-o-wersja-fable.md) | Samodzielny wzór w konfiguracji **60/40** — ochrona mniejszości większością 3/4, tag-along, umorzenie automatyczne, podwyższenie bez zmiany umowy, kara umowna |
+| 06 | [Spółka w organizacji (Fable)](06-spolka-w-organizacji.md) | Faza od aktu notarialnego do wpisu: dlaczego nie ma odrębnej „umowy spółki w organizacji", firma „w organizacji", pełnomocnik z jednomyślnej uchwały, odpowiedzialność i jej wygaszanie, rejestr czynności, likwidacja |
+| 07 | [Źródła i weryfikacja 05–06 (Fable)](07-zrodla-i-weryfikacja-fable.md) | Niezależna warstwa weryfikacyjna nowej pary + różnice konstrukcyjne wobec 01–03 |
+
+Szablony 01–04 tworzą komplet dla konfiguracji **50/50**; szablony 05–07 są od nich niezależne (odrębna weryfikacja, konfiguracja **60/40**, inna strategia ochrony wspólników). Wspólny pozostaje tylko rdzeń ustawowy.
 
 ## Jak czytać te pliki
 
