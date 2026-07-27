@@ -21,7 +21,8 @@ Uporządkowany zbiór pułapek i wskazówek. Każdy punkt ma link do rozwinięci
 - [ ] Klauzula z art. 177 KSH (dopłaty)
 - [ ] Klauzula z art. 182 KSH (ograniczenie zbycia udziałów)
 - [ ] Klauzula z art. 183 KSH (wstąpienie/wyłączenie spadkobierców — ⚠️ WERYFIKACJA)
-- [ ] Klauzula z art. 208 § 8 KSH (głos prezesa przy remisie)
+- [ ] Klauzula z art. 208 § 8 KSH (głos prezesa przy remisie **w zarządzie** — nie rozwiązuje patu wspólników na zgromadzeniu)
+- [ ] Mechanizm wyjścia z patu wspólników przy 50/50 (buy-sell / umorzenie przymusowe / rozwiązanie) — art. 266 KSH jest przy 50/50 niedostępny, bo wymaga **więcej niż połowy** kapitału po stronie żądających
 - [ ] Kadencja członków zarządu (dłuższa niż 1 rok — art. 202 § 2 KSH)
 - [ ] Warunek: członek zarządu/wspólnik musi mieć prawo wykonywania zawodu — istotne od 19.05.2028 ([10](10-psycholog-2026-2028.md))
 - [ ] Zakaz konkurencji wspólników (art. 159 KSH — musi być w umowie)

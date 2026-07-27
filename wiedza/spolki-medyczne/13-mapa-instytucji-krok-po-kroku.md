@@ -58,7 +58,8 @@ Do tego S24 nie dopuszcza indywidualnych klauzul. Dla dwóch wspólników 50/50 
 - art. 159 KSH — obowiązki i szczególne korzyści wspólników: „należy to **pod rygorem bezskuteczności wobec spółki** dokładnie określić w umowie spółki" ✅ [VER: ELI DU/2024/18, 2026-07-21]
 - art. 182 KSH — ograniczenie zbycia udziałów
 - art. 177 KSH — dopłaty
-- art. 208 § 8 KSH — głos rozstrzygający przy remisie (**krytyczne przy 50/50**)
+- art. 208 § 8 KSH — głos rozstrzygający prezesa **w zarządzie** (uwaga: dotyczy tylko patu w zarządzie, **nie** patu między wspólnikami na zgromadzeniu — tam odpowiednika nie ma)
+- mechanizm wyjścia z patu wspólników 50/50 (buy-sell, umorzenie przymusowe, rozwiązanie spółki) — **krytyczne przy 50/50**, bo art. 266 KSH jest przy tym układzie niedostępny; patrz [`szablony/01-umowa-spolki-z-o-o-medyczna.md`](../../szablony/01-umowa-spolki-z-o-o-medyczna.md) § 24
 - warunek posiadania prawa wykonywania zawodu przez wspólnika/członka zarządu — istotne od 19.05.2028
 
 ### 0.2. Co z dwiema JDG?
