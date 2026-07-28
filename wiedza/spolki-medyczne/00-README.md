@@ -14,7 +14,7 @@
 | Zawód psychologa (obowiązująca do 19.05.2028) | **Ustawa z 8.06.2001** — t.j. | DU/2019/1026 | [`akty/prawo_medyczne/…stara_ustawa_z_2001…`](../../akty/prawo_medyczne/ustawa_o_zawodzie_psychologa_i_samorzadzie_zawodowym_psychologow_--_stara_ustawa_z_2001_t_j_z_2019_obowiazuje_do_2028-05-19.index.json) |
 | Zawód psychologa (nowa, wchodzi 19.05.2028) | **Ustawa z 23.01.2026** | DU/2026/187 | [`akty/prawo_medyczne/…nowa_ustawa…`](../../akty/prawo_medyczne/ustawa_o_zawodzie_psychologa_oraz_samorzadzie_zawodowym_psychologow_--_nowa_ustawa_podpisana_12_02_2026_wchodzi_w_zycie_glownie_19_05_2028.index.json) |
 | Ochrona zdrowia psychicznego | **Ustawa z 19.08.1994** — t.j. | DU/2024/917 | [`akty/prawo_medyczne/…ochronie_zdrowia_psychicznego…`](../../akty/prawo_medyczne/ustawa_o_ochronie_zdrowia_psychicznego_tekst_jednolity_.index.json) |
-| Ochrona danych osobowych | **RODO** (2016/679) + **UODO** (DU/2019/1781) | — | brak lokalnie — weryfikować przez WebFetch |
+| Ochrona danych osobowych | **RODO** (2016/679) + **ustawa o ochronie danych osobowych** (Dz.U. 2018 poz. 1000) | — | brak lokalnie. Ustawa krajowa: w `config.json`, do pobrania przez ELI. **RODO nie jest dostępne przez ELI** (akt unijny) — EUR-Lex, CELEX 02016R0679 |
 
 ## Spis rozdziałów
 
@@ -33,6 +33,7 @@
 | 11 | [Tajemnica psychologiczna vs medyczna](11-tajemnica-zawodowa.md) | Trzy tajemnice: psychologa (u.psy 2001 art. 14), medyczna (u.p.p. art. 13–14), RODO |
 | 12 | [Checklist i najczęstsze kruczki](12-checklist-i-kruczki.md) | Uporządkowana lista pułapek i wskazówek |
 | 13 | [Mapa instytucji krok po kroku](13-mapa-instytucji-krok-po-kroku.md) | **Pełna lista 27 urzędów/instytucji/serwisów** dla kazusu „2 psychologów z JDG → sp. z o.o. 50/50": fazy 0–19, opłaty, zakupy, ścieżka krytyczna, kalendarz cykliczny, rejestr długu weryfikacyjnego |
+| 14 | [Inspektor ochrony danych (IOD)](14-inspektor-ochrony-danych.md) | **Kiedy IOD jest obowiązkowy** — trzy przesłanki art. 37 RODO i kryterium „dużej skali"; obowiązki spółki (zawiadomienie UODO w 14 dni, publikacja danych, sześć gwarancji statusu), wymagania wobec osoby, konflikt interesów, kary do 10 mln EUR / 2 % obrotu, ścieżka decyzyjna z wzorem notatki z analizy |
 
 ## Konwencje w tej bazie wiedzy
 
