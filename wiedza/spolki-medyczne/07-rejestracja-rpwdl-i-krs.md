@@ -30,7 +30,16 @@
 - **PRS (Portal Rejestrów Sądowych)** — od 2021 obowiązkowa forma elektroniczna
 - **S24** — jeśli spółka zakładana wzorcem umowy
 
-**Termin sądu:** ustawowo do 7 dni, praktycznie 1–4 tygodnie (⚠️ WERYFIKACJA aktualnych czasów).
+**Termin na zgłoszenie (po stronie spółki) — art. 169 KSH:**
+
+„§ 1. Jeżeli zawiązanie spółki nie zostało zgłoszone do sądu rejestrowego **w terminie sześciu miesięcy** od dnia zawarcia umowy spółki albo jeżeli postanowienie sądu odmawiające zarejestrowania stało się prawomocne, **umowa spółki ulega rozwiązaniu**.
+§ 2. W przypadku spółki, której umowa została zawarta przy wykorzystaniu wzorca umowy, termin, o którym mowa w § 1, wynosi **7 dni**."
+
+✅ [VER: api.sejm.gov.pl ELI DU/2024/18, 2026-07-21]
+
+**→ Kruczek:** 7 dni dotyczy **wyłącznie** ścieżki S24 (wzorzec umowy). Przy akcie notarialnym jest 6 miesięcy. Sankcją nie jest grzywna, a **rozwiązanie umowy spółki** — spółka w organizacji upada, wkłady podlegają zwrotowi.
+
+**Termin sądu rejestrowego:** praktycznie 1–4 tygodnie (⚠️ WERYFIKACJA aktualnych czasów — nie wynika z KSH).
 
 **Koszty:**
 - Wpis do KRS: 500 PLN (ścieżka tradycyjna) / 250 PLN (S24) — ⚠️ WERYFIKACJA aktualnych stawek
@@ -103,7 +112,20 @@ Dla spółki-podmiotu leczniczego: **wojewoda właściwy dla siedziby**.
 
 Art. 103 u.dz.l.: „Działalność leczniczą można rozpocząć **po uzyskaniu wpisu do rejestru**, z zastrzeżeniem art. 104."
 
-**Art. 104 u.dz.l.** (⚠️ WYMAGA odczytu z pliku indeksowego — WERYFIKACJA) — dotyczy sytuacji tzw. „domniemania wpisu" po upływie 30 dni od złożenia wniosku bez decyzji organu.
+### Art. 104 u.dz.l. — furtka 30 + 40 dni (treść zweryfikowana)
+
+„1. Organ prowadzący rejestr dokonuje wpisu do rejestru **w terminie 30 dni** od dnia wpływu wniosku o wpis do rejestru wraz z oświadczeniem.
+2. Jeżeli właściwy organ nie dokona wpisu w terminie, o którym mowa w ust. 1, a od dnia wpływu wniosku do tego organu **upłynęło 40 dni**, wnioskodawca **może rozpocząć działalność po uprzednim zawiadomieniu o tym na piśmie organu**, który nie dokonał wpisu. **Nie dotyczy to przypadku, gdy organ wezwał tego wnioskodawcę do uzupełnienia wniosku** o wpis nie później niż przed upływem 7 dni od dnia jego otrzymania. W takiej sytuacji termin, o którym mowa w zdaniu pierwszym, biegnie od dnia wpływu uzupełnienia wniosku o wpis.
+3. Organ prowadzący rejestr wydaje z urzędu **zaświadczenie o dokonaniu wpisu** do rejestru."
+
+✅ [VER: api.sejm.gov.pl ELI DU/2026/156, 2026-07-21]
+
+**→ Sprostowanie wcześniejszej wersji tego pliku:** to NIE jest „domniemanie wpisu po 30 dniach". Mechanizm jest dwuetapowy i warunkowy:
+- 30 dni = termin dla organu (instrukcyjny, sam upływ nie uprawnia do startu),
+- 40 dni = dopiero wtedy wnioskodawca może zacząć, i **wyłącznie po pisemnym zawiadomieniu** organu,
+- wezwanie do uzupełnienia w ciągu pierwszych 7 dni **resetuje** bieg 40 dni od dnia wpływu uzupełnienia.
+
+**→ Kruczek procesowy:** licząc 40 dni trzymaj dowód doręczenia zawiadomienia — start działalności bez zawiadomienia to działalność bez wpisu (art. 103 u.dz.l.), z konsekwencjami dla ważności rozliczeń i dla oświadczenia z art. 100 ust. 2.
 
 **→ Praktyczne konsekwencje:**
 - Nie można umawiać pacjentów przed wpisem do RPWDL
@@ -121,7 +143,7 @@ Wpis do rejestru musi być aktualizowany — art. 106 ust. 3 u.dz.l. wymienia da
 | Krok | Czas | Uwagi |
 |---|---|---|
 | Umowa spółki (akt notarialny) | 1 dzień | Termin u notariusza |
-| Zgłoszenie do KRS | 7 dni od podpisu umowy | Ustawowy termin |
+| Zgłoszenie do KRS | **6 miesięcy** od zawarcia umowy (akt notarialny) / **7 dni** (wzorzec umowy S24) | Art. 169 § 1 i § 2 KSH — po upływie umowa spółki **ulega rozwiązaniu** |
 | Wpis do KRS | 1–4 tygodnie | Zależy od sądu |
 | Nadanie NIP + REGON | do 7 dni po KRS | Automatycznie |
 | Otwarcie rachunku | 1–3 dni po NIP | |
