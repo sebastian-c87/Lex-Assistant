@@ -250,7 +250,7 @@
     "category": "zawody_prawnicze",
     "label": "Prawo o adwokaturze (tekst jednolity)",
     "expectTitle": "Prawo o adwokaturze",
-    "why": "art. 6 (tajemnica adwokacka - zakres, brak ograniczenia w czasie, zwolnienie tylko przez sad), art. 4 (zakres pomocy prawnej), podstawa relacji tajemnica zawodowa a RODO (art. 90 RODO)"
+    "why": "art. 6 (tajemnica adwokacka - zakres, bezterminowosc, zwolnienie tylko przez sad) oraz ART. 16A-16C dodane ustawa z 21.02.2019 (Dz.U. 2019 poz. 730) wdrazajaca RODO: art. 16a - art. 15 ust. 1 i 3, art. 18 i art. 19 RODO tylko w granicach tajemnicy, art. 21 ust. 1 RODO WYLACZONY; art. 16b - tajemnica nie ustaje wobec zadania Prezesa UODO; art. 16c - okresy przechowywania 5 i 10 lat (USTALIC czy dotycza kancelarii czy organow adwokatury). Przepisy NIE obejmuja wewnetrznego funkcjonowania kancelarii"
   },
   {
     "search": "o świadczeniu usług drogą elektroniczną",
@@ -265,5 +265,12 @@
     "label": "Prawo komunikacji elektronicznej (ustawa z 12.07.2024)",
     "expectTitle": "Prawo komunikacji elektronicznej",
     "why": "ZASTAPILO Prawo telekomunikacyjne od 10.11.2024. Cookies i dostep do informacji w urzadzeniu koncowym - art. 399 PKE (dawniej art. 173 Pt); zgoda na marketing bezposredni. UWAGA: starsze materialy RODO powoluja nieaktualny art. 173 Pt"
+  },
+  {
+    "search": "o zmianie niektórych ustaw w związku z zapewnieniem stosowania rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679",
+    "category": "rodo",
+    "label": "Ustawa z 21.02.2019 o zmianie niektorych ustaw w zwiazku z zapewnieniem stosowania RODO (Dz.U. 2019 poz. 730)",
+    "expectTitle": "w związku z zapewnieniem stosowania rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679",
+    "why": "ustawa wdrazajaca RODO - znowelizowala 162 ustawy. Zrodlo art. 16a-16c Prawa o adwokaturze i art. 5a-5c ustawy o radcach prawnych, czyli krajowej realizacji art. 90 RODO dla zawodow prawniczych"
   }
 ]

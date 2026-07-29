@@ -27,8 +27,13 @@ Podjęto próbę pobrania **wszystkimi dostępnymi kanałami**:
 | `curl` → publications.europa.eu, op.europa.eu, data.europa.eu, cellar.publications.europa.eu | ✗ identycznie |
 | `curl` → isap.sejm.gov.pl, eli.gov.pl, uodo.gov.pl | ✗ identycznie |
 | WebFetch (dowolny z powyższych) | ✗ HTTP 403 |
+| **Playwright + Chromium** (zainstalowany z npm, uruchomiony na `/opt/pw-browsers/chromium-1194/`) — **z** jawną konfiguracją proxy | ✗ `net::ERR_TUNNEL_CONNECTION_FAILED` |
+| **Playwright + Chromium** — **bez** konfiguracji proxy (próba połączenia bezpośredniego) | ✗ `net::ERR_TUNNEL_CONNECTION_FAILED` |
 | **Dysk Google użytkownika** — przeszukany pod kątem tekstu rozporządzenia | ✗ brak kopii aktu |
+| Hosty w `noProxy` (dostęp bezpośredni): registry.npmjs.org, pypi.org, files.pythonhosted.org | ✔ `200` — ale nie serwują oficjalnych tekstów aktów |
 | WebSearch | ✔ działa (idzie poza proxy) — ale zwraca **opisy i omówienia**, nie tekst aktu |
+
+**Wniosek z testu przeglądarkowego:** headless browser nie zmienia nic, bo **blokada jest na poziomie bramy sieciowej kontenera, a nie klienta HTTP**. Chromium zgłasza `ERR_TUNNEL_CONNECTION_FAILED` identycznie z proxy i bez proxy — cały ruch wychodzący jest wymuszany przez politykę egress, która te hosty odrzuca. Żadne narzędzie działające wewnątrz kontenera tego nie obejdzie i obchodzić nie powinno.
 
 **Świadoma decyzja:** nie pobrano kopii RODO z nieoficjalnego źródła (np. przypadkowego repozytorium czy portalu wtórnego). Zasada naczelna tego projektu wymaga tekstu z bazy oficjalnej — nieoficjalna kopia nie przechodzi KROKU 2B i wprowadzałaby do bazy tekst o niepotwierdzonej integralności. Lepiej mieć jawny brak niż niepewne źródło udające pewne.
 
@@ -91,6 +96,12 @@ Wszystkie ⚠️ — do potwierdzenia po pobraniu aktów.
 | ustawa o ochronie danych osobowych: art. 8, 10, 11, 11a | obowiązek wyznaczenia IOD, zawiadomienie w 14 dni, publikacja danych, zastępca |
 | **Prawo komunikacji elektronicznej: art. 399** | **cookies — zastąpiło art. 173 Prawa telekomunikacyjnego od 10.11.2024** |
 | Prawo o adwokaturze: art. 6 | tajemnica adwokacka — zakres, bezterminowość, tryb zwolnienia |
+| **Prawo o adwokaturze: art. 16a** | **art. 15 ust. 1 i 3, art. 18, art. 19 RODO tylko w granicach tajemnicy; art. 21 ust. 1 RODO wyłączony** wobec danych z pomocy prawnej |
+| **Prawo o adwokaturze: art. 16b** | **tajemnica nie ustaje wobec żądania Prezesa UODO** |
+| **Prawo o adwokaturze: art. 16c** | okresy przechowywania 5 i 10 lat — ⚠️ ustalić, czy dotyczą kancelarii, czy organów adwokatury |
+| Prawo o adwokaturze: art. 16a–16c, zdanie wyłączające | przepisy **nie obejmują wewnętrznego funkcjonowania** kancelarii, zespołu ani spółki |
+| Ustawa o radcach prawnych: art. 5a–5c | odpowiedniki art. 16a–16c dla radców prawnych |
+| **Ustawa z 21.02.2019 (Dz.U. 2019 poz. 730)** | **ustawa wdrażająca RODO — źródło art. 16a–16c; znowelizowała 162 ustawy** |
 | ustawa o świadczeniu usług drogą elektroniczną: art. 5, 8, 10 | regulamin, obowiązki informacyjne, informacja handlowa |
 | Kodeks pracy: art. 22¹ | katalog danych od kandydata i pracownika |
 | ustawa o prawach pacjenta: art. 24 ust. 2 pkt 2 | pisemne upoważnienia — ✅ [VER: ELI DU/2024/581, 2026-07-21] |
@@ -116,6 +127,7 @@ Wszystkie ⚠️ — do potwierdzenia po pobraniu aktów.
 - [Kara pieniężna za nieudzielenie informacji](https://uodo.gov.pl/pl/360/1823)
 - [Wytyczne 05/2021 EROD — wzajemne zależności (PDF)](https://uodo.gov.pl/pl/file/4498)
 - [Grupa Robocza Art. 29 — wytyczne (PDF)](https://uodo.gov.pl/data/filemanager_pl/690.pdf)
+- [Ustawa z 21 lutego 2019 r. o zmianie niektórych ustaw w związku z zapewnieniem stosowania RODO — omówienie UODO](https://uodo.gov.pl/pl/395/967)
 - [Baza decyzji Prezesa UODO](https://orzeczenia.uodo.gov.pl/)
 
 ## Samorząd adwokacki
@@ -125,6 +137,9 @@ Wszystkie ⚠️ — do potwierdzenia po pobraniu aktów.
 - [Regulamin wykonywania zawodu adwokata — uchwała NRA nr 140/2023 (PDF)](https://www.adwokatura.pl/admin/wgrane_pliki/file-regulamin-wykonywania-zawodu-adwokata-1122023-39479.pdf)
 - [Zbiór Zasad Etyki Adwokackiej i Godności Zawodu (PDF)](https://www.adwokatura.pl/admin/wgrane_pliki/file-20200123projektkomisjietykinra-zzeaigz-29810.pdf)
 - [RPO — Ochrona tajemnicy adwokackiej (radcy prawnego) (PDF)](https://bip.brpo.gov.pl/sites/default/files/INTERNET_ochrona-tajemnicy.pdf)
+- [NRA — Poradnik RODO, aktualizacja uwzględniająca ustawę z 21.02.2019](https://www.adwokatura.pl/ogolnoprawne/poradnik-rodo-aktualizacja/)
+- [Kwartalnik „Radca Prawny" (KIRP) — Tajemnica zawodowa radcy prawnego w świetle przepisów o kontroli przestrzegania przepisów o ochronie danych osobowych](https://kwartalnikradcaprawny.kirp.pl/2018/10/10/tajemnica-zawodowa-radcy-prawnego-w-swietle-przepisow-o-kontroli-przestrzegania-przepisow-o-ochronie-danych-osobowych/)
+- [KIRP — Memorandum dotyczące stosowania przepisów o tajemnicy zawodowej (PDF)](https://kirp.pl/wp-content/uploads/2019/04/tkp-memorandum-kirp-29042019.pdf)
 
 ## PARP — poradniki dla MŚP
 
@@ -143,6 +158,8 @@ Wszystkie ⚠️ — do potwierdzenia po pobraniu aktów.
 - [ISAP — Prawo komunikacji elektronicznej, Dz.U. 2024 poz. 1221](https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU20240001221)
 - [ISAP — przepisy wprowadzające PKE, Dz.U. 2024 poz. 1222](https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU20240001222)
 - [ISAP — Prawo o adwokaturze](https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU19820160124)
+- [ISAP — Prawo o adwokaturze, tekst jednolity (PDF; zawiera art. 16a–16c)](https://isap.sejm.gov.pl/isap.nsf/download.xsp/WDU19820160124/U/D19820124Lj.pdf)
+- [Sejm — ustawa z 21.02.2019 wdrażająca RODO, przebieg procesu legislacyjnego (druk 3050)](https://www.sejm.gov.pl/sejm8.nsf/PrzebiegProc.xsp?nr=3050)
 - [gov.pl — Nowe Prawo Komunikacji Elektronicznej: co zmieni](https://www.gov.pl/web/baza-wiedzy/nowe-prawo-komunikacji-elektronicznej--co-zmieni)
 - [biznes.gov.pl — Zawiadomienie o wyznaczeniu IOD](https://www.biznes.gov.pl/pl/portal/ou871)
 - [EUR-Lex — RODO, wersja skonsolidowana (CELEX 02016R0679)](https://eur-lex.europa.eu/legal-content/PL/TXT/HTML/?uri=CELEX:02016R0679) — **źródło docelowe, obecnie niedostępne z tego środowiska**
