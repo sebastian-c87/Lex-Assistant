@@ -236,5 +236,34 @@
     "label": "Rozporzadzenie MF w sprawie zwolnien z obowiazku prowadzenia ewidencji sprzedazy przy zastosowaniu kas rejestrujacych",
     "expectTitle": "kas rejestrujących",
     "why": "czy uslugi psychologiczne wpadaja w bezwzgledny obowiazek kasy online. Kandydaci: rozp. z 17.12.2024 (Dz.U. 2024 poz. 1902) + nowelizacja z 27.03.2026 (Dz.U. 2026 poz. 420) - SPRAWDZ ktory jest aktualny"
+  },
+  {
+    "source": "eurlex",
+    "celex": "02016R0679",
+    "category": "rodo",
+    "label": "RODO - rozporzadzenie (UE) 2016/679 (wersja skonsolidowana)",
+    "expectTitle": "w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych",
+    "why": "AKT UNIJNY - niedostepny przez ELI, pobierany z EUR-Lex po CELEX. Podstawa calego systemu: art. 2-3 (zakres), art. 4 (definicje), art. 5-6 i 9-10 (zasady i podstawy), art. 12-22 (prawa osob), art. 24-32 (obowiazki, powierzenie, rejestr, bezpieczenstwo), art. 33-34 (naruszenia), art. 35 (DPIA), art. 37-39 (IOD), art. 82-83 (odszkodowania i kary), art. 90 (tajemnica zawodowa)"
+  },
+  {
+    "search": "Prawo o adwokaturze",
+    "category": "zawody_prawnicze",
+    "label": "Prawo o adwokaturze (tekst jednolity)",
+    "expectTitle": "Prawo o adwokaturze",
+    "why": "art. 6 (tajemnica adwokacka - zakres, brak ograniczenia w czasie, zwolnienie tylko przez sad), art. 4 (zakres pomocy prawnej), podstawa relacji tajemnica zawodowa a RODO (art. 90 RODO)"
+  },
+  {
+    "search": "o świadczeniu usług drogą elektroniczną",
+    "category": "internet_i_komunikacja",
+    "label": "Ustawa o swiadczeniu uslug droga elektroniczna (tekst jednolity)",
+    "expectTitle": "o świadczeniu usług drogą elektroniczną",
+    "why": "regulamin swiadczenia uslug droga elektroniczna dla strony www z formularzem, obowiazki informacyjne uslugodawcy, zasady handlowej informacji elektronicznej"
+  },
+  {
+    "search": "Prawo komunikacji elektronicznej",
+    "category": "internet_i_komunikacja",
+    "label": "Prawo komunikacji elektronicznej (ustawa z 12.07.2024)",
+    "expectTitle": "Prawo komunikacji elektronicznej",
+    "why": "ZASTAPILO Prawo telekomunikacyjne od 10.11.2024. Cookies i dostep do informacji w urzadzeniu koncowym - art. 399 PKE (dawniej art. 173 Pt); zgoda na marketing bezposredni. UWAGA: starsze materialy RODO powoluja nieaktualny art. 173 Pt"
   }
 ]

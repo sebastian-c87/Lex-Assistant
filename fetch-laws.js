@@ -152,6 +152,68 @@ async function fetchActMeta(publisher, year, pos) {
   return apiGet(`${API_BASE}/${publisher}/${year}/${pos}`);
 }
 
+// ── EUR-Lex: akty prawa Unii Europejskiej ────────────────────────────────────
+// ELI (api.sejm.gov.pl) obejmuje wyłącznie polskie Dzienniki Ustaw. Akty unijne —
+// jak RODO — trzeba pobrać z EUR-Lex po identyfikatorze CELEX. Wpis w config.json:
+//   { "source": "eurlex", "celex": "02016R0679", "category": "...", "label": "...",
+//     "expectTitle": "..." }
+// Uwaga: CELEX zaczynający się od "0" to wersja SKONSOLIDOWANA (z późniejszymi
+// zmianami) — dla RODO właściwa. "3" oznacza akt w brzmieniu pierwotnym.
+const EURLEX_HTML = (celex, lang = 'PL') =>
+  `https://eur-lex.europa.eu/legal-content/${lang}/TXT/HTML/?uri=CELEX:${celex}`;
+
+const isEurlex = (e) => e.source === 'eurlex' && e.celex;
+
+async function processEurlexAct(entry, manifest) {
+  const { celex, category, label } = entry;
+  const key = `CELEX/${celex}`;
+  console.log(`→ Sprawdzam: ${label} (${key})`);
+
+  const html = await apiGet(EURLEX_HTML(celex), { asText: true });
+
+  // KROK 2B dla EUR-Lex: brak osobnych metadanych, więc bramkę stosujemy do treści
+  // dokumentu — fraza z expectTitle musi wystąpić w pobranym tekście.
+  if (!entry.expectTitle) {
+    throw new Error('brak pola "expectTitle" — bramka KROK 2B nieaktywna, uzupełnij config.json');
+  }
+  const plain = html.replace(/<[^>]+>/g, ' ');
+  if (!norm(plain).includes(norm(entry.expectTitle))) {
+    throw new Error(
+      `NIEZGODNOŚĆ TREŚCI (KROK 2B)\n` +
+      `     oczekiwano frazy: "${entry.expectTitle}"\n` +
+      `     → Nie znaleziono jej w dokumencie CELEX ${celex}. Sprawdź identyfikator ` +
+      `(wersja skonsolidowana zaczyna się od "0") oraz język. Nie zapisuję.`
+    );
+  }
+  console.log(`  ✓ KROK 2B: treść zgodna ("${entry.expectTitle}")`);
+
+  const dir = path.join(OUT_DIR, category);
+  fs.mkdirSync(dir, { recursive: true });
+  const base = safeName(label);
+  const filePath = path.join(dir, `${base}.html`);
+  fs.writeFileSync(filePath, html);
+
+  saveJSON(path.join(dir, `${base}.meta.json`), {
+    label,
+    title: entry.expectTitle,
+    source: 'EUR-Lex',
+    celex,
+    expectTitleVerified: entry.expectTitle,
+    sourceUrl: EURLEX_HTML(celex),
+    lastFetched: new Date().toISOString(),
+  });
+
+  manifest[key] = {
+    label,
+    category,
+    source: 'EUR-Lex',
+    lastFetched: new Date().toISOString(),
+    file: path.relative(__dirname, filePath),
+  };
+
+  console.log(`  ✓ Zapisano: ${path.relative(__dirname, filePath)}`);
+}
+
 async function fetchActText(publisher, year, pos, meta) {
   if (meta.textHTML) {
     try {
@@ -203,7 +265,7 @@ function safeName(label) {
     .toLowerCase();
 }
 
-const isPinned = (e) => e.publisher && e.year && e.pos;
+const isPinned = (e) => (e.publisher && e.year && e.pos) || isEurlex(e);
 
 async function processAct(entry, manifest) {
   const { publisher, year, pos, category, label } = entry;
@@ -347,7 +409,8 @@ async function diag() {
   console.log(`HTTPS_PROXY:       ${process.env.HTTPS_PROXY || '(brak)'}`);
   console.log(`NODE_USE_ENV_PROXY: ${process.env.NODE_USE_ENV_PROXY || '(brak)'}`);
   console.log(`NODE_EXTRA_CA_CERTS: ${process.env.NODE_EXTRA_CA_CERTS || '(brak)'}`);
-  console.log(`API_BASE:          ${API_BASE}\n`);
+  console.log(`API_BASE:          ${API_BASE}`);
+  console.log(`EUR-Lex:           ${EURLEX_HTML('<CELEX>')}\n`);
 
   try {
     const meta = await apiGet(`${API_BASE}/DU/2024/18`);
@@ -382,7 +445,7 @@ async function main() {
   }
 
   if (doResolve) {
-    const pending = config.filter((e) => !isPinned(e) && e.search);
+    const pending = config.filter((e) => !isPinned(e) && e.search && !isEurlex(e));
     if (!pending.length) {
       console.log('Wszystkie wpisy w config.json są już przypięte — nie ma czego rozwiązywać.');
       return;
@@ -419,6 +482,14 @@ async function main() {
   let errors = 0;
   for (const entry of pinned) {
     try {
+      if (isEurlex(entry)) {
+        if (checkOnly) {
+          console.log(`ℹ EUR-Lex CELEX ${entry.celex} — ${entry.label} (brak metadanych zmian; pobranie weryfikuje treść)`);
+        } else {
+          await processEurlexAct(entry, manifest);
+        }
+        continue;
+      }
       if (checkOnly) {
         const meta = await fetchActMeta(entry.publisher, entry.year, entry.pos);
         const key = `${entry.publisher}/${entry.year}/${entry.pos}`;
