@@ -75,6 +75,8 @@ node fetch-laws.js --diag
 ```
 Ma wypisać `✓ POŁĄCZENIE DZIAŁA` i tytuł aktu kontrolnego DU/2024/18.
 
+**Uprawnienia w sesji:** `.claude/settings.json` (w repo) przepuszcza bez pytania `node fetch-laws.js`, `curl` do domen źródeł urzędowych (sejm.gov.pl, eli.gov.pl, eur-lex.europa.eu, uodo.gov.pl, saos.org.pl) oraz zapis w `akty/`, `wiedza/`, `szablony/`. Ustawia też `NODE_USE_ENV_PROXY=1` — bez tego natywny `fetch` Node'a ignoruje `HTTPS_PROXY` i żądania idą bezpośrednio, w pustkę. Blokuje `curl --insecure` i `git push --force`. **To nie otwiera sieci** — allowlista domen (pkt 1–5 wyżej) jest osobną, nadrzędną barierą; settings.json usuwa tylko monity o zgodę.
+
 **Uwaga o samym API:** ELI API jest publiczne — **nie wymaga klucza, tokenu ani rejestracji**. Jedyną barierą jest allowlista środowiska. Dokumentacja API: <https://api.sejm.gov.pl/eli_pl.html>, OpenAPI: <https://api.sejm.gov.pl/eli/openapi/ui/>.
 
 **Dopóki hosty są zablokowane:** działaj wyłącznie na 6 aktach w `akty/` (znacznik ✅) i oznaczaj wszystko inne `⚠️ [NIEWERYFIKOWANE — egress blokuje api.sejm.gov.pl]`. Nie zastępuj weryfikacji ELI wyszukiwaniem w internecie — portale wtórne nie są bazą oficjalną (patrz KROK 2B).
