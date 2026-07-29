@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "permissions": {
+    "allow": [
+      "Bash(node fetch-laws.js)",
+      "Bash(node fetch-laws.js *)",
+
+      "Bash(curl *api.sejm.gov.pl*)",
+      "Bash(curl *isap.sejm.gov.pl*)",
+      "Bash(curl *eli.gov.pl*)",
+      "Bash(curl *eur-lex.europa.eu*)",
+      "Bash(curl *publications.europa.eu*)",
+      "Bash(curl *op.europa.eu*)",
+      "Bash(curl *data.europa.eu*)",
+      "Bash(curl *uodo.gov.pl*)",
+      "Bash(curl *saos.org.pl*)",
+      "Bash(curl *nfz.gov.pl*)",
+      "Bash(curl *rpwdl.ezdrowie.gov.pl*)",
+
+      "Bash(python3 tools/*)",
+      "Bash(node tools/*)",
+      "Bash(jq *)",
+
+      "Read",
+      "Glob",
+      "Grep",
+      "WebFetch",
+      "WebSearch",
+
+      "Edit(akty/**)",
+      "Edit(wiedza/**)",
+      "Edit(szablony/**)",
+      "Edit(config.json)",
+      "Edit(HANDOFF.md)",
+      "Write(akty/**)",
+      "Write(wiedza/**)",
+      "Write(szablony/**)"
+    ],
+    "deny": [
+      "Bash(rm -rf *)",
+      "Bash(git push --force*)",
+      "Bash(git push -f *)",
+      "Bash(git reset --hard*)",
+      "Bash(curl --insecure*)"
+    ]
+  },
+  "env": {
+    "NODE_USE_ENV_PROXY": "1"
+  }
+}
