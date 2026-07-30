@@ -21,6 +21,13 @@ INDEXES = {
     'pke': 'akty/internet_i_komunikacja/prawo_komunikacji_elektronicznej_ustawa_z_12_07_2024_.index.json',
     'pke_wpr': 'akty/internet_i_komunikacja/przepisy_wprowadzajace_ustawe_-_prawo_komunikacji_elektronicznej_ustawa_z_12_07_2024_.index.json',
     'wdrozeniowa2019': 'akty/rodo/ustawa_z_21_02_2019_o_zmianie_niektorych_ustaw_w_zwiazku_z_zapewnieniem_stosowania_rodo_dz_u_2019_poz_730_.index.json',
+    # Otoczenie kancelarii: AML, obowiazki informacyjne przedsiebiorcy, zatrudnienie
+    'aml': 'akty/rejestry_i_procedury/ustawa_o_przeciwdzialaniu_praniu_pieniedzy_i_finansowaniu_terroryzmu_t_j_z_9_05_2025_.index.json',
+    'przeds': 'akty/internet_i_komunikacja/prawo_przedsiebiorcow_t_j_z_20_10_2025_.index.json',
+    # UWAGA: w KP klucz `arti_221` to art. 22(1) (dane osobowe kandydata i pracownika),
+    # a `arti_221__wyst2` to art. 221 (substancje chemiczne, BHP) - PDF splaszcza indeks
+    # gorny, wiec konwerter rozdziela kolizje sufiksem. Analogicznie inne pary 22x/2x(1).
+    'kp': 'akty/prawo_pracy/kodeks_pracy_t_j_z_14_02_2025_.index.json',
 }
 
 def dump(act, keys):
@@ -28,6 +35,9 @@ def dump(act, keys):
     for k in keys:
         # `motyw_N` (preambuła RODO) obok `arti_N` — prefiks podany wprost wygrywa
         key = k if k.startswith(('arti_', 'motyw_')) else f'arti_{k}'
+        # kolizje z konwersji PDF: art. 22(1) i art. 221 daja ten sam klucz
+        if key not in d and f'{key}__wyst2' in d:
+            key = f'{key}__wyst2'
         if key in d:
             print(f'\n### [{act}] {d[key]["heading"]}\n{d[key]["text"]}')
         else:

@@ -129,9 +129,28 @@ async function apiGet(url, { asBuffer = false, asText = false } = {}) {
           throw e;
         }
       } else {
-        if (asBuffer) return Buffer.from(await res.arrayBuffer());
-        if (asText) return res.text();
-        return res.json();
+        // PUSTA ODPOWIEDŹ MIMO STATUSU 2xx — EUR-Lex przy throttlingu odpowiada
+        // `202 Accepted` z zerowym ciałem (sprawdzone 2026-07-30). Bez tego testu
+        // pusty dokument szedł dalej i wywracał się dopiero na bramce KROK 2B,
+        // z komunikatem sugerującym zły CELEX zamiast problemu z siecią.
+        // Traktujemy to jak błąd przejściowy — ponawiamy z backoffem.
+        if (asBuffer) {
+          const buf = Buffer.from(await res.arrayBuffer());
+          if (buf.length === 0) {
+            lastErr = new Error(`pusta odpowiedź (HTTP ${res.status}) dla ${url} — throttling po stronie serwera?`);
+          } else {
+            return buf;
+          }
+        } else if (asText) {
+          const txt = await res.text();
+          if (txt.trim() === '') {
+            lastErr = new Error(`pusta odpowiedź (HTTP ${res.status}) dla ${url} — throttling po stronie serwera?`);
+          } else {
+            return txt;
+          }
+        } else {
+          return res.json();
+        }
       }
     } catch (err) {
       if (err.httpStatus) throw err;

@@ -22,7 +22,10 @@ Poprzednia wersja tego rozdziału opisywała, dlaczego RODO **nie** dało się p
 | `wdrozeniowa2019` | Ustawa z 21.02.2019 o zmianie niektórych ustaw w zw. z zapewnieniem stosowania RODO | `DU/2019/730` | `akty/rodo/` | 322 |
 | — | Ustawa z 23.01.2026 o zmianie ustawy o KSC (nowelizuje u.o.d.o. i PKE) | `DU/2026/252` | `akty/ochrona_danych/` | 132 |
 | — | Ustawa z 27.03.2026 o zarządzaniu danymi (nowelizuje u.o.d.o.) | `DU/2026/548` | `akty/ochrona_danych/` | 39 |
-| — | Ustawa z 3.07.2026 o systemach sztucznej inteligencji (nowelizuje u.o.d.o.; wejście **11.08.2026**) | `DU/2026/1003` | `akty/ochrona_danych/` | 128 |
+| — | Ustawa z 3.07.2026 o systemach sztucznej inteligencji (nowelizuje u.o.d.o.; wejście **11.08.2026**) | `DU/2026/1003` | `akty/ochrona_danych/` | 137 |
+| `aml` | Ustawa o przeciwdziałaniu praniu pieniędzy i finansowaniu terroryzmu, t.j. z 9.05.2025 | `DU/2025/644` | `akty/rejestry_i_procedury/` | 240 |
+| `przeds` | Prawo przedsiębiorców, t.j. z 20.10.2025 | `DU/2025/1480` | `akty/internet_i_komunikacja/` | 84 |
+| `kp` | Kodeks pracy, t.j. z 14.02.2025 | `DU/2025/277` | `akty/prawo_pracy/` | 517 |
 
 Odczyt artykułu: `python tools/dump_articles.py rodo 6 30 | poa 6 16a 16b 16c | pke 398 399`
 Odczyt motywu: `python tools/dump_articles.py rodo_motywy motyw_47`
@@ -46,6 +49,10 @@ Konwertery: `tools/html_act_to_md.py` (ELI HTML), `tools/pdf_act_to_md.py` (ELI 
 **Żadna z tych trzech nie dotyka przepisów istotnych dla kancelarii** — art. 8–11 (IOD), art. 101–102 (kary administracyjne), art. 107–108 (odpowiedzialność karna) pozostają w brzmieniu z t.j. `DU/2019/1781`. ✅ [VER: odczyt tekstów DU/2026/252, DU/2026/548, DU/2026/1003, 2026-07-29]
 
 **Uwaga na numerację t.j. u.o.d.o.:** art. 110–157 są w tekście jednolitym oznaczone „(pominięte)" — to przepisy zmieniające inne ustawy, standardowo pomijane w t.j. Indeks lokalny ma więc 132 klucze przy numeracji do art. 176. To nie błąd konwersji.
+
+**4. Kolizja kluczy w aktach z PDF — art. 22(1) kontra art. 221.** PDF spłaszcza indeks górny, więc „Art. 22¹." i „Art. 221." dają identyczny napis. Do 2026-07-30 drugie wystąpienie po cichu nadpisywało pierwsze i jeden z przepisów znikał z indeksu (w Kodeksie pracy dotyczyło to 24 par, w ustawie o świadczeniach opieki zdrowotnej — 30). Konwerter `pdf_act_to_md.py` zapisuje teraz kolejne wystąpienia pod sufiksem `__wyst2`, `__wyst3` i wypisuje listę kolizji do ręcznego sprawdzenia; `dump_articles.py` sam sięga po sufiks, gdy klucza bazowego nie ma.
+
+W Kodeksie pracy rozkład jest taki: **`arti_221` = art. 22¹** (dane osobowe kandydata i pracownika), **`arti_221__wyst2` = art. 221** (substancje chemiczne, BHP). Przy innych parach sprawdź w `.md`, który jest który — konwerter tego nie zgaduje.
 
 # 2. Aktualność aktów po tekstach jednolitych
 
@@ -73,7 +80,16 @@ T.j. ogłoszono 10.10.2024, a przepisy wprowadzające PKE (`DU/2024/1222`) wesz�
 
 Zmieniające: `DU/2025/637` (30.05.2025), `DU/2025/820` (25.07.2025), `DU/2026/252` (3.04.2026), `DU/2026/815` (4.07.2026).
 
-⚠️ **Nie sprawdzono, czy któraś dotyka art. 398–400.** Pobrany plik to tekst pierwotny z Dz.U. 2024 poz. 1221; brzmienie art. 398 i 399 odczytano z niego, ale **przed powołaniem w piśmie procesowym potwierdź przez ELI `/references`**, czy te konkretne jednostki nie były zmieniane. To najważniejszy otwarty dług weryfikacyjny obszaru.
+✅ **SPRAWDZONE 2026-07-30: żadna z nich nie dotyka art. 398–400.** Odczyt tekstów ustaw zmieniających:
+
+| Nowelizacja | Co zmienia w PKE |
+|---|---|
+| `DU/2025/637` (Państwowe Ratownictwo Medyczne) | art. 337 ust. 1 |
+| `DU/2025/820` (Służba Więzienna) | art. 43 ust. 1 pkt 1 lit. a |
+| `DU/2026/252` (KSC) | art. 40 ust. 1 pkt 2 lit. b |
+| `DU/2026/815` (zarządzanie kryzysowe) | uchyla art. 42 |
+
+Art. 398 (marketing), art. 399 (cookies) i art. 400 (standard zgody) pozostają w **brzmieniu pierwotnym z Dz.U. 2024 poz. 1221**, czyli w tym, które mamy lokalnie.
 
 # 3. Mapa przepisów — gdzie czego szukać
 
@@ -131,7 +147,14 @@ Zmieniające: `DU/2025/637` (30.05.2025), `DU/2025/820` (25.07.2025), `DU/2026/2
 | **cookies i dostęp do urządzenia końcowego** | **art. 399 PKE** (nie art. 173 Prawa telekomunikacyjnego — uchylone) |
 | standard zgody w PKE = standard RODO | art. 400 PKE; art. 4 uśude |
 | źródło art. 16a–16c PoA i art. 5a–5c u.r.p. | art. 6 i art. 7 ustawy `DU/2019/730` |
-| katalog danych od kandydata i pracownika | Kodeks pracy art. 22¹ ⚠️ [KP nie ma jeszcze w bazie] |
+| katalog danych od kandydata i pracownika | Kodeks pracy art. 22¹ (klucz `arti_221`) — 🚩 § 1 pkt 6 w brzmieniu od 24.12.2025 z `DU/2025/807` |
+| zgoda pracownika jako podstawa, dane z art. 9 i 10 RODO w zatrudnieniu | KP art. 22¹a i 22¹b |
+| widełki wynagrodzenia w ogłoszeniu o naborze | KP art. 18³ca (dodany `DU/2025/807`, od 24.12.2025) |
+| adwokat jako instytucja obowiązana AML — pięć typów czynności | AML art. 2 ust. 1 pkt 14 |
+| wyłączenie obowiązku zawiadamiania GIIF dla obrony i reprezentacji | AML art. 75 |
+| zawiadomienie GIIF — 2 dni robocze; wstrzymanie transakcji 24 h | AML art. 74 ust. 2, art. 86 ust. 1 i 4 |
+| brak obowiązku wpisu adwokata do rejestru działalności na rzecz spółek | AML art. 129a ust. 2 |
+| firma, NIP i siedziba w ofercie na odległość | Prawo przedsiębiorców art. 20 ust. 3 |
 | pisemne upoważnienia w podmiocie leczniczym | u.p.p. art. 24 ust. 2 pkt 2 ✅ [VER: ELI DU/2024/581] |
 
 # 4. Dokumenty dostawcy hostingu — stan faktyczny, nie prawo
@@ -205,17 +228,26 @@ Jedna teza z poradników **nie znalazła potwierdzenia w tekście ustawy** i zos
 
 # 6. Dług weryfikacyjny obszaru
 
+## ✅ Zamknięte 2026-07-30
+
+| Kwestia | Rozstrzygnięcie |
+|---|---|
+| czy nowelizacje PKE dotykają **art. 398–400** | **nie** — zmieniają art. 337, 43, 40 i uchylają art. 42; szczegóły w § 2 |
+| **ustawa AML** | pobrana — `DU/2025/644`, klucz `aml`. Adwokat jest instytucją obowiązaną **tylko** przy pięciu typach czynności z art. 2 ust. 1 pkt 14; art. 75 wyłącza obowiązek zawiadamiania GIIF dla informacji z ustalania sytuacji prawnej, obrony i reprezentacji. Nowelizacje po t.j. (`DU/2025/1669`, `DU/2026/875`) nie dotykają tych przepisów |
+| **Prawo przedsiębiorców** | pobrane — `DU/2025/1480`, klucz `przeds`. Art. 20 ust. 3 (firma, NIP, siedziba albo adres w ofercie) bez zmian po t.j. |
+| **Kodeks pracy** | pobrany — `DU/2025/277`, klucz `kp`. 🚩 **art. 22¹ § 1 pkt 6 zmieniony po t.j.** przez `DU/2025/807` (od 24.12.2025): z przebiegu zatrudnienia wyłączono informacje o wynagrodzeniu obecnym i poprzednim; ta sama ustawa dodała art. 18³ca (widełki w ogłoszeniu). Pozostałe nowelizacje (`DU/2025/1423`, `DU/2025/1661`, `DU/2026/25`, `DU/2026/473`) nie dotykają art. 22¹ |
+
+## Otwarte
+
 | # | Kwestia | Dlaczego ważna | Gdzie sprawdzić |
 |---|---|---|---|
-| 1 | czy nowelizacje PKE (`DU/2025/637`, `DU/2025/820`, `DU/2026/252`, `DU/2026/815`) dotykają **art. 398–400** | to podstawa cookies i marketingu, cytowana w każdej polityce | ELI `/references` dla `DU/2024/1221` + teksty nowelizacji |
-| 2 | jak liczyć 10 lat z art. 16c PoA przy czynnościach bez postępowania (porada, opinia) | wyznacza politykę retencji kancelarii | NRA, Regulamin wykonywania zawodu adwokata |
-| 3 | kolizja art. 16c ust. 2 PoA (nakaz usunięcia) z bezterminowością tajemnicy (art. 6 ust. 2 PoA) | rozstrzyga los akt po 10 latach | stanowisko NRA, doktryna |
-| 4 | **ustawa AML — brak w bazie** | art. 6 ust. 4 pkt 1 PoA odsyła do niej wprost; po 1.10.2026 będzie jedynym wyłączeniem tajemnicy | jest w `config.json` jako pozycja do rozwiązania (`--resolve`) |
-| 5 | **Prawo przedsiębiorców — brak w bazie** | art. 5 ust. 4 uśude odsyła do art. 20 ust. 3 (NIP w ofercie) | ELI; do dopisania do `config.json` |
-| 6 | **Kodeks pracy — brak w bazie** | art. 22¹ KP (dane kandydata i pracownika) — proces nr 5 kancelarii | `config.json`, pozycja `Kodeks pracy` |
-| 7 | Zbiór Zasad Etyki Adwokackiej, Regulamin wykonywania zawodu | reklama, przechowywanie akt, zobowiązania współpracowników do tajemnicy | adwokatura.pl — **akty samorządowe, nie ma ich w ELI** |
-| 8 | status transferów do USA (analityka, chmura) | warunkuje legalność Google Analytics i narzędzi chmurowych | decyzje wykonawcze KE, orzecznictwo TSUE, komunikaty EROD |
-| 9 | lista podprocesorów home.pl i lokalizacja przetwarzania | wzorzec DPA milczy o EOG | panel klienta, audyt elektroniczny raz na 12 mies. |
+| 1 | jak liczyć 10 lat z art. 16c PoA przy czynnościach bez postępowania (porada, opinia) | wyznacza politykę retencji kancelarii | NRA, Regulamin wykonywania zawodu adwokata |
+| 2 | kolizja art. 16c ust. 2 PoA (nakaz usunięcia) z bezterminowością tajemnicy (art. 6 ust. 2 PoA) | rozstrzyga los akt po 10 latach | stanowisko NRA, doktryna |
+| 3 | art. 16c a dane kadrowe kancelarii | „w ramach wykonywania zawodu" jest szersze niż „pomoc prawna" | j.w. |
+| 4 | Zbiór Zasad Etyki Adwokackiej, Regulamin wykonywania zawodu | reklama, przechowywanie akt, zobowiązania współpracowników do tajemnicy | adwokatura.pl — **akty samorządowe, nie ma ich w ELI** |
+| 5 | status transferów do USA (analityka, chmura) | warunkuje legalność Google Analytics i narzędzi chmurowych | decyzje wykonawcze KE, orzecznictwo TSUE, komunikaty EROD |
+| 6 | lista podprocesorów home.pl i lokalizacja przetwarzania | wzorzec DPA milczy o EOG | panel klienta, audyt elektroniczny raz na 12 mies. |
+| 7 | łączenie funkcji IOD z wykonywaniem zawodu adwokata | konflikt interesów, nie tekst ustawy | uodo.gov.pl |
 
 ---
 

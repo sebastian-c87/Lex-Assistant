@@ -10,6 +10,10 @@ Blokada została zdjęta. Pobrano i zindeksowano **11 aktów**: RODO w dwóch we
 
 Pełny wykaz z kluczami do `dump_articles.py`, pułapkami i stanem aktualności: [03-zrodla-i-akty.md](03-zrodla-i-akty.md).
 
+## 📄 Analiza całościowa dla kazusu kancelarii
+
+Zwarte opracowanie łączące wszystkie cztery rozdziały w jeden dokument — dla adwokata-JDG ze stroną na home.pl: **[`RODO-KANCELARIA-ADWOKACKA-JDG.md`](../../RODO-KANCELARIA-ADWOKACKA-JDG.md)** (katalog główny repo). Zawiera checklistę wdrożeniową, kalendarz zmian w prawie i tabelę tego, co zweryfikowano, a co pozostaje otwarte.
+
 ## Spis rozdziałów
 
 | # | Plik | Zakres |

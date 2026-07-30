@@ -84,11 +84,13 @@
     "why": "decyzje wojewody w sprawie RPWDL, kara z art. 107 u.dz.l., odwolania; u.dz.l. art. 107 ust. 5 odsyla wprost do KPA"
   },
   {
-    "search": "Kodeks pracy",
+    "publisher": "DU",
+    "year": 2025,
+    "pos": 277,
     "category": "prawo_pracy",
-    "label": "Kodeks pracy (tekst jednolity)",
-    "expectTitle": "Kodeks pracy",
-    "why": "art. 229 (medycyna pracy), art. 237(3) i nast. (BHP), art. 120 (odpowiedzialnosc pracownika - odeslanie z art. 25 ust. 4 u.dz.l.), zatrudnianie psychologow"
+    "label": "Kodeks pracy (t.j. z 14.02.2025)",
+    "expectTitle": "jednolitego tekstu ustawy - Kodeks pracy",
+    "why": "art. 22(1) i nast. (dane osobowe kandydata i pracownika - warstwa RODO w zatrudnieniu), art. 22(2) (monitoring), art. 229 (medycyna pracy), art. 237(3) i nast. (BHP), art. 120 (odpowiedzialnosc pracownika - odeslanie z art. 25 ust. 4 u.dz.l.). UWAGA: po t.j. nowelizacje DU/2025/807, DU/2025/1423, DU/2025/1661, DU/2026/25, DU/2026/473"
   },
   {
     "search": "o podatku od towarów i usług",
@@ -161,11 +163,13 @@
     "why": "obowiazek adresu do e-Doreczen (ADE) dla podmiotow KRS, skutek doreczenia; KSH art. 166 par. 1 pkt 5 juz wymaga adresu do doreczen elektronicznych czlonkow zarzadu"
   },
   {
-    "search": "o przeciwdziałaniu praniu pieniędzy",
+    "publisher": "DU",
+    "year": 2025,
+    "pos": 644,
     "category": "rejestry_i_procedury",
-    "label": "Ustawa o przeciwdzialaniu praniu pieniedzy i finansowaniu terroryzmu (tekst jednolity)",
-    "expectTitle": "o przeciwdziałaniu praniu pieniędzy",
-    "why": "CRBR: art. 58-60 (kto beneficjentem, TERMIN 7 vs 14 dni - sprzecznosc w naszej bazie), art. 153 (kara do 1 mln zl). PRIORYTET 1 dlugu weryfikacyjnego"
+    "label": "Ustawa o przeciwdzialaniu praniu pieniedzy i finansowaniu terroryzmu (t.j. z 9.05.2025)",
+    "expectTitle": "jednolitego tekstu ustawy o przeciwdziałaniu praniu pieniędzy",
+    "why": "CRBR: art. 58-60 (kto beneficjentem, TERMIN 7 vs 14 dni - sprzecznosc w naszej bazie), art. 153 (kara do 1 mln zl). TAKZE: art. 2 ust. 1 pkt 14 - adwokat jako instytucja obowiazana, art. 6 ust. 4 pkt 1 Prawa o adwokaturze odsyla do tej ustawy jako wylaczenia tajemnicy adwokackiej (po 1.10.2026 JEDYNEGO). UWAGA: po t.j. nowelizacje DU/2025/1669 (od 2026-06-30) i DU/2026/875 (od 2027-01-01)"
   },
   {
     "search": "o rachunkowości",
@@ -317,6 +321,15 @@
     "label": "Przepisy wprowadzajace ustawe - Prawo komunikacji elektronicznej (ustawa z 12.07.2024)",
     "expectTitle": "Przepisy wprowadzające ustawę - Prawo komunikacji elektronicznej",
     "why": "uchyla Prawo telekomunikacyjne i nowelizuje uśude (m.in. art. 10 - niezamowiona informacja handlowa). Konieczne do ustalenia, ktory przepis reguluje dzisiaj marketing e-mail"
+  },
+  {
+    "publisher": "DU",
+    "year": 2025,
+    "pos": 1480,
+    "category": "internet_i_komunikacja",
+    "label": "Prawo przedsiebiorcow (t.j. z 20.10.2025)",
+    "expectTitle": "jednolitego tekstu ustawy - Prawo przedsiębiorców",
+    "why": "art. 20 ust. 3 (NIP w ofercie) - art. 5 ust. 4 usude odsyla do niego wprost przy obowiazkach informacyjnych strony www. UWAGA: po t.j. nowelizacje DU/2025/1168, DU/2025/1795, DU/2025/1826 i DU/2026/507 (od 2026-10-14)"
   },
   {
     "publisher": "DU",

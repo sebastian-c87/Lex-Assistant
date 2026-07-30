@@ -202,6 +202,18 @@ Lex-Assistant/
 
 Do tego trzy nowelizacje u.o.d.o. z 2026 r. (DU/2026/252, DU/2026/548, DU/2026/1003) — **t.j. z 2019 r. nie jest tekstem aktualnym**. Szczegóły i pułapki: `wiedza/rodo/03-zrodla-i-akty.md`.
 
+**Otoczenie kancelarii — dodane 2026-07-30:**
+
+| Moduł | Akt | ELI |
+|---|---|---|
+| aml | Ustawa o przeciwdziałaniu praniu pieniędzy i finansowaniu terroryzmu, t.j. z 9.05.2025 | DU/2025/644 |
+| przeds | Prawo przedsiębiorców, t.j. z 20.10.2025 (art. 20 ust. 3 — NIP w ofercie) | DU/2025/1480 |
+| kp | Kodeks pracy, t.j. z 14.02.2025 (art. 22¹ — dane kandydata i pracownika) | DU/2025/277 |
+
+🚩 **Pułapka w KP:** PDF spłaszcza indeks górny, więc `arti_221` = **art. 22¹** (dane osobowe), a `arti_221__wyst2` = **art. 221** (BHP). Konwerter rozdziela kolizje sufiksem i wypisuje ich listę. 🚩 **art. 22¹ § 1 pkt 6 zmieniony po t.j.** przez DU/2025/807 (od 24.12.2025) — zakaz pytania o dotychczasowe wynagrodzenie.
+
+**Analiza całościowa RODO dla kancelarii adwokackiej-JDG ze stroną na home.pl:** `RODO-KANCELARIA-ADWOKACKA-JDG.md` w katalogu głównym.
+
 Pełna mapa źródeł: `wiedza/spolki-medyczne/00-README.md` (tabela na górze), `wiedza/rodo/00-README.md`.
 
 ## 7. Kaskada wejścia w życie DU/2026/187 (nowa ustawa o psychologu)

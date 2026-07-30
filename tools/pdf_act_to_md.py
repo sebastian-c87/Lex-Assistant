@@ -53,13 +53,28 @@ def parse(text: str) -> tuple[str, dict]:
     current_art_key = None
     current_art_lines: list[str] = []
     current_art_heading = ''
+    collisions: list[tuple[str, str]] = []
 
     def flush_article():
         nonlocal current_art_key, current_art_lines, current_art_heading
         if current_art_key:
             body = '\n'.join(l for l in current_art_lines if l.strip())
             body = re.sub(r'\n{3,}', '\n\n', body).strip()
-            index[current_art_key] = {'heading': current_art_heading, 'text': body}
+            # KOLIZJA KLUCZY. PDF spłaszcza indeks górny, więc „Art. 22(1)." i „Art. 221."
+            # dają ten sam napis „Art. 221." — w Kodeksie pracy to art. 22(1) (dane osobowe
+            # kandydata i pracownika) oraz art. 221 (substancje chemiczne, BHP). Wcześniej
+            # drugie wystąpienie po cichu nadpisywało pierwsze i jeden z przepisów znikał
+            # z indeksu. Zachowujemy oba: drugie i kolejne dostają sufiks `__wyst2`, `__wyst3`,
+            # a na koniec konwersji wypisujemy ostrzeżenie — rozstrzygnięcie, który klucz jest
+            # którym artykułem, wymaga oczu człowieka i nie zgadujemy go tutaj.
+            key = current_art_key
+            if key in index:
+                n = 2
+                while f'{key}__wyst{n}' in index:
+                    n += 1
+                collisions.append((key, f'{key}__wyst{n}'))
+                key = f'{key}__wyst{n}'
+            index[key] = {'heading': current_art_heading, 'text': body}
             md_out.append(f'\n**{current_art_heading}**\n\n{body}\n')
         current_art_key = None
         current_art_lines = []
@@ -110,20 +125,26 @@ def parse(text: str) -> tuple[str, dict]:
         i += 1
 
     flush_article()
-    return '\n'.join(md_out), index
+    return '\n'.join(md_out), index, collisions
 
 
 def convert(pdf_path: Path) -> None:
     print(f'→ Konwertuję {pdf_path.name}')
     raw = extract_text(pdf_path)
     cleaned = clean(raw)
-    md, idx = parse(cleaned)
+    md, idx, collisions = parse(cleaned)
 
     md_path = pdf_path.with_suffix('.md')
     idx_path = pdf_path.with_suffix('.index.json')
     md_path.write_text(md, encoding='utf-8')
     idx_path.write_text(json.dumps(idx, ensure_ascii=False, indent=2), encoding='utf-8')
     print(f'  ✓ {md_path.name}  ({md_path.stat().st_size:,} B, {len(idx)} artykułów)')
+    if collisions:
+        print(f'  ⚠ KOLIZJA KLUCZY ({len(collisions)}) — PDF spłaszcza indeks górny, więc np.')
+        print(f'    „Art. 22(1)." i „Art. 221." wyglądają identycznie. Drugie wystąpienie zapisano')
+        print(f'    pod sufiksem; SPRAWDŹ RĘCZNIE w .md, który klucz jest którym artykułem:')
+        for orig, alt in collisions:
+            print(f'      {orig}  ->  {alt}')
 
 
 if __name__ == '__main__':

@@ -140,5 +140,29 @@
     "source": "EUR-Lex",
     "lastFetched": "2026-07-29T23:46:36.302Z",
     "file": "akty/rodo/rodo_-_rozporzadzenie_ue_2016-679_brzmienie_z_dz_u_ue_l_119_zrodlo_motywow_-_preambula_.html"
+  },
+  "DU/2025/277": {
+    "label": "Kodeks pracy (t.j. z 14.02.2025)",
+    "category": "prawo_pracy",
+    "changeDate": "2026-07-28T14:43:10",
+    "status": "obowiązujący",
+    "lastFetched": "2026-07-30T06:50:27.556Z",
+    "file": "akty/prawo_pracy/kodeks_pracy_t_j_z_14_02_2025_.pdf"
+  },
+  "DU/2025/644": {
+    "label": "Ustawa o przeciwdzialaniu praniu pieniedzy i finansowaniu terroryzmu (t.j. z 9.05.2025)",
+    "category": "rejestry_i_procedury",
+    "changeDate": "2026-07-28T15:06:08",
+    "status": "obowiązujący",
+    "lastFetched": "2026-07-30T06:50:31.777Z",
+    "file": "akty/rejestry_i_procedury/ustawa_o_przeciwdzialaniu_praniu_pieniedzy_i_finansowaniu_terroryzmu_t_j_z_9_05_2025_.pdf"
+  },
+  "DU/2025/1480": {
+    "label": "Prawo przedsiebiorcow (t.j. z 20.10.2025)",
+    "category": "internet_i_komunikacja",
+    "changeDate": "2026-05-06T10:57:10",
+    "status": "obowiązujący",
+    "lastFetched": "2026-07-30T06:50:36.989Z",
+    "file": "akty/internet_i_komunikacja/prawo_przedsiebiorcow_t_j_z_20_10_2025_.pdf"
   }
 }
