@@ -128,21 +128,32 @@ def convert(html_path: Path) -> None:
     h1 = soup.find('h1')
     title = clean_text(h1.get_text(' ')) if h1 else html_path.stem
 
-    # Weź główny załącznik z tekstem jednolitym (part_2 w ELI HTML)
-    part2 = soup.find(id='part_2') or soup.body
+    # Wybór kontenera z treścią. ELI HTML dzieli dokument na sekcje part_1, part_2, …
+    # i ich znaczenie ZALEŻY OD TYPU AKTU:
+    #   • obwieszczenie (t.j.) — part_1 to treść obwieszczenia, tekst jednolity siedzi
+    #     w załączniku, czyli part_2,
+    #   • zwykła ustawa      — cała treść jest w part_1, a part_2 (jeśli jest) to
+    #     prawdziwy załącznik do ustawy (wzory, tabele, formularze).
+    # Sztywne part_2 dawało więc 0 artykułów dla zwykłych ustaw (wykryte na
+    # „Przepisach wprowadzających PKE"). Wybieramy sekcję z NAJWIĘKSZĄ liczbą
+    # artykułów — działa dla obu układów bez rozpoznawania typu aktu.
+    parts = [el for el in soup.find_all(id=True) if str(el.get('id', '')).startswith('part_')]
+    root = max(parts, key=lambda el: len(el.select('.unit_arti')), default=None)
+    if root is None or not root.select('.unit_arti'):
+        root = soup.body
 
     out: list[str] = [f'# {title}\n']
     index: dict = {}
 
-    # Top-level unit_titl są zagnieżdżone głębiej (part_2 > div.part > ...).
+    # Top-level unit_titl są zagnieżdżone głębiej (part > div.part > ...).
     # Znajdujemy najwyższe unit_titl — te bez rodzica unit_titl.
-    top_titls = [t for t in part2.select('.unit_titl') if not t.find_parent(class_='unit_titl')]
+    top_titls = [t for t in root.select('.unit_titl') if not t.find_parent(class_='unit_titl')]
     if top_titls:
         for t in top_titls:
             render_unit(t, out, index, None)
     else:
         # fallback: iteruj po unit_arti bezpośrednio
-        for a in part2.select('.unit_arti'):
+        for a in root.select('.unit_arti'):
             render_unit(a, out, index, None)
 
     md_path = html_path.with_suffix('.md')

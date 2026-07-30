@@ -12,11 +12,15 @@ Przed pierwszą odpowiedzią przeczytaj [HANDOFF.md](HANDOFF.md) — zawiera pe�
 
 | Pytanie | Otwórz najpierw |
 |---|---|
-| Konkretny art. X któregoś z 6 aktów | `akty/<kat>/*.index.json`, klucz `arti_X` |
+| Konkretny art. X aktu z bazy | `akty/<kat>/*.index.json`, klucz `arti_X` — albo `python3 tools/dump_articles.py <klucz> X` |
 | Sp. z o.o. medyczna / psychologia | `wiedza/spolki-medyczne/00-README.md` |
-| Akt spoza naszych 6 | `api.sejm.gov.pl/eli/acts/search?title=...` (web_fetch) |
+| RODO, dane osobowe, IOD, cookies, strona www | `wiedza/rodo/00-README.md` |
+| Kancelaria adwokacka, tajemnica zawodowa | `wiedza/rodo/02-kancelaria-adwokacka-jdg.md` |
+| Akt spoza bazy | `api.sejm.gov.pl/eli/acts/search?title=...` — albo dopisz do `config.json` i `node fetch-laws.js` |
 | Sygnatura orzeczenia | `saos.org.pl/api` lub baza właściwa (KROK 2B) |
 | Pytanie otwarte | `.claude/skills/prawny-router/SKILL.md` |
+
+Klucze do `tools/dump_articles.py`: `ksh`, `udzl`, `pp`, `psy2001`, `psy2026`, `ozp`, `rodo`, `rodo_motywy` (klucze `motyw_N`), `uodo`, `poa`, `usude`, `pke`, `pke_wpr`, `wdrozeniowa2019`.
 
 ## Style
 

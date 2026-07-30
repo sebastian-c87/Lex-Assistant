@@ -155,10 +155,18 @@ async function fetchActMeta(publisher, year, pos) {
 // ── EUR-Lex: akty prawa Unii Europejskiej ────────────────────────────────────
 // ELI (api.sejm.gov.pl) obejmuje wyłącznie polskie Dzienniki Ustaw. Akty unijne —
 // jak RODO — trzeba pobrać z EUR-Lex po identyfikatorze CELEX. Wpis w config.json:
-//   { "source": "eurlex", "celex": "02016R0679", "category": "...", "label": "...",
+//   { "source": "eurlex", "celex": "02016R0679-20160504", "category": "...", "label": "...",
 //     "expectTitle": "..." }
 // Uwaga: CELEX zaczynający się od "0" to wersja SKONSOLIDOWANA (z późniejszymi
 // zmianami) — dla RODO właściwa. "3" oznacza akt w brzmieniu pierwotnym.
+// WAŻNE (sprawdzone 2026-07-29): wersja skonsolidowana wymaga SUFIKSU DATY konsolidacji —
+// `02016R0679-20160504`. Bez sufiksu EUR-Lex odpowiada 404, bo samo „02016R0679" nie jest
+// adresowalnym dokumentem, tylko rodziną wersji. Sufiks to data, NA KTÓRĄ tekst jest
+// skonsolidowany (nie data ostatniej zmiany): dla RODO 20160504 zawiera oba sprostowania
+// (Dz.U. L 127 z 23.5.2018 i Dz.U. L 74 z 4.3.2021) — potwierdzone nagłówkiem ►C1 ►C2.
+// Alternatywne adresy, gdyby ten przestał działać (oba zwracają brzmienie pierwotne z Dz.U.):
+//   https://eur-lex.europa.eu/legal-content/PL/TXT/HTML/?uri=CELEX:32016R0679
+//   https://eur-lex.europa.eu/eli/reg/2016/679/oj/pol/HTML
 const EURLEX_HTML = (celex, lang = 'PL') =>
   `https://eur-lex.europa.eu/legal-content/${lang}/TXT/HTML/?uri=CELEX:${celex}`;
 

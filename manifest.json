@@ -50,9 +50,95 @@
   "DU/2026/156": {
     "label": "Ustawa o dzialalnosci leczniczej (t.j. z 5.02.2026)",
     "category": "prawo_medyczne",
-    "changeDate": "2026-02-13T08:21:55",
+    "changeDate": "2026-07-28T14:01:19",
     "status": "obowiązujący",
-    "lastFetched": "2026-07-21T19:59:15.262Z",
-    "file": "akty\\prawo_medyczne\\ustawa_o_dzialalnosci_leczniczej_t_j_z_5_02_2026_.pdf"
+    "lastFetched": "2026-07-29T23:36:06.462Z",
+    "file": "akty/prawo_medyczne/ustawa_o_dzialalnosci_leczniczej_t_j_z_5_02_2026_.pdf"
+  },
+  "DU/2019/1781": {
+    "label": "Ustawa o ochronie danych osobowych (UODO 2018) (tekst jednolity z 30.08.2019)",
+    "category": "ochrona_danych",
+    "changeDate": "2026-05-06T10:52:30",
+    "status": "obowiązujący",
+    "lastFetched": "2026-07-29T23:36:09.272Z",
+    "file": "akty/ochrona_danych/ustawa_o_ochronie_danych_osobowych_uodo_2018_tekst_jednolity_z_30_08_2019_.html"
+  },
+  "DU/2026/252": {
+    "label": "Ustawa z 23.01.2026 o zmianie ustawy o krajowym systemie cyberbezpieczenstwa oraz niektorych innych ustaw (nowelizuje u.o.d.o. i PKE)",
+    "category": "ochrona_danych",
+    "changeDate": "2026-03-11T17:15:14",
+    "status": "obowiązujący",
+    "lastFetched": "2026-07-29T23:36:11.215Z",
+    "file": "akty/ochrona_danych/ustawa_z_23_01_2026_o_zmianie_ustawy_o_krajowym_systemie_cyberbezpieczenstwa_oraz_niektorych_innych_ustaw_nowelizuje_u_o_d_o_i_pke_.pdf"
+  },
+  "DU/2026/548": {
+    "label": "Ustawa z 27.03.2026 o zarzadzaniu danymi (nowelizuje u.o.d.o.)",
+    "category": "ochrona_danych",
+    "changeDate": "2026-05-04T08:20:47",
+    "status": "obowiązujący",
+    "lastFetched": "2026-07-29T23:36:11.763Z",
+    "file": "akty/ochrona_danych/ustawa_z_27_03_2026_o_zarzadzaniu_danymi_nowelizuje_u_o_d_o_.pdf"
+  },
+  "DU/2026/1003": {
+    "label": "Ustawa z 3.07.2026 o systemach sztucznej inteligencji (nowelizuje u.o.d.o., wchodzi 11.08.2026)",
+    "category": "ochrona_danych",
+    "changeDate": "2026-07-29T08:48:22",
+    "status": "obowiązujący",
+    "lastFetched": "2026-07-29T23:36:12.769Z",
+    "file": "akty/ochrona_danych/ustawa_z_3_07_2026_o_systemach_sztucznej_inteligencji_nowelizuje_u_o_d_o_wchodzi_11_08_2026_.pdf"
+  },
+  "DU/2024/1564": {
+    "label": "Prawo o adwokaturze (tekst jednolity z 11.10.2024)",
+    "category": "zawody_prawnicze",
+    "changeDate": "2026-07-20T09:44:59",
+    "status": "obowiązujący",
+    "lastFetched": "2026-07-29T23:36:14.739Z",
+    "file": "akty/zawody_prawnicze/prawo_o_adwokaturze_tekst_jednolity_z_11_10_2024_.html"
+  },
+  "DU/2024/1513": {
+    "label": "Ustawa o swiadczeniu uslug droga elektroniczna (tekst jednolity z 10.10.2024)",
+    "category": "internet_i_komunikacja",
+    "changeDate": "2024-10-17T12:27:39",
+    "status": "obowiązujący",
+    "lastFetched": "2026-07-29T23:36:15.265Z",
+    "file": "akty/internet_i_komunikacja/ustawa_o_swiadczeniu_uslug_droga_elektroniczna_tekst_jednolity_z_10_10_2024_.html"
+  },
+  "DU/2024/1221": {
+    "label": "Prawo komunikacji elektronicznej (ustawa z 12.07.2024)",
+    "category": "internet_i_komunikacja",
+    "changeDate": "2026-07-24T00:00:00",
+    "status": "obowiązujący",
+    "lastFetched": "2026-07-29T23:36:20.499Z",
+    "file": "akty/internet_i_komunikacja/prawo_komunikacji_elektronicznej_ustawa_z_12_07_2024_.html"
+  },
+  "DU/2024/1222": {
+    "label": "Przepisy wprowadzajace ustawe - Prawo komunikacji elektronicznej (ustawa z 12.07.2024)",
+    "category": "internet_i_komunikacja",
+    "changeDate": "2026-03-24T17:04:24",
+    "status": "obowiązujący",
+    "lastFetched": "2026-07-29T23:36:23.747Z",
+    "file": "akty/internet_i_komunikacja/przepisy_wprowadzajace_ustawe_-_prawo_komunikacji_elektronicznej_ustawa_z_12_07_2024_.html"
+  },
+  "DU/2019/730": {
+    "label": "Ustawa z 21.02.2019 o zmianie niektorych ustaw w zwiazku z zapewnieniem stosowania RODO (Dz.U. 2019 poz. 730)",
+    "category": "rodo",
+    "changeDate": "2024-03-14T20:01:22",
+    "status": "obowiązujący",
+    "lastFetched": "2026-07-29T23:36:28.359Z",
+    "file": "akty/rodo/ustawa_z_21_02_2019_o_zmianie_niektorych_ustaw_w_zwiazku_z_zapewnieniem_stosowania_rodo_dz_u_2019_poz_730_.html"
+  },
+  "CELEX/02016R0679-20160504": {
+    "label": "RODO - rozporzadzenie (UE) 2016/679 (wersja skonsolidowana, ze sprostowaniami L 127-2018 i L 74-2021)",
+    "category": "rodo",
+    "source": "EUR-Lex",
+    "lastFetched": "2026-07-29T23:46:35.713Z",
+    "file": "akty/rodo/rodo_-_rozporzadzenie_ue_2016_679_wersja_skonsolidowana_ze_sprostowaniami_l_127-2018_i_l_74-2021_.html"
+  },
+  "CELEX/32016R0679": {
+    "label": "RODO - rozporzadzenie (UE) 2016-679, brzmienie z Dz.U. UE L 119 (ZRODLO MOTYWOW - preambula)",
+    "category": "rodo",
+    "source": "EUR-Lex",
+    "lastFetched": "2026-07-29T23:46:36.302Z",
+    "file": "akty/rodo/rodo_-_rozporzadzenie_ue_2016-679_brzmienie_z_dz_u_ue_l_119_zrodlo_motywow_-_preambula_.html"
   }
 }

@@ -203,11 +203,40 @@
     "why": "EDM, System P1/SIM, raportowanie zdarzen medycznych. u.p.p. art. 24 ust. 1 odsyla wprost do tej ustawy - luka w naszej bazie"
   },
   {
-    "search": "o ochronie danych osobowych",
+    "publisher": "DU",
+    "year": 2019,
+    "pos": 1781,
     "category": "ochrona_danych",
-    "label": "Ustawa o ochronie danych osobowych (UODO 2018) (tekst jednolity)",
-    "expectTitle": "o ochronie danych osobowych",
-    "why": "art. 10 (zawiadomienie o IOD - 14 dni, wylacznie elektronicznie), przepisy krajowe uzupelniajace RODO. UWAGA: samo RODO 2016/679 nie jest w ELI - EUR-Lex CELEX 02016R0679"
+    "label": "Ustawa o ochronie danych osobowych (UODO 2018) (tekst jednolity z 30.08.2019)",
+    "expectTitle": "jednolitego tekstu ustawy o ochronie danych osobowych",
+    "why": "art. 10 (zawiadomienie o IOD - 14 dni, wylacznie elektronicznie), przepisy krajowe uzupelniajace RODO. UWAGA: samo RODO 2016/679 nie jest w ELI - EUR-Lex CELEX 02016R0679. UWAGA 2: t.j. z 2019 NIE jest tekstem aktualnym - akt bazowy DU/2018/1000 zmieniony po t.j. przez DU/2026/252, DU/2026/548 i DU/2026/1003 (te trzy sledzone osobno ponizej)"
+  },
+  {
+    "publisher": "DU",
+    "year": 2026,
+    "pos": 252,
+    "category": "ochrona_danych",
+    "label": "Ustawa z 23.01.2026 o zmianie ustawy o krajowym systemie cyberbezpieczenstwa oraz niektorych innych ustaw (nowelizuje u.o.d.o. i PKE)",
+    "expectTitle": "o zmianie ustawy o krajowym systemie cyberbezpieczeństwa",
+    "why": "nowelizacja u.o.d.o. po t.j. DU/2019/1781, w mocy od 2026-04-03. Potrzebna do ustalenia aktualnego brzmienia u.o.d.o. i PKE"
+  },
+  {
+    "publisher": "DU",
+    "year": 2026,
+    "pos": 548,
+    "category": "ochrona_danych",
+    "label": "Ustawa z 27.03.2026 o zarzadzaniu danymi (nowelizuje u.o.d.o.)",
+    "expectTitle": "o zarządzaniu danymi",
+    "why": "nowelizacja u.o.d.o. po t.j. DU/2019/1781, w mocy od 2026-07-23 - najswiezsza zmiana obowiazujaca. Potrzebna do ustalenia aktualnego brzmienia u.o.d.o."
+  },
+  {
+    "publisher": "DU",
+    "year": 2026,
+    "pos": 1003,
+    "category": "ochrona_danych",
+    "label": "Ustawa z 3.07.2026 o systemach sztucznej inteligencji (nowelizuje u.o.d.o., wchodzi 11.08.2026)",
+    "expectTitle": "o systemach sztucznej inteligencji",
+    "why": "nowelizacja u.o.d.o. jeszcze NIEOBOWIAZUJACA - vacatio do 2026-08-11. Sledzona, zeby nie cytowac przepisu, ktory za chwile sie zmieni"
   },
   {
     "search": "o przeciwdziałaniu zagrożeniom przestępczością na tle seksualnym",
@@ -239,35 +268,60 @@
   },
   {
     "source": "eurlex",
-    "celex": "02016R0679",
+    "celex": "02016R0679-20160504",
     "category": "rodo",
-    "label": "RODO - rozporzadzenie (UE) 2016/679 (wersja skonsolidowana)",
+    "label": "RODO - rozporzadzenie (UE) 2016/679 (wersja skonsolidowana, ze sprostowaniami L 127-2018 i L 74-2021)",
     "expectTitle": "w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych",
-    "why": "AKT UNIJNY - niedostepny przez ELI, pobierany z EUR-Lex po CELEX. Podstawa calego systemu: art. 2-3 (zakres), art. 4 (definicje), art. 5-6 i 9-10 (zasady i podstawy), art. 12-22 (prawa osob), art. 24-32 (obowiazki, powierzenie, rejestr, bezpieczenstwo), art. 33-34 (naruszenia), art. 35 (DPIA), art. 37-39 (IOD), art. 82-83 (odszkodowania i kary), art. 90 (tajemnica zawodowa)"
+    "why": "AKT UNIJNY, TEKST WIAZACY dla brzmienia artykulow - niedostepny przez ELI, pobierany z EUR-Lex po CELEX. UWAGA: wersja skonsolidowana NIE zawiera preambuly (motywow) - motywy sa w osobnym wpisie CELEX 32016R0679. Podstawa calego systemu: art. 2-3 (zakres), art. 4 (definicje), art. 5-6 i 9-10 (zasady i podstawy), art. 12-22 (prawa osob), art. 24-32 (obowiazki, powierzenie, rejestr, bezpieczenstwo), art. 33-34 (naruszenia), art. 35 (DPIA), art. 37-39 (IOD), art. 82-83 (odszkodowania i kary), art. 90 (tajemnica zawodowa)"
   },
   {
-    "search": "Prawo o adwokaturze",
+    "source": "eurlex",
+    "celex": "32016R0679",
+    "category": "rodo",
+    "label": "RODO - rozporzadzenie (UE) 2016-679, brzmienie z Dz.U. UE L 119 (ZRODLO MOTYWOW - preambula)",
+    "expectTitle": "w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych",
+    "why": "Ten wpis istnieje TYLKO dla preambuly (173 motywy) - wersja skonsolidowana 02016R0679-20160504 ich nie zawiera, a motywy sa kluczowa wskazowka interpretacyjna (m.in. motyw 47 - prawnie uzasadniony interes, motyw 39 - przejrzystosc, motyw 91 - DPIA). BRZMIENIA ARTYKULOW cytuj z wersji SKONSOLIDOWANEJ, nie z tego pliku - tutaj nie ma sprostowan L 127-2018 i L 74-2021"
+  },
+  {
+    "publisher": "DU",
+    "year": 2024,
+    "pos": 1564,
     "category": "zawody_prawnicze",
-    "label": "Prawo o adwokaturze (tekst jednolity)",
-    "expectTitle": "Prawo o adwokaturze",
+    "label": "Prawo o adwokaturze (tekst jednolity z 11.10.2024)",
+    "expectTitle": "jednolitego tekstu ustawy - Prawo o adwokaturze",
     "why": "art. 6 (tajemnica adwokacka - zakres, bezterminowosc, zwolnienie tylko przez sad) oraz ART. 16A-16C dodane ustawa z 21.02.2019 (Dz.U. 2019 poz. 730) wdrazajaca RODO: art. 16a - art. 15 ust. 1 i 3, art. 18 i art. 19 RODO tylko w granicach tajemnicy, art. 21 ust. 1 RODO WYLACZONY; art. 16b - tajemnica nie ustaje wobec zadania Prezesa UODO; art. 16c - okresy przechowywania 5 i 10 lat (USTALIC czy dotycza kancelarii czy organow adwokatury). Przepisy NIE obejmuja wewnetrznego funkcjonowania kancelarii"
   },
   {
-    "search": "o świadczeniu usług drogą elektroniczną",
+    "publisher": "DU",
+    "year": 2024,
+    "pos": 1513,
     "category": "internet_i_komunikacja",
-    "label": "Ustawa o swiadczeniu uslug droga elektroniczna (tekst jednolity)",
-    "expectTitle": "o świadczeniu usług drogą elektroniczną",
-    "why": "regulamin swiadczenia uslug droga elektroniczna dla strony www z formularzem, obowiazki informacyjne uslugodawcy, zasady handlowej informacji elektronicznej"
+    "label": "Ustawa o swiadczeniu uslug droga elektroniczna (tekst jednolity z 10.10.2024)",
+    "expectTitle": "jednolitego tekstu ustawy o świadczeniu usług drogą elektroniczną",
+    "why": "regulamin swiadczenia uslug droga elektroniczna dla strony www z formularzem, obowiazki informacyjne uslugodawcy, zasady handlowej informacji elektronicznej. UWAGA: t.j. z 10.10.2024 ogloszony PRZED wejsciem w zycie DU/2024/1222 (10.11.2024), ktora uchylila art. 10 - sprawdz w przepisach wprowadzajacych PKE"
   },
   {
-    "search": "Prawo komunikacji elektronicznej",
+    "publisher": "DU",
+    "year": 2024,
+    "pos": 1221,
     "category": "internet_i_komunikacja",
     "label": "Prawo komunikacji elektronicznej (ustawa z 12.07.2024)",
     "expectTitle": "Prawo komunikacji elektronicznej",
-    "why": "ZASTAPILO Prawo telekomunikacyjne od 10.11.2024. Cookies i dostep do informacji w urzadzeniu koncowym - art. 399 PKE (dawniej art. 173 Pt); zgoda na marketing bezposredni. UWAGA: starsze materialy RODO powoluja nieaktualny art. 173 Pt"
+    "why": "ZASTAPILO Prawo telekomunikacyjne od 10.11.2024. Cookies i dostep do informacji w urzadzeniu koncowym oraz zgoda na marketing bezposredni - USTALIC numer artykulu z tekstu (materialy wtorne podaja rozne: 398 albo 399; dawniej art. 172-173 Pt)"
   },
   {
-    "search": "o zmianie niektórych ustaw w związku z zapewnieniem stosowania rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679",
+    "publisher": "DU",
+    "year": 2024,
+    "pos": 1222,
+    "category": "internet_i_komunikacja",
+    "label": "Przepisy wprowadzajace ustawe - Prawo komunikacji elektronicznej (ustawa z 12.07.2024)",
+    "expectTitle": "Przepisy wprowadzające ustawę - Prawo komunikacji elektronicznej",
+    "why": "uchyla Prawo telekomunikacyjne i nowelizuje uśude (m.in. art. 10 - niezamowiona informacja handlowa). Konieczne do ustalenia, ktory przepis reguluje dzisiaj marketing e-mail"
+  },
+  {
+    "publisher": "DU",
+    "year": 2019,
+    "pos": 730,
     "category": "rodo",
     "label": "Ustawa z 21.02.2019 o zmianie niektorych ustaw w zwiazku z zapewnieniem stosowania RODO (Dz.U. 2019 poz. 730)",
     "expectTitle": "w związku z zapewnieniem stosowania rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679",

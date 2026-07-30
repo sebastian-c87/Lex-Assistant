@@ -48,6 +48,8 @@ Konsekwencje operacyjne:
 
 ## 3a. Dostęp sieciowy do ELI — warunek konieczny (Claude Code on the web)
 
+> **Stan na 2026-07-29: egress DZIAŁA.** `node fetch-laws.js --diag` zwraca `✓ POŁĄCZENIE DZIAŁA`. Sprawdzone i otwarte: `api.sejm.gov.pl`, `isap.sejm.gov.pl`, `eli.gov.pl`, `eur-lex.europa.eu`, `uodo.gov.pl`. Reszta tej sekcji jest instrukcją naprawy na wypadek, gdyby blokada wróciła w nowym środowisku.
+
 **Objaw:** każde żądanie do `api.sejm.gov.pl` / `isap.sejm.gov.pl` / `eli.gov.pl` kończy się `403`. W curl: `CONNECT tunnel failed, response 403`. W Node: `Proxy response (403) !== 200 when HTTP Tunneling`.
 
 **Przyczyna:** to **nie** awaria i **nie** błąd w kodzie. Środowisko cloud ma poziom dostępu sieciowego **Trusted** — dozwolone są tylko domeny z domyślnej allowlisty (rejestry pakietów, GitHub, chmury). `sejm.gov.pl` się na niej nie znajduje. Sandbox nie może tego zmienić od wewnątrz i nie wolno tego obchodzić.
@@ -185,7 +187,22 @@ Lex-Assistant/
 | psy2026 | Ustawa o zawodzie psychologa 2026 (161 art.) — kaskadowe wejście | DU/2026/187 |
 | ozp | Ustawa o ochronie zdrowia psychicznego (74 art.) | DU/2024/917 |
 
-Pełna mapa źródeł: `wiedza/spolki-medyczne/00-README.md` (tabela na górze).
+**Obszar ochrony danych — dodany 2026-07-29** (klucze `tools/dump_articles.py`):
+
+| Moduł | Akt | ELI / CELEX |
+|---|---|---|
+| rodo | RODO 2016/679, wersja skonsolidowana ze sprostowaniami (99 art.) | CELEX 02016R0679-**20160504** |
+| rodo_motywy | RODO, brzmienie z Dz.U. UE L 119 — **źródło 173 motywów** | CELEX 32016R0679 |
+| uodo | Ustawa o ochronie danych osobowych, t.j. z 30.08.2019 | DU/2019/1781 |
+| poa | Prawo o adwokaturze, t.j. z 11.10.2024 (173 art.) | DU/2024/1564 |
+| usude | Ustawa o świadczeniu usług drogą elektroniczną, t.j. z 10.10.2024 | DU/2024/1513 |
+| pke | Prawo komunikacji elektronicznej (450 art.) — **cookies art. 399, marketing art. 398** | DU/2024/1221 |
+| pke_wpr | Przepisy wprowadzające PKE — uchyliły art. 10 uśude | DU/2024/1222 |
+| wdrozeniowa2019 | Ustawa z 21.02.2019 wdrażająca RODO — źródło art. 16a–16c PoA | DU/2019/730 |
+
+Do tego trzy nowelizacje u.o.d.o. z 2026 r. (DU/2026/252, DU/2026/548, DU/2026/1003) — **t.j. z 2019 r. nie jest tekstem aktualnym**. Szczegóły i pułapki: `wiedza/rodo/03-zrodla-i-akty.md`.
+
+Pełna mapa źródeł: `wiedza/spolki-medyczne/00-README.md` (tabela na górze), `wiedza/rodo/00-README.md`.
 
 ## 7. Kaskada wejścia w życie DU/2026/187 (nowa ustawa o psychologu)
 
@@ -244,8 +261,10 @@ Do 19.05.2028 obowiązuje stara ustawa 2001 (DU/2019/1026 t.j.).
 ## 10. Ograniczenia i pułapki
 
 - **Nie odpowiadaj na pytania podatkowe** (składka zdrowotna, CIT, VAT, PCC) **z pamięci** — bardzo szybko zmieniające się, zawsze web_fetch aktualnych interpretacji lub jasno powiedz „⚠️ WYMAGA WERYFIKACJI aktualnego stanu"
-- **RODO** — nie mamy lokalnie; web_fetch na EUR-Lex CELEX 02016R0679 (wersja skonsolidowana)
-- **UODO** (krajowa) — DU/2019/1781, do dorzucenia lokalnie w przyszłości; teraz web_fetch
+- **RODO** — ✅ mamy lokalnie (`akty/rodo/`). Artykuły cytuj z wersji **skonsolidowanej** (CELEX `02016R0679-20160504` — sufiks daty obowiązkowy, bez niego EUR-Lex zwraca 404), **motywy** z osobnego pliku CELEX `32016R0679`, bo wersja skonsolidowana preambuły nie zawiera
+- **UODO** (krajowa) — ✅ mamy lokalnie, DU/2019/1781. **Ale t.j. z 2019 nie jest tekstem aktualnym** — po nim trzy nowelizacje z 2026 r. (DU/2026/252 art. 104, DU/2026/548 art. 34 ust. 2a, DU/2026/1003 art. 59a od 11.08.2026); żadna nie dotyka IOD ani sankcji
+- **Cookies i marketing e-mail** — nie z RODO: cookies **art. 399 PKE**, marketing **art. 398 PKE**. Art. 10 uśude jest **uchylony**, art. 173 Prawa telekomunikacyjnego nie obowiązuje od 10.11.2024. Wzory z internetu powołują nieaktualne przepisy
+- **Tajemnica adwokacka a RODO** — art. 90 RODO → art. 16a–16c Prawa o adwokaturze (DU/2024/1564). Art. 16c ust. 1 pkt 2 lit. c: **10 lat** retencji dla danych przetwarzanych przez adwokatów, ust. 2: nakaz usunięcia. 🚩 **Art. 6 ust. 4 PoA zmienia się 1.10.2026** (DU/2026/846 — znika wyłączenie dla MDR, zostaje AML)
 - **KC, KK, KPC, KPK** — do dorzucenia; teraz web_fetch (KC: DU/2026/795, KK: DU/2025/383, KKW: DU/2025/911)
 - **PKD** (kody) — zmieniają się; ⚠️ WYMAGA WERYFIKACJI
 - **Kwoty ubezpieczenia OC** — w rozporządzeniu MF, ⚠️ WYMAGA WERYFIKACJI
