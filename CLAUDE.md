@@ -20,7 +20,7 @@ Przed pierwszą odpowiedzią przeczytaj [HANDOFF.md](HANDOFF.md) — zawiera pe�
 | Sygnatura orzeczenia | `saos.org.pl/api` lub baza właściwa (KROK 2B) |
 | Pytanie otwarte | `.claude/skills/prawny-router/SKILL.md` |
 
-Klucze do `tools/dump_articles.py`: `ksh`, `udzl`, `pp`, `psy2001`, `psy2026`, `ozp`, `rodo`, `rodo_motywy` (klucze `motyw_N`), `uodo`, `poa`, `usude`, `pke`, `pke_wpr`, `wdrozeniowa2019`, `aml`, `przeds`, `kp`.
+Klucze do `tools/dump_articles.py`: `ksh`, `udzl`, `pp`, `psy2001`, `psy2026`, `ozp`, `rodo`, `rodo_motywy` (klucze `motyw_N`), `uodo`, `poa`, `usude`, `pke`, `pke_wpr`, `wdrozeniowa2019`, `aml`, `przeds`, `kp`, `krs`.
 
 ## Style
 

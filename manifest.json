@@ -26,10 +26,10 @@
   "DU/2025/1461": {
     "label": "Ustawa o swiadczeniach opieki zdrowotnej finansowanych ze srodkow publicznych (tekst jednolity)",
     "category": "prawo_medyczne",
-    "changeDate": "2026-06-16T00:00:00",
+    "changeDate": "2026-08-03T10:21:13",
     "status": "obowiązujący",
-    "lastFetched": "2026-07-21T19:37:21.516Z",
-    "file": "akty\\prawo_medyczne\\ustawa_o_swiadczeniach_opieki_zdrowotnej_finansowanych_ze_srodkow_publicznych_tekst_jednolity_.pdf"
+    "lastFetched": "2026-08-04T20:13:11.698Z",
+    "file": "akty/prawo_medyczne/ustawa_o_swiadczeniach_opieki_zdrowotnej_finansowanych_ze_srodkow_publicznych_tekst_jednolity_.pdf"
   },
   "DU/2026/187": {
     "label": "Ustawa o zawodzie psychologa oraz samorzadzie zawodowym psychologow -- NOWA ustawa, podpisana 12.02.2026, wchodzi w zycie glownie 19.05.2028",
@@ -82,9 +82,9 @@
   "DU/2026/1003": {
     "label": "Ustawa z 3.07.2026 o systemach sztucznej inteligencji (nowelizuje u.o.d.o., wchodzi 11.08.2026)",
     "category": "ochrona_danych",
-    "changeDate": "2026-07-29T08:48:22",
+    "changeDate": "2026-08-04T09:34:19",
     "status": "obowiązujący",
-    "lastFetched": "2026-07-29T23:36:12.769Z",
+    "lastFetched": "2026-08-04T20:13:17.265Z",
     "file": "akty/ochrona_danych/ustawa_z_3_07_2026_o_systemach_sztucznej_inteligencji_nowelizuje_u_o_d_o_wchodzi_11_08_2026_.pdf"
   },
   "DU/2024/1564": {
@@ -164,5 +164,13 @@
     "status": "obowiązujący",
     "lastFetched": "2026-07-30T06:50:36.989Z",
     "file": "akty/internet_i_komunikacja/prawo_przedsiebiorcow_t_j_z_20_10_2025_.pdf"
+  },
+  "DU/2025/869": {
+    "label": "Ustawa o Krajowym Rejestrze Sadowym (t.j. z 26.06.2025)",
+    "category": "rejestry_i_procedury",
+    "changeDate": "2026-07-28T11:14:39",
+    "status": "obowiązujący",
+    "lastFetched": "2026-08-04T20:13:14.795Z",
+    "file": "akty/rejestry_i_procedury/ustawa_o_krajowym_rejestrze_sadowym_t_j_z_26_06_2025_.pdf"
   }
 }

@@ -28,6 +28,7 @@ INDEXES = {
     # a `arti_221__wyst2` to art. 221 (substancje chemiczne, BHP) - PDF splaszcza indeks
     # gorny, wiec konwerter rozdziela kolizje sufiksem. Analogicznie inne pary 22x/2x(1).
     'kp': 'akty/prawo_pracy/kodeks_pracy_t_j_z_14_02_2025_.index.json',
+    'krs': 'akty/rejestry_i_procedury/ustawa_o_krajowym_rejestrze_sadowym_t_j_z_26_06_2025_.index.json',
 }
 
 def dump(act, keys):

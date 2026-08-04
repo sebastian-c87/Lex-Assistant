@@ -142,11 +142,13 @@
     "why": "terminy umowy o zarzadzanie i o prowadzenie PPK po zatrudnieniu pierwszej osoby"
   },
   {
-    "search": "o Krajowym Rejestrze Sądowym",
     "category": "rejestry_i_procedury",
-    "label": "Ustawa o Krajowym Rejestrze Sadowym (tekst jednolity)",
-    "expectTitle": "o Krajowym Rejestrze Sądowym",
-    "why": "KSH art. 164 par. 2 odsyla wprost do tej ustawy; terminy zglaszania zmian, obowiazek ogloszen w MSiG (uchylony dla wnioskow od 29.11.2025 - do potwierdzenia)"
+    "label": "Ustawa o Krajowym Rejestrze Sadowym (t.j. z 26.06.2025)",
+    "expectTitle": "jednolitego tekstu ustawy o Krajowym Rejestrze Sądowym",
+    "why": "KSH art. 164 par. 2 odsyla wprost do tej ustawy; terminy zglaszania zmian, obowiazek ogloszen w MSiG (uchylony dla wnioskow od 29.11.2025 - do potwierdzenia) . Tryb skladania wnioskow (art. 19), postepowanie rejestrowe. UWAGA: sprawdzic nowelizacje po t.j.",
+    "publisher": "DU",
+    "year": 2025,
+    "pos": 869
   },
   {
     "search": "o kosztach sądowych w sprawach cywilnych",
