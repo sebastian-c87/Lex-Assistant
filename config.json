@@ -5,7 +5,8 @@
     "pos": 18,
     "category": "ksh",
     "label": "Kodeks spolek handlowych (tekst jednolity)",
-    "expectTitle": "Kodeks spółek handlowych"
+    "expectTitle": "Kodeks spółek handlowych",
+    "baseEli": "DU/2000/1037"
   },
   {
     "publisher": "DU",
@@ -13,7 +14,8 @@
     "pos": 156,
     "category": "prawo_medyczne",
     "label": "Ustawa o dzialalnosci leczniczej (t.j. z 5.02.2026)",
-    "expectTitle": "o działalności leczniczej"
+    "expectTitle": "o działalności leczniczej",
+    "baseEli": "DU/2011/654"
   },
   {
     "publisher": "DU",
@@ -21,7 +23,8 @@
     "pos": 581,
     "category": "prawo_medyczne",
     "label": "Ustawa o prawach pacjenta i Rzeczniku Praw Pacjenta (tekst jednolity)",
-    "expectTitle": "o prawach pacjenta i Rzeczniku Praw Pacjenta"
+    "expectTitle": "o prawach pacjenta i Rzeczniku Praw Pacjenta",
+    "baseEli": "DU/2009/417"
   },
   {
     "publisher": "DU",
@@ -29,7 +32,8 @@
     "pos": 917,
     "category": "prawo_medyczne",
     "label": "Ustawa o ochronie zdrowia psychicznego (tekst jednolity)",
-    "expectTitle": "o ochronie zdrowia psychicznego"
+    "expectTitle": "o ochronie zdrowia psychicznego",
+    "baseEli": "DU/1994/535"
   },
   {
     "publisher": "DU",
@@ -37,7 +41,8 @@
     "pos": 1461,
     "category": "prawo_medyczne",
     "label": "Ustawa o swiadczeniach opieki zdrowotnej finansowanych ze srodkow publicznych (tekst jednolity)",
-    "expectTitle": "o świadczeniach opieki zdrowotnej finansowanych ze środków publicznych"
+    "expectTitle": "o świadczeniach opieki zdrowotnej finansowanych ze środków publicznych",
+    "baseEli": "DU/2004/2135"
   },
   {
     "publisher": "DU",
@@ -45,7 +50,8 @@
     "pos": 1026,
     "category": "prawo_medyczne",
     "label": "Ustawa o zawodzie psychologa i samorzadzie zawodowym psychologow -- STARA ustawa z 2001, t.j. z 2019, obowiazuje do 2028-05-19",
-    "expectTitle": "o zawodzie psychologa i samorządzie zawodowym psychologów"
+    "expectTitle": "o zawodzie psychologa i samorządzie zawodowym psychologów",
+    "baseEli": "DU/2001/763"
   },
   {
     "publisher": "DU",
@@ -53,168 +59,169 @@
     "pos": 187,
     "category": "prawo_medyczne",
     "label": "Ustawa o zawodzie psychologa oraz samorzadzie zawodowym psychologow -- NOWA ustawa, podpisana 12.02.2026, wchodzi w zycie glownie 19.05.2028",
-    "expectTitle": "o zawodzie psychologa oraz samorządzie zawodowym psychologów"
+    "expectTitle": "o zawodzie psychologa oraz samorządzie zawodowym psychologów",
+    "baseEli": "DU/2026/187"
   },
   {
-    "search": "Kodeks karny",
     "category": "prawo_karne",
-    "label": "Kodeks karny (tekst jednolity)",
+    "label": "Kodeks karny",
     "expectTitle": "Kodeks karny",
-    "why": "art. 233 par. 6 KK (falszywe oswiadczenie do RPWDL), art. 266 KK (tajemnica), art. 240 KK (obowiazek denuncjacji), art. 189a, art. 207 KK (weryfikacja kadr przy maloletnich)"
+    "why": "art. 233 par. 6 KK (falszywe oswiadczenie do RPWDL), art. 266 KK (tajemnica), art. 240 KK (obowiazek denuncjacji), art. 189a, art. 207 KK (weryfikacja kadr przy maloletnich)",
+    "baseEli": "DU/1997/553"
   },
   {
-    "search": "Kodeks postępowania karnego",
     "category": "prawo_karne",
-    "label": "Kodeks postepowania karnego (tekst jednolity)",
+    "label": "Kodeks postepowania karnego",
     "expectTitle": "Kodeks postępowania karnego",
-    "why": "zwolnienie z tajemnicy zawodowej przez sad/prokurature - procedura zadan wobec gabinetu"
+    "why": "zwolnienie z tajemnicy zawodowej przez sad/prokurature - procedura zadan wobec gabinetu",
+    "baseEli": "DU/1997/555"
   },
   {
-    "search": "Kodeks cywilny",
     "category": "prawo_cywilne",
-    "label": "Kodeks cywilny (tekst jednolity)",
+    "label": "Kodeks cywilny",
     "expectTitle": "Kodeks cywilny",
-    "why": "umowy, odpowiedzialnosc kontraktowa i deliktowa, najem lokalu gabinetu, przedawnienie roszczen pacjentow"
+    "why": "umowy, odpowiedzialnosc kontraktowa i deliktowa, najem lokalu gabinetu, przedawnienie roszczen pacjentow",
+    "baseEli": "DU/1964/93"
   },
   {
-    "search": "Kodeks postępowania administracyjnego",
     "category": "prawo_administracyjne",
-    "label": "Kodeks postepowania administracyjnego (tekst jednolity)",
+    "label": "Kodeks postepowania administracyjnego",
     "expectTitle": "Kodeks postępowania administracyjnego",
-    "why": "decyzje wojewody w sprawie RPWDL, kara z art. 107 u.dz.l., odwolania; u.dz.l. art. 107 ust. 5 odsyla wprost do KPA"
+    "why": "decyzje wojewody w sprawie RPWDL, kara z art. 107 u.dz.l., odwolania; u.dz.l. art. 107 ust. 5 odsyla wprost do KPA",
+    "baseEli": "DU/1960/168"
   },
   {
-    "search": "Kodeks pracy",
     "category": "prawo_pracy",
-    "label": "Kodeks pracy (tekst jednolity)",
+    "label": "Kodeks pracy",
     "expectTitle": "Kodeks pracy",
-    "why": "art. 229 (medycyna pracy), art. 237(3) i nast. (BHP), art. 120 (odpowiedzialnosc pracownika - odeslanie z art. 25 ust. 4 u.dz.l.), zatrudnianie psychologow"
+    "why": "art. 229 (medycyna pracy), art. 237(3) i nast. (BHP), art. 120 (odpowiedzialnosc pracownika - odeslanie z art. 25 ust. 4 u.dz.l.), zatrudnianie psychologow",
+    "baseEli": "DU/1974/141"
   },
   {
-    "search": "o podatku od towarów i usług",
     "category": "podatki",
-    "label": "Ustawa o podatku od towarow i uslug (VAT) (tekst jednolity)",
+    "label": "Ustawa o podatku od towarow i uslug (VAT)",
     "expectTitle": "o podatku od towarów i usług",
-    "why": "art. 43 ust. 1 pkt 18-19a (zwolnienie dla uslug opieki medycznej - kluczowe i sporne dla opinii/diagnoz na zamowienie), art. 106ga i nast. (KSeF), art. 96b (biala lista)"
+    "why": "art. 43 ust. 1 pkt 18-19a (zwolnienie dla uslug opieki medycznej - kluczowe i sporne dla opinii/diagnoz na zamowienie), art. 106ga i nast. (KSeF), art. 96b (biala lista)",
+    "baseEli": "DU/2004/535"
   },
   {
-    "search": "Ordynacja podatkowa",
     "category": "podatki",
-    "label": "Ordynacja podatkowa (tekst jednolity)",
+    "label": "Ordynacja podatkowa",
     "expectTitle": "Ordynacja podatkowa",
-    "why": "art. 14b-14f (interpretacje indywidualne KIS - rekomendowane dla VAT i kasy fiskalnej), art. 117ba (odpowiedzialnosc solidarna przy platnosci poza biala liste)"
+    "why": "art. 14b-14f (interpretacje indywidualne KIS - rekomendowane dla VAT i kasy fiskalnej), art. 117ba (odpowiedzialnosc solidarna przy platnosci poza biala liste)",
+    "baseEli": "DU/1997/926"
   },
   {
-    "search": "o podatku od czynności cywilnoprawnych",
     "category": "podatki",
-    "label": "Ustawa o podatku od czynnosci cywilnoprawnych (PCC) (tekst jednolity)",
+    "label": "Ustawa o podatku od czynnosci cywilnoprawnych (PCC)",
     "expectTitle": "o podatku od czynności cywilnoprawnych",
-    "why": "PCC 0,5% od kapitalu zakladowego, notariusz jako platnik, PCC-3 przy S24, obnizenie podstawy o koszty notariusza i KRS"
+    "why": "PCC 0,5% od kapitalu zakladowego, notariusz jako platnik, PCC-3 przy S24, obnizenie podstawy o koszty notariusza i KRS",
+    "baseEli": "DU/2000/959"
   },
   {
-    "search": "o podatku dochodowym od osób prawnych",
     "category": "podatki",
-    "label": "Ustawa o podatku dochodowym od osob prawnych (CIT) (tekst jednolity)",
+    "label": "Ustawa o podatku dochodowym od osob prawnych (CIT)",
     "expectTitle": "o podatku dochodowym od osób prawnych",
-    "why": "CIT spolki, rozdzial 6b (ryczalt od dochodow spolek - estonski CIT), opodatkowanie dywidendy"
+    "why": "CIT spolki, rozdzial 6b (ryczalt od dochodow spolek - estonski CIT), opodatkowanie dywidendy",
+    "baseEli": "DU/1992/86"
   },
   {
-    "search": "o podatku dochodowym od osób fizycznych",
     "category": "podatki",
-    "label": "Ustawa o podatku dochodowym od osob fizycznych (PIT) (tekst jednolity)",
+    "label": "Ustawa o podatku dochodowym od osob fizycznych (PIT)",
     "expectTitle": "o podatku dochodowym od osób fizycznych",
-    "why": "art. 30a ust. 19 (odliczenie 90%/70% podatku spolki od PIT z dywidendy przy estonskim CIT), art. 13 pkt 7-9 i art. 20 ust. 1 (kwalifikacja zrodla wynagrodzenia wspolnika - decyduje o ryzyku ukrytych zyskow przy art. 176 KSH), opodatkowanie dywidendy"
+    "why": "art. 30a ust. 19 (odliczenie 90%/70% podatku spolki od PIT z dywidendy przy estonskim CIT), art. 13 pkt 7-9 i art. 20 ust. 1 (kwalifikacja zrodla wynagrodzenia wspolnika - decyduje o ryzyku ukrytych zyskow przy art. 176 KSH), opodatkowanie dywidendy",
+    "baseEli": "DU/1991/350"
   },
   {
-    "search": "o systemie ubezpieczeń społecznych",
     "category": "ubezpieczenia_spoleczne",
-    "label": "Ustawa o systemie ubezpieczen spolecznych (tekst jednolity)",
+    "label": "Ustawa o systemie ubezpieczen spolecznych",
     "expectTitle": "o systemie ubezpieczeń społecznych",
-    "why": "art. 6 ust. 1 pkt 5 w zw. z art. 8 ust. 6 pkt 4 (wspolnik JEDNOosobowej sp. z o.o. - kluczowe dla ustalenia, ze wspolnicy 50/50 nie podlegaja), art. 36 (terminy zgloszen)"
+    "why": "art. 6 ust. 1 pkt 5 w zw. z art. 8 ust. 6 pkt 4 (wspolnik JEDNOosobowej sp. z o.o. - kluczowe dla ustalenia, ze wspolnicy 50/50 nie podlegaja), art. 36 (terminy zgloszen)",
+    "baseEli": "DU/1998/887"
   },
   {
-    "search": "o pracowniczych planach kapitałowych",
     "category": "ubezpieczenia_spoleczne",
-    "label": "Ustawa o pracowniczych planach kapitalowych (PPK) (tekst jednolity)",
+    "label": "Ustawa o pracowniczych planach kapitalowych (PPK)",
     "expectTitle": "o pracowniczych planach kapitałowych",
-    "why": "terminy umowy o zarzadzanie i o prowadzenie PPK po zatrudnieniu pierwszej osoby"
+    "why": "terminy umowy o zarzadzanie i o prowadzenie PPK po zatrudnieniu pierwszej osoby",
+    "baseEli": "DU/2018/2215"
   },
   {
-    "search": "o Krajowym Rejestrze Sądowym",
     "category": "rejestry_i_procedury",
-    "label": "Ustawa o Krajowym Rejestrze Sadowym (tekst jednolity)",
+    "label": "Ustawa o Krajowym Rejestrze Sadowym",
     "expectTitle": "o Krajowym Rejestrze Sądowym",
-    "why": "KSH art. 164 par. 2 odsyla wprost do tej ustawy; terminy zglaszania zmian, obowiazek ogloszen w MSiG (uchylony dla wnioskow od 29.11.2025 - do potwierdzenia)"
+    "why": "KSH art. 164 par. 2 odsyla wprost do tej ustawy; terminy zglaszania zmian, obowiazek ogloszen w MSiG (uchylony dla wnioskow od 29.11.2025 - do potwierdzenia)",
+    "baseEli": "DU/1997/769"
   },
   {
-    "search": "o kosztach sądowych w sprawach cywilnych",
     "category": "rejestry_i_procedury",
-    "label": "Ustawa o kosztach sadowych w sprawach cywilnych (tekst jednolity)",
+    "label": "Ustawa o kosztach sadowych w sprawach cywilnych",
     "expectTitle": "o kosztach sądowych w sprawach cywilnych",
-    "why": "oplata za wpis spolki do KRS (500 zl / 250 zl S24) - jedyne wiarygodne zrodlo kwoty"
+    "why": "oplata za wpis spolki do KRS (500 zl / 250 zl S24) - jedyne wiarygodne zrodlo kwoty",
+    "baseEli": "DU/2005/1398"
   },
   {
-    "search": "o doręczeniach elektronicznych",
     "category": "rejestry_i_procedury",
-    "label": "Ustawa o doreczeniach elektronicznych (tekst jednolity)",
+    "label": "Ustawa o doreczeniach elektronicznych",
     "expectTitle": "o doręczeniach elektronicznych",
-    "why": "obowiazek adresu do e-Doreczen (ADE) dla podmiotow KRS, skutek doreczenia; KSH art. 166 par. 1 pkt 5 juz wymaga adresu do doreczen elektronicznych czlonkow zarzadu"
+    "why": "obowiazek adresu do e-Doreczen (ADE) dla podmiotow KRS, skutek doreczenia; KSH art. 166 par. 1 pkt 5 juz wymaga adresu do doreczen elektronicznych czlonkow zarzadu",
+    "baseEli": "DU/2020/2320"
   },
   {
-    "search": "o przeciwdziałaniu praniu pieniędzy",
     "category": "rejestry_i_procedury",
-    "label": "Ustawa o przeciwdzialaniu praniu pieniedzy i finansowaniu terroryzmu (tekst jednolity)",
+    "label": "Ustawa o przeciwdzialaniu praniu pieniedzy i finansowaniu terroryzmu",
     "expectTitle": "o przeciwdziałaniu praniu pieniędzy",
-    "why": "CRBR: art. 58-60 (kto beneficjentem, TERMIN 7 vs 14 dni - sprzecznosc w naszej bazie), art. 153 (kara do 1 mln zl). PRIORYTET 1 dlugu weryfikacyjnego"
+    "why": "CRBR: art. 58-60 (kto beneficjentem, TERMIN 7 vs 14 dni - sprzecznosc w naszej bazie), art. 153 (kara do 1 mln zl). PRIORYTET 1 dlugu weryfikacyjnego",
+    "baseEli": "DU/2018/723"
   },
   {
-    "search": "o rachunkowości",
     "category": "rejestry_i_procedury",
-    "label": "Ustawa o rachunkowosci (tekst jednolity)",
+    "label": "Ustawa o rachunkowosci",
     "expectTitle": "o rachunkowości",
-    "why": "art. 2 (obowiazek pelnych ksiag dla sp. z o.o.), sprawozdanie finansowe i terminy zlozenia do KRS"
+    "why": "art. 2 (obowiazek pelnych ksiag dla sp. z o.o.), sprawozdanie finansowe i terminy zlozenia do KRS",
+    "baseEli": "DU/1994/591"
   },
   {
-    "search": "Prawo budowlane",
     "category": "budownictwo_i_sanepid",
-    "label": "Prawo budowlane (tekst jednolity)",
+    "label": "Prawo budowlane",
     "expectTitle": "Prawo budowlane",
-    "why": "art. 71 ust. 2 i 2b (zgloszenie zmiany sposobu uzytkowania lokalu na gabinet, 30 dni na sprzeciw) - pozycja na sciezce krytycznej przed RPWDL"
+    "why": "art. 71 ust. 2 i 2b (zgloszenie zmiany sposobu uzytkowania lokalu na gabinet, 30 dni na sprzeciw) - pozycja na sciezce krytycznej przed RPWDL",
+    "baseEli": "DU/1994/414"
   },
   {
-    "search": "o Państwowej Inspekcji Sanitarnej",
     "category": "budownictwo_i_sanepid",
-    "label": "Ustawa o Panstwowej Inspekcji Sanitarnej (tekst jednolity)",
+    "label": "Ustawa o Panstwowej Inspekcji Sanitarnej",
     "expectTitle": "o Państwowej Inspekcji Sanitarnej",
-    "why": "opinia sanitarna o lokalu, nadzor zapobiegawczy i podstawa oplat"
+    "why": "opinia sanitarna o lokalu, nadzor zapobiegawczy i podstawa oplat",
+    "baseEli": "DU/1985/49"
   },
   {
-    "search": "o odpadach",
     "category": "budownictwo_i_sanepid",
-    "label": "Ustawa o odpadach (tekst jednolity)",
+    "label": "Ustawa o odpadach",
     "expectTitle": "o odpadach",
-    "why": "BDO: obowiazek wpisu, ewidencja, karta przekazania odpadow - rozstrzygniecie czy gabinet psychologiczny wytwarza odpady medyczne"
+    "why": "BDO: obowiazek wpisu, ewidencja, karta przekazania odpadow - rozstrzygniecie czy gabinet psychologiczny wytwarza odpady medyczne",
+    "baseEli": "DU/2013/21"
   },
   {
-    "search": "o systemie informacji w ochronie zdrowia",
     "category": "prawo_medyczne",
-    "label": "Ustawa o systemie informacji w ochronie zdrowia (tekst jednolity)",
+    "label": "Ustawa o systemie informacji w ochronie zdrowia",
     "expectTitle": "o systemie informacji w ochronie zdrowia",
-    "why": "EDM, System P1/SIM, raportowanie zdarzen medycznych. u.p.p. art. 24 ust. 1 odsyla wprost do tej ustawy - luka w naszej bazie"
+    "why": "EDM, System P1/SIM, raportowanie zdarzen medycznych. u.p.p. art. 24 ust. 1 odsyla wprost do tej ustawy - luka w naszej bazie",
+    "baseEli": "DU/2011/657"
   },
   {
-    "search": "o ochronie danych osobowych",
     "category": "ochrona_danych",
-    "label": "Ustawa o ochronie danych osobowych (UODO 2018) (tekst jednolity)",
+    "label": "Ustawa o ochronie danych osobowych (UODO 2018)",
     "expectTitle": "o ochronie danych osobowych",
-    "why": "art. 10 (zawiadomienie o IOD - 14 dni, wylacznie elektronicznie), przepisy krajowe uzupelniajace RODO. UWAGA: samo RODO 2016/679 nie jest w ELI - EUR-Lex CELEX 02016R0679"
+    "why": "art. 10 (zawiadomienie o IOD - 14 dni, wylacznie elektronicznie), przepisy krajowe uzupelniajace RODO. UWAGA: samo RODO 2016/679 nie jest w ELI - EUR-Lex CELEX 02016R0679",
+    "baseEli": "DU/2018/1000"
   },
   {
-    "search": "o przeciwdziałaniu zagrożeniom przestępczością na tle seksualnym",
     "category": "ochrona_maloletnich",
-    "label": "Ustawa o przeciwdzialaniu zagrozeniom przestepczoscia na tle seksualnym i ochronie maloletnich (tzw. ustawa Kamilka) (tekst jednolity)",
+    "label": "Ustawa o przeciwdzialaniu zagrozeniom przestepczoscia na tle seksualnym i ochronie maloletnich (tzw. ustawa Kamilka)",
     "expectTitle": "przestępczością na tle seksualnym",
-    "why": "standardy ochrony maloletnich dla podmiotow leczniczych, weryfikacja kadr w RSPTS i KRK przed dopuszczeniem do pracy z dziecmi, sankcje. Nowelizacja z 5.08.2025 - upewnic sie ze t.j. jest po niej"
+    "why": "standardy ochrony maloletnich dla podmiotow leczniczych, weryfikacja kadr w RSPTS i KRK przed dopuszczeniem do pracy z dziecmi, sankcje. Nowelizacja z 5.08.2025 - upewnic sie ze t.j. jest po niej",
+    "baseEli": "DU/2016/862"
   },
   {
     "search": "pomieszczenia i urządzenia podmiotu wykonującego działalność leczniczą",
@@ -246,31 +253,231 @@
     "why": "AKT UNIJNY - niedostepny przez ELI, pobierany z EUR-Lex po CELEX. Podstawa calego systemu: art. 2-3 (zakres), art. 4 (definicje), art. 5-6 i 9-10 (zasady i podstawy), art. 12-22 (prawa osob), art. 24-32 (obowiazki, powierzenie, rejestr, bezpieczenstwo), art. 33-34 (naruszenia), art. 35 (DPIA), art. 37-39 (IOD), art. 82-83 (odszkodowania i kary), art. 90 (tajemnica zawodowa)"
   },
   {
-    "search": "Prawo o adwokaturze",
     "category": "zawody_prawnicze",
-    "label": "Prawo o adwokaturze (tekst jednolity)",
+    "label": "Prawo o adwokaturze",
     "expectTitle": "Prawo o adwokaturze",
-    "why": "art. 6 (tajemnica adwokacka - zakres, bezterminowosc, zwolnienie tylko przez sad) oraz ART. 16A-16C dodane ustawa z 21.02.2019 (Dz.U. 2019 poz. 730) wdrazajaca RODO: art. 16a - art. 15 ust. 1 i 3, art. 18 i art. 19 RODO tylko w granicach tajemnicy, art. 21 ust. 1 RODO WYLACZONY; art. 16b - tajemnica nie ustaje wobec zadania Prezesa UODO; art. 16c - okresy przechowywania 5 i 10 lat (USTALIC czy dotycza kancelarii czy organow adwokatury). Przepisy NIE obejmuja wewnetrznego funkcjonowania kancelarii"
+    "why": "art. 6 (tajemnica adwokacka - zakres, bezterminowosc, zwolnienie tylko przez sad) oraz ART. 16A-16C dodane ustawa z 21.02.2019 (Dz.U. 2019 poz. 730) wdrazajaca RODO: art. 16a - art. 15 ust. 1 i 3, art. 18 i art. 19 RODO tylko w granicach tajemnicy, art. 21 ust. 1 RODO WYLACZONY; art. 16b - tajemnica nie ustaje wobec zadania Prezesa UODO; art. 16c - okresy przechowywania 5 i 10 lat (USTALIC czy dotycza kancelarii czy organow adwokatury). Przepisy NIE obejmuja wewnetrznego funkcjonowania kancelarii",
+    "baseEli": "DU/1982/124"
   },
   {
-    "search": "o świadczeniu usług drogą elektroniczną",
     "category": "internet_i_komunikacja",
-    "label": "Ustawa o swiadczeniu uslug droga elektroniczna (tekst jednolity)",
+    "label": "Ustawa o swiadczeniu uslug droga elektroniczna",
     "expectTitle": "o świadczeniu usług drogą elektroniczną",
-    "why": "regulamin swiadczenia uslug droga elektroniczna dla strony www z formularzem, obowiazki informacyjne uslugodawcy, zasady handlowej informacji elektronicznej"
+    "why": "regulamin swiadczenia uslug droga elektroniczna dla strony www z formularzem, obowiazki informacyjne uslugodawcy, zasady handlowej informacji elektronicznej",
+    "baseEli": "DU/2002/1204"
   },
   {
-    "search": "Prawo komunikacji elektronicznej",
     "category": "internet_i_komunikacja",
     "label": "Prawo komunikacji elektronicznej (ustawa z 12.07.2024)",
     "expectTitle": "Prawo komunikacji elektronicznej",
-    "why": "ZASTAPILO Prawo telekomunikacyjne od 10.11.2024. Cookies i dostep do informacji w urzadzeniu koncowym - art. 399 PKE (dawniej art. 173 Pt); zgoda na marketing bezposredni. UWAGA: starsze materialy RODO powoluja nieaktualny art. 173 Pt"
+    "why": "ZASTAPILO Prawo telekomunikacyjne od 10.11.2024. Cookies i dostep do informacji w urzadzeniu koncowym - art. 399 PKE (dawniej art. 173 Pt); zgoda na marketing bezposredni. UWAGA: starsze materialy RODO powoluja nieaktualny art. 173 Pt",
+    "baseEli": "DU/2024/1221"
   },
   {
-    "search": "o zmianie niektórych ustaw w związku z zapewnieniem stosowania rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679",
     "category": "rodo",
     "label": "Ustawa z 21.02.2019 o zmianie niektorych ustaw w zwiazku z zapewnieniem stosowania RODO (Dz.U. 2019 poz. 730)",
     "expectTitle": "w związku z zapewnieniem stosowania rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679",
-    "why": "ustawa wdrazajaca RODO - znowelizowala 162 ustawy. Zrodlo art. 16a-16c Prawa o adwokaturze i art. 5a-5c ustawy o radcach prawnych, czyli krajowej realizacji art. 90 RODO dla zawodow prawniczych"
+    "why": "ustawa wdrazajaca RODO - znowelizowala 162 ustawy. Zrodlo art. 16a-16c Prawa o adwokaturze i art. 5a-5c ustawy o radcach prawnych, czyli krajowej realizacji art. 90 RODO dla zawodow prawniczych",
+    "baseEli": "DU/2019/730"
+  },
+  {
+    "baseEli": "DU/1964/296",
+    "category": "procedura_cywilna",
+    "label": "Kodeks postepowania cywilnego",
+    "expectTitle": "Kodeks postępowania cywilnego",
+    "projectSearch": "Kodeks postępowania cywilnego",
+    "why": "procedura cywilna: pozew, terminy, srodki zaskarzenia, postepowanie zabezpieczajace i egzekucyjne (w tym egzekucja z rachunku bankowego, sprawy z umow ubezpieczenia i kredytow)"
+  },
+  {
+    "baseEli": "DU/2002/1270",
+    "category": "procedura_administracyjna",
+    "label": "Prawo o postepowaniu przed sadami administracyjnymi (PPSA)",
+    "expectTitle": "Prawo o postępowaniu przed sądami administracyjnymi",
+    "projectSearch": "Prawo o postępowaniu przed sądami administracyjnymi",
+    "why": "skarga do WSA na decyzje (np. RPWDL, KNF), skarga kasacyjna do NSA, terminy"
+  },
+  {
+    "baseEli": "DU/2001/1148",
+    "category": "prawo_karne",
+    "label": "Kodeks postepowania w sprawach o wykroczenia",
+    "expectTitle": "Kodeks postępowania w sprawach o wykroczenia",
+    "projectSearch": "Kodeks postępowania w sprawach o wykroczenia",
+    "why": "procedura wykroczeniowa, mandaty, wnioski o ukaranie"
+  },
+  {
+    "baseEli": "DU/1997/939",
+    "category": "bankowosc",
+    "label": "Prawo bankowe",
+    "expectTitle": "Prawo bankowe",
+    "projectSearch": "Prawo bankowe",
+    "why": "umowa rachunku bankowego, kredytu, GWARANCJA BANKOWA (art. 81, art. 87), tajemnica bankowa (art. 104-106), wierzytelnosci banku"
+  },
+  {
+    "baseEli": "DU/2011/715",
+    "category": "bankowosc",
+    "label": "Ustawa o kredycie konsumenckim",
+    "expectTitle": "o kredycie konsumenckim",
+    "projectSearch": "o kredycie konsumenckim",
+    "why": "obowiazki informacyjne, RRSO, sankcja kredytu darmowego (art. 45), odstapienie od umowy"
+  },
+  {
+    "baseEli": "DU/2017/819",
+    "category": "bankowosc",
+    "label": "Ustawa o kredycie hipotecznym oraz o nadzorze nad posrednikami kredytu hipotecznego i agentami",
+    "expectTitle": "o kredycie hipotecznym",
+    "projectSearch": "o kredycie hipotecznym",
+    "why": "kredyty hipoteczne konsumenckie, obowiazki kredytodawcy, posrednicy"
+  },
+  {
+    "baseEli": "DU/2011/1175",
+    "category": "bankowosc",
+    "label": "Ustawa o uslugach platniczych",
+    "expectTitle": "o usługach płatniczych",
+    "projectSearch": "o usługach płatniczych",
+    "why": "rachunki platnicze, nieautoryzowane transakcje (art. 46), odpowiedzialnosc dostawcy uslug platniczych"
+  },
+  {
+    "baseEli": "DU/2015/1348",
+    "category": "bankowosc",
+    "label": "Ustawa o rozpatrywaniu reklamacji przez podmioty rynku finansowego, o Rzeczniku Finansowym i o Funduszu Edukacji Finansowej",
+    "expectTitle": "o rozpatrywaniu reklamacji przez podmioty rynku finansowego",
+    "projectSearch": "o rozpatrywaniu reklamacji przez podmioty rynku finansowego",
+    "why": "reklamacje do banku i ubezpieczyciela (terminy, skutek braku odpowiedzi), Rzecznik Finansowy"
+  },
+  {
+    "baseEli": "DU/2016/996",
+    "category": "bankowosc",
+    "label": "Ustawa o Bankowym Funduszu Gwarancyjnym, systemie gwarantowania depozytow oraz przymusowej restrukturyzacji",
+    "expectTitle": "o Bankowym Funduszu Gwarancyjnym",
+    "projectSearch": "o Bankowym Funduszu Gwarancyjnym",
+    "why": "gwarantowanie depozytow, przymusowa restrukturyzacja banku"
+  },
+  {
+    "baseEli": "DU/2006/1119",
+    "category": "bankowosc",
+    "label": "Ustawa o nadzorze nad rynkiem finansowym",
+    "expectTitle": "o nadzorze nad rynkiem finansowym",
+    "projectSearch": "o nadzorze nad rynkiem finansowym",
+    "why": "kompetencje KNF, postepowania przed KNF"
+  },
+  {
+    "baseEli": "DU/2012/855",
+    "category": "bankowosc",
+    "label": "Ustawa o spoldzielczych kasach oszczednosciowo-kredytowych",
+    "expectTitle": "o spółdzielczych kasach oszczędnościowo-kredytowych",
+    "projectSearch": "o spółdzielczych kasach oszczędnościowo-kredytowych",
+    "why": "SKOK - pozyczki i kredyty czlonkowskie, nadzor"
+  },
+  {
+    "baseEli": "DU/1997/940",
+    "category": "bankowosc",
+    "label": "Ustawa o listach zastawnych i bankach hipotecznych",
+    "expectTitle": "o listach zastawnych i bankach hipotecznych",
+    "projectSearch": "o listach zastawnych i bankach hipotecznych",
+    "why": "banki hipoteczne, listy zastawne"
+  },
+  {
+    "baseEli": "DU/1936/283",
+    "category": "bankowosc",
+    "label": "Prawo czekowe",
+    "expectTitle": "Prawo czekowe",
+    "projectSearch": "Prawo czekowe",
+    "why": "czek, odpowiedzialnosc z czeku"
+  },
+  {
+    "baseEli": "DU/2015/1844",
+    "category": "ubezpieczenia",
+    "label": "Ustawa o dzialalnosci ubezpieczeniowej i reasekuracyjnej",
+    "expectTitle": "o działalności ubezpieczeniowej i reasekuracyjnej",
+    "projectSearch": "o działalności ubezpieczeniowej i reasekuracyjnej",
+    "why": "obowiazki zakladu ubezpieczen, OWU, likwidacja szkod, ubezpieczenia z UFK"
+  },
+  {
+    "baseEli": "DU/2003/1152",
+    "category": "ubezpieczenia",
+    "label": "Ustawa o ubezpieczeniach obowiazkowych, Ubezpieczeniowym Funduszu Gwarancyjnym i Polskim Biurze Ubezpieczycieli Komunikacyjnych",
+    "expectTitle": "o ubezpieczeniach obowiązkowych",
+    "projectSearch": "o ubezpieczeniach obowiązkowych",
+    "why": "OC komunikacyjne, OC rolnikow, UFG, terminy likwidacji szkody (art. 14), sumy gwarancyjne"
+  },
+  {
+    "baseEli": "DU/2017/2486",
+    "category": "ubezpieczenia",
+    "label": "Ustawa o dystrybucji ubezpieczen",
+    "expectTitle": "o dystrybucji ubezpieczeń",
+    "projectSearch": "o dystrybucji ubezpieczeń",
+    "why": "agenci, brokerzy, badanie potrzeb klienta (APK), obowiazki informacyjne"
+  },
+  {
+    "baseEli": "DU/1936/282",
+    "category": "zabezpieczenia_i_gwarancje",
+    "label": "Prawo wekslowe",
+    "expectTitle": "Prawo wekslowe",
+    "projectSearch": "Prawo wekslowe",
+    "why": "weksel in blanco jako zabezpieczenie kredytu i gwarancji, poreczenie wekslowe (aval)"
+  },
+  {
+    "baseEli": "DU/2004/871",
+    "category": "zabezpieczenia_i_gwarancje",
+    "label": "Ustawa o niektorych zabezpieczeniach finansowych",
+    "expectTitle": "o niektórych zabezpieczeniach finansowych",
+    "projectSearch": "o niektórych zabezpieczeniach finansowych",
+    "why": "umowy zabezpieczenia finansowego (przewlaszczenie, zastaw finansowy), netting"
+  },
+  {
+    "baseEli": "DU/1996/703",
+    "category": "zabezpieczenia_i_gwarancje",
+    "label": "Ustawa o zastawie rejestrowym i rejestrze zastawow",
+    "expectTitle": "o zastawie rejestrowym i rejestrze zastawów",
+    "projectSearch": "o zastawie rejestrowym i rejestrze zastawów",
+    "why": "zastaw rejestrowy jako zabezpieczenie kredytu bankowego, pozasadowe zaspokojenie"
+  },
+  {
+    "baseEli": "DU/1982/147",
+    "category": "zabezpieczenia_i_gwarancje",
+    "label": "Ustawa o ksiegach wieczystych i hipotece",
+    "expectTitle": "o księgach wieczystych i hipotece",
+    "projectSearch": "o księgach wieczystych i hipotece",
+    "why": "hipoteka jako zabezpieczenie kredytu, wpisy, rekojmia wiary publicznej ksiag wieczystych"
+  },
+  {
+    "baseEli": "DU/1997/484",
+    "category": "zabezpieczenia_i_gwarancje",
+    "label": "Ustawa o poreczeniach i gwarancjach udzielanych przez Skarb Panstwa oraz niektore osoby prawne",
+    "expectTitle": "o poręczeniach i gwarancjach udzielanych przez Skarb Państwa",
+    "projectSearch": "o poręczeniach i gwarancjach udzielanych przez Skarb Państwa",
+    "why": "gwarancje i poreczenia Skarbu Panstwa i BGK"
+  },
+  {
+    "baseEli": "DU/2019/2019",
+    "category": "zabezpieczenia_i_gwarancje",
+    "label": "Prawo zamowien publicznych",
+    "expectTitle": "Prawo zamówień publicznych",
+    "projectSearch": "Prawo zamówień publicznych",
+    "why": "wadium i zabezpieczenie nalezytego wykonania umowy w formie GWARANCJI BANKOWEJ lub ubezpieczeniowej (art. 97, art. 450), zwrot i zatrzymanie"
+  },
+  {
+    "baseEli": "DU/2021/1177",
+    "category": "zabezpieczenia_i_gwarancje",
+    "label": "Ustawa o ochronie praw nabywcy lokalu mieszkalnego lub domu jednorodzinnego oraz Deweloperskim Funduszu Gwarancyjnym",
+    "expectTitle": "Deweloperskim Funduszu Gwarancyjnym",
+    "projectSearch": "Deweloperskim Funduszu Gwarancyjnym",
+    "why": "mieszkaniowy rachunek powierniczy, gwarancja bankowa / ubezpieczeniowa dewelopera, DFG"
+  },
+  {
+    "baseEli": "DU/2017/2361",
+    "category": "zabezpieczenia_i_gwarancje",
+    "label": "Ustawa o imprezach turystycznych i powiazanych uslugach turystycznych",
+    "expectTitle": "o imprezach turystycznych",
+    "projectSearch": "o imprezach turystycznych",
+    "why": "gwarancja bankowa lub ubezpieczeniowa organizatora turystyki, TFG, UFG"
+  },
+  {
+    "baseEli": "DU/2014/827",
+    "category": "prawo_cywilne",
+    "label": "Ustawa o prawach konsumenta",
+    "expectTitle": "o prawach konsumenta",
+    "projectSearch": "o prawach konsumenta",
+    "why": "umowy o uslugi finansowe zawierane na odleglosc (rozdzial 5), prawo odstapienia, klauzule"
   }
 ]

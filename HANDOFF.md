@@ -81,25 +81,47 @@ Ma wypisać `✓ POŁĄCZENIE DZIAŁA` i tytuł aktu kontrolnego DU/2024/18.
 
 **Dopóki hosty są zablokowane:** działaj wyłącznie na 6 aktach w `akty/` (znacznik ✅) i oznaczaj wszystko inne `⚠️ [NIEWERYFIKOWANE — egress blokuje api.sejm.gov.pl]`. Nie zastępuj weryfikacji ELI wyszukiwaniem w internecie — portale wtórne nie są bazą oficjalną (patrz KROK 2B).
 
-## 3b. Workflow config.json — wpisy przypięte i do rozwiązania
+## 3b. Workflow config.json — wpisy przypięte, bazowe i do rozwiązania
 
-`config.json` obsługuje dwie postacie wpisu:
+`config.json` obsługuje trzy postacie wpisu:
 
 | Postać | Pola | Zachowanie |
 |---|---|---|
-| **przypięta** | `publisher`, `year`, `pos`, `category`, `label`, `expectTitle` | pobierana normalnie |
+| **przypięta (t.j.)** | `publisher`, `year`, `pos`, `category`, `label`, `expectTitle`, opcjonalnie `baseEli` | pobierany jest wskazany t.j.; `baseEli` służy `--check` do czytania nowelizacji |
+| **akt bazowy** | `baseEli`, `category`, `label`, `expectTitle`, opcjonalnie `projectSearch`, `why` | najnowszy t.j. ustalany przy każdym uruchomieniu z `/references` aktu bazowego — nie trzeba przepinać numerów |
 | **do rozwiązania** | `search`, `category`, `label`, `expectTitle`, `why` | **pomijana** przy pobieraniu — numer pozycji nie jest zgadywany |
 
-`expectTitle` to **zautomatyzowany KROK 2B**: przed pobraniem skrypt porównuje tytuł aktu z ELI z tą frazą. Niezgodność = odmowa pobrania i błąd. To bramka na klasę błędu „prawdziwy numer, zły akt" (DU/2024/1571, DU/2025/540).
+**Dlaczego akt bazowy:** nowelizacje w ELI są przypięte do aktu PIERWOTNEGO (KPC = DU/1964/296), nie do obwieszczenia o t.j. Obwieszczenie (np. KSH DU/2024/18) nie dowie się o nowelizacjach późniejszych niż ono samo. Wszystkie `baseEli` w config.json zostały ustalone przez ELI search + `/references` („Tekst jednolity dla aktu") w dniu 2026-11-25 — nie z pamięci.
+
+`expectTitle` to **zautomatyzowany KROK 2B**: przed pobraniem skrypt porównuje tytuł aktu z ELI z tą frazą (dla wpisów bazowych — tytuł aktu bazowego). Niezgodność = odmowa pobrania i błąd. To bramka na klasę błędu „prawdziwy numer, zły akt" (DU/2024/1571, DU/2025/540).
 
 Komendy:
 ```bash
 node fetch-laws.js --diag              # test łączności + diagnostyka proxy
-node fetch-laws.js --check             # co się zmieniło (nic nie zapisuje) + walidacja tytułów
+node fetch-laws.js --check             # przegląd zmian (nic nie zapisuje) + walidacja tytułów
+node fetch-laws.js --check --od 2026-01-01 --projekty --tylko bankowosc --raport
+#   --od RRRR-MM-DD  nowelizacje ogłoszone / wchodzące w życie od daty (+ wyroki TK)
+#   --projekty       projekty ustaw w Sejmie (api.sejm.gov.pl/sejm) z tytułem zawierającym nazwę aktu
+#   --tylko FRAZA    tylko akty, których nazwa/kategoria zawiera frazę (bez polskich znaków też działa)
+#   --raport         zapis do raporty/zmiany_RRRR-MM-DD.md (folder w .gitignore)
 node fetch-laws.js --resolve           # szuka w ELI adresów dla wpisów `search`, pokazuje kandydatów
 node fetch-laws.js --resolve --write   # jw. + przypina najlepsze trafienie do config.json
-node fetch-laws.js                     # pobiera / aktualizuje wpisy przypięte
+node fetch-laws.js                     # pobiera / aktualizuje wpisy przypięte i bazowe
+node szukaj.js                         # menu dla osoby nietechnicznej (też: SZUKAJ.bat / SZUKAJ.command)
 ```
+
+`--check` dla każdego aktu pokazuje: najnowszy t.j. (i czy lokalna kopia jest nieaktualna), **nowelizacje ogłoszone po dacie obwieszczenia o t.j.** (nie ma ich w tekście jednolitym — klasyczna pułapka przy cytowaniu z t.j.), zmiany z przyszłą datą wejścia w życie (⏳). Data przy nowelizacji = data wejścia w życie ustawy zmieniającej wg ELI; zróżnicowane terminy dla poszczególnych przepisów trzeba sprawdzić w jej przepisach końcowych.
+
+## 3c. Źródła API (stan 2026-11-25)
+
+| Źródło | Endpoint | Klucz | Do czego |
+|---|---|---|---|
+| ELI (Dz.U., M.P.) | `api.sejm.gov.pl/eli/acts/...` | nie | metadane, tekst, `/references` (nowelizacje, t.j., TK), `/eli/changes/acts?since=` |
+| Sejm — proces legislacyjny | `api.sejm.gov.pl/sejm/term{N}/processes?title=…`, `/processes/{nr}`, `/prints` | nie | projekty ustaw, etapy, głosowania, numer RCL projektów rządowych; OpenAPI: `api.sejm.gov.pl/sejm/openapi/` |
+| SAOS | `saos.org.pl/api/search/judgments` | nie | orzeczenia (niepełne pokrycie — brak ≠ nie istnieje) |
+| RCL (legislacja.gov.pl) | — | — | **brak publicznego API**; serwer zrywa połączenia z chmury. Link do projektu rządowego daje pole `rclLink` z API Sejmu |
+
+Ograniczenie wyszukiwania projektów: filtr po TYTULE. Projekt „o zmianie niektórych ustaw w związku z…" może zmieniać dany kodeks bez jego nazwy w tytule — taki przypadek wychodzi dopiero po uchwaleniu (w `/references` aktu).
 
 **Kolejność przy dodawaniu nowych aktów:** `--resolve` (podgląd) → **ręcznie sprawdź kandydatów** → `--resolve --write` → `--check` → pobranie → konwersja przez `tools/html_act_to_md.py` lub `tools/pdf_act_to_md.py`.
 
@@ -114,7 +136,9 @@ Lex-Assistant/
 ├── README.md                           ← ogólny opis repo
 ├── config.json                         ← lista aktów śledzonych przez fetch-laws.js
 ├── manifest.json                       ← historia pobrań (dla dat w [VER: …, data])
-├── fetch-laws.js                       ← skrypt pobierający akty (Node.js — NIE URUCHOMISZ w aplikacji)
+├── fetch-laws.js                       ← skrypt pobierający akty + --check (Node.js — NIE URUCHOMISZ w aplikacji)
+├── szukaj.js / SZUKAJ.bat / SZUKAJ.command ← menu wyszukiwania dla osoby nietechnicznej (instrukcja: JAK-SZUKAC.md)
+├── tools/lex-api.js                    ← wspólny klient ELI / Sejm / SAOS
 │
 ├── akty/                               ← teksty jednolite (do bezpośredniego czytania)
 │   ├── ksh/

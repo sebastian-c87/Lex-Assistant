@@ -26,12 +26,26 @@ Jeśli sklonowałeś bez `--recursive`:
 git submodule update --init --recursive
 ```
 
-## Aktualizacja aktów
+## Wyszukiwarka dla osoby nietechnicznej
+
+Dwuklik na **`SZUKAJ.bat`** (Windows) albo **`SZUKAJ.command`** (macOS) — lub `node szukaj.js`.
+Menu: szukanie ustawy po nazwie, zmiany w akcie, projekty ustaw w Sejmie, przegląd wszystkich
+śledzonych aktów, artykuł z lokalnej bazy, orzeczenia (SAOS). Instrukcja: [JAK-SZUKAC.md](JAK-SZUKAC.md).
+
+## Aktualizacja aktów i przegląd zmian
 
 ```bash
 node fetch-laws.js         # pobiera / aktualizuje wszystko z config.json
-node fetch-laws.js --check # tylko sprawdza zmiany w ELI, nic nie zapisuje
+node fetch-laws.js --check # przegląd zmian w ELI, nic nie zapisuje
+node fetch-laws.js --check --od 2026-01-01 --projekty --tylko bankowosc --raport
 ```
+
+Śledzone akty (config.json): KSH, prawo medyczne, kodeksy (KC, KK, KPC, KPK, KPA, PPSA, KPW, KP),
+bankowość (Prawo bankowe, kredyt konsumencki i hipoteczny, usługi płatnicze, Rzecznik Finansowy, BFG, KNF, SKOK,
+listy zastawne, Prawo czekowe), ubezpieczenia (działalność ubezpieczeniowa, ubezpieczenia obowiązkowe/UFG,
+dystrybucja), gwarancje i zabezpieczenia (Prawo wekslowe, zabezpieczenia finansowe, zastaw rejestrowy, hipoteka,
+gwarancje Skarbu Państwa, PZP — wadium i zabezpieczenie, DFG, imprezy turystyczne), podatki i inne.
+Szczegóły: HANDOFF.md §3b–3c.
 
 Po pobraniu nowych aktów HTML/PDF — konwersja:
 ```bash
@@ -50,7 +64,7 @@ Dostępne moduły: `ksh` `udzl` `pp` `psy2001` `psy2026` `ozp`.
 
 ## Wymagania
 
-- Node.js 18+ (dla `fetch-laws.js` — używa wbudowanego `fetch`)
+- Node.js 18+ (dla `fetch-laws.js` i `szukaj.js` — wbudowany `fetch`, bez instalowania pakietów)
 - Python 3.9+ z pakietami: `beautifulsoup4 lxml pdfplumber`
 
 ```bash

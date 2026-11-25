@@ -17,9 +17,15 @@ Mechanika: `fetch-laws.js` porównuje pole `changeDate` z ELI z zapisanym w `man
 node fetch-laws.js --check
 ```
 
-Wypisuje dla każdego aktu z `config.json`:
-- `✓ aktualne` — jeśli lokalne changeDate = zdalne
-- `⟳ ZMIANA` — jeśli różnica; nic nie pobiera, tylko raportuje
+Dla wpisów z `baseEli` (akt bazowy — obecnie prawie wszystkie) wypisuje:
+- najnowszy t.j. i czy lokalna kopia jest nieaktualna (`⚠ … NIEAKTUALNY`)
+- nowelizacje ogłoszone PO dacie obwieszczenia o t.j. (nie ma ich w tekście jednolitym)
+- zmiany z przyszłą datą wejścia w życie (`⏳`)
+
+Opcje: `--od RRRR-MM-DD` (zmiany od daty + wyroki TK), `--projekty` (projekty ustaw w Sejmie),
+`--tylko FRAZA` (filtr po nazwie/kategorii), `--raport` (zapis do `raporty/`).
+
+Dla wpisów bez `baseEli` — jak dawniej: `✓ aktualne` / `⟳ ZMIANA` wg `changeDate` z manifestu.
 
 Używaj gdy chcesz zorientować się co jest do zaktualizowania.
 

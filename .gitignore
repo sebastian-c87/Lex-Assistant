@@ -27,3 +27,6 @@ desktop.ini
 *.log
 tmp/
 scratchpad/
+
+# Raporty generowane przez szukaj.js / fetch-laws.js --raport (wyniki lokalne)
+raporty/

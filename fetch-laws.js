@@ -15,10 +15,15 @@
  *  - zapisuje plik tekstowy + plik .meta.json z metadanymi i linkiem źródłowym
  *  - aktualizuje manifest.json na potrzeby wykrywania zmian przy kolejnych uruchomieniach
  *
- * Wpisy w config.json mają jedną z dwóch postaci:
- *  1) PRZYPIĘTE  — { publisher, year, pos, category, label, expectTitle }
- *     Gotowe do pobrania. Adres Dz.U. jest znany i potwierdzony.
- *  2) DO ROZWIĄZANIA — { search, category, label, expectTitle, why }
+ * Wpisy w config.json mają jedną z trzech postaci:
+ *  1) PRZYPIĘTE  — { publisher, year, pos, category, label, expectTitle, [baseEli] }
+ *     Gotowe do pobrania. Adres Dz.U. (zwykle obwieszczenia z t.j.) jest znany i potwierdzony.
+ *     Opcjonalne `baseEli` = akt BAZOWY (pierwotny) — z niego --check czyta nowelizacje.
+ *  2) AKT BAZOWY — { baseEli, category, label, expectTitle, [projectSearch], why }
+ *     Śledzimy akt pierwotny (np. KPC = DU/1964/296). Najnowszy tekst jednolity jest
+ *     ustalany przy każdym uruchomieniu z /references → „Inf. o tekście jednolitym",
+ *     więc nie trzeba ręcznie przepinać numeru po każdym nowym obwieszczeniu.
+ *  3) DO ROZWIĄZANIA — { search, category, label, expectTitle, why }
  *     Adres Dz.U. nieznany. W trybie normalnym taki wpis jest POMIJANY (świadomie —
  *     żeby nie zgadywać numeru pozycji). Użyj `--resolve`, żeby wyszukać kandydatów
  *     w ELI i przypiąć właściwy.
@@ -28,6 +33,10 @@
  * Użycie:
  *   node fetch-laws.js                 // pobiera / aktualizuje wpisy przypięte
  *   node fetch-laws.js --check         // tylko sprawdza czy są zmiany, nic nie zapisuje
+ *        --od 2026-01-01                // + lista nowelizacji ogłoszonych / wchodzących w życie od daty
+ *        --projekty                     // + projekty ustaw w Sejmie zmieniające dany akt (api.sejm.gov.pl/sejm)
+ *        --tylko bankowe                // tylko akty, których nazwa/kategoria zawiera frazę
+ *        --raport                       // zapisuje wynik do raporty/zmiany_RRRR-MM-DD.md
  *   node fetch-laws.js --resolve       // szuka w ELI kandydatów dla wpisów `search`, wypisuje je
  *   node fetch-laws.js --resolve --write   // jw. + przypina jednoznaczne trafienia do config.json
  *   node fetch-laws.js --diag          // test łączności z api.sejm.gov.pl i diagnostyka proxy
@@ -49,7 +58,7 @@ if (process.env.HTTPS_PROXY && !process.env.NODE_USE_ENV_PROXY) {
     const { spawnSync } = require('child_process');
     const res = spawnSync(process.execPath, [__filename, ...process.argv.slice(2)], {
       stdio: 'inherit',
-      env: { ...process.env, NODE_USE_ENV_PROXY: '1' },
+      env: { ...process.env, NODE_USE_ENV_PROXY: '1', NODE_NO_WARNINGS: '1' },
     });
     process.exit(res.status ?? 1);
   }
@@ -57,6 +66,7 @@ if (process.env.HTTPS_PROXY && !process.env.NODE_USE_ENV_PROXY) {
 
 const fs = require('fs');
 const path = require('path');
+const lex = require('./tools/lex-api');
 
 const CONFIG_PATH = path.join(__dirname, 'config.json');
 const OUT_DIR = path.join(__dirname, 'akty');
@@ -265,66 +275,147 @@ function safeName(label) {
     .toLowerCase();
 }
 
-const isPinned = (e) => (e.publisher && e.year && e.pos) || isEurlex(e);
+const hasTjPin = (e) => Boolean(e.publisher && e.year && e.pos);
+const isPinned = (e) => hasTjPin(e) || Boolean(e.baseEli) || isEurlex(e);
 
-async function processAct(entry, manifest) {
-  const { publisher, year, pos, category, label } = entry;
-  const key = `${publisher}/${year}/${pos}`;
-  console.log(`→ Sprawdzam: ${label} (${key})`);
-
-  const meta = await fetchActMeta(publisher, year, pos);
-
-  const gate = checkTitleGate(entry, meta);
-  if (gate) {
-    throw new Error(gate);
-  }
+/**
+ * Wpis typu AKT BAZOWY: ustala najnowszy t.j. z /references aktu bazowego i pobiera jego treść.
+ * Bramka KROK 2B: tytuł aktu BAZOWEGO musi zawierać `expectTitle`; t.j. jest powiązany z aktem
+ * bazowym strukturalnie (pochodzi z jego własnej listy „Inf. o tekście jednolitym").
+ */
+async function processBaseAct(entry, manifest) {
+  const { baseEli, category, label } = entry;
+  console.log(`→ Sprawdzam: ${label} (akt bazowy ${baseEli})`);
+  const [bp, by, bpos] = baseEli.split('/');
+  const baseMeta = await fetchActMeta(bp, by, bpos);
+  const gate = checkTitleGate(entry, baseMeta);
+  if (gate) throw new Error(gate);
   console.log(`  ✓ KROK 2B: tytuł zgodny ("${entry.expectTitle}")`);
 
-  const prevChangeDate = manifest[key]?.changeDate;
-  if (prevChangeDate && prevChangeDate === meta.changeDate) {
-    console.log(`  ✓ Bez zmian (ostatnia aktualizacja: ${meta.changeDate})`);
+  const { latestTj } = await lex.analyzeChanges(baseEli);
+  const srcEli = latestTj ? latestTj.ELI : baseEli;
+  const [p, y, pos] = srcEli.split('/');
+  const meta = latestTj ? await fetchActMeta(p, y, pos) : baseMeta;
+
+  const prev = manifest[baseEli];
+  if (prev && prev.tjEli === srcEli && prev.changeDate === meta.changeDate) {
+    console.log(`  ✓ Bez zmian (t.j. ${srcEli}, ostatnia aktualizacja: ${meta.changeDate})`);
     return;
   }
-
-  console.log(`  ⟳ ${prevChangeDate ? 'Wykryto zmianę' : 'Pierwsze pobranie'} — pobieram treść...`);
-  const text = await fetchActText(publisher, year, pos, meta);
+  console.log(`  ⟳ ${prev ? 'Wykryto zmianę' : 'Pierwsze pobranie'} — pobieram ${latestTj ? 't.j. ' : 'akt '}${srcEli}...`);
+  const text = await fetchActText(p, y, pos, meta);
   if (!text) {
-    console.warn(`  ⚠ Brak dostępnego tekstu (ani HTML ani PDF) dla ${key}`);
+    console.warn(`  ⚠ Brak dostępnego tekstu (ani HTML ani PDF) dla ${srcEli}`);
     return;
   }
-
   const dir = path.join(OUT_DIR, category);
   fs.mkdirSync(dir, { recursive: true });
   const base = safeName(label);
-  const ext = text.type === 'html' ? 'html' : 'pdf';
-  const filePath = path.join(dir, `${base}.${ext}`);
+  const filePath = path.join(dir, `${base}.${text.type === 'html' ? 'html' : 'pdf'}`);
   fs.writeFileSync(filePath, text.content);
-
-  const metaPath = path.join(dir, `${base}.meta.json`);
-  saveJSON(metaPath, {
+  saveJSON(path.join(dir, `${base}.meta.json`), {
     label,
     title: meta.title,
+    baseEli,
+    baseTitle: baseMeta.title,
+    tjEli: latestTj ? srcEli : null,
     status: meta.status,
     displayAddress: meta.displayAddress,
     promulgation: meta.promulgation,
     changeDate: meta.changeDate,
     type: meta.type,
-    ELI: meta.ELI,
     expectTitleVerified: entry.expectTitle,
-    sourceUrl: `https://eli.gov.pl/eli/${publisher}/${year}/${pos}`,
+    sourceUrl: `https://eli.gov.pl/eli/${srcEli}`,
     lastFetched: new Date().toISOString(),
   });
-
-  manifest[key] = {
+  manifest[baseEli] = {
     label,
     category,
+    tjEli: latestTj ? srcEli : null,
     changeDate: meta.changeDate,
     status: meta.status,
     lastFetched: new Date().toISOString(),
     file: path.relative(__dirname, filePath),
   };
-
   console.log(`  ✓ Zapisano: ${path.relative(__dirname, filePath)}`);
+}
+
+// ── Tryb --check: analiza zmian aktu bazowego ────────────────────────────────
+
+const fmtDates = (a) => (a.inForceDates.length ? a.inForceDates.join(', ') : '?');
+
+async function checkBaseAct(entry, manifest, opts, out) {
+  const { baseEli, label } = entry;
+  const [bp, by, bpos] = baseEli.split('/');
+  const baseMeta = await fetchActMeta(bp, by, bpos);
+  const gate = checkTitleGate(entry, baseMeta);
+  if (gate) throw new Error(gate);
+
+  const ch = await lex.analyzeChanges(baseEli, { since: opts.since });
+  const localTj = hasTjPin(entry)
+    ? `${entry.publisher}/${entry.year}/${entry.pos}`
+    : manifest[baseEli]?.tjEli || null;
+  const latest = ch.latestTj;
+  const tjStale = latest && localTj && localTj !== latest.ELI;
+  const flags = [];
+  if (tjStale) flags.push('NOWY T.J.');
+  if (ch.afterTj.length) flags.push(`${ch.afterTj.length} nowel. po t.j.`);
+  if (ch.pending.length) flags.push(`${ch.pending.length} oczekujących`);
+  if (opts.since && ch.since.length) flags.push(`${ch.since.length} od ${opts.since}`);
+
+  out(`\n## ${flags.length ? '⟳' : '✓'} ${label}`);
+  out(`   akt bazowy: ${baseMeta.displayAddress} (${baseEli}) — ${baseMeta.status}`);
+  if (latest) {
+    out(`   najnowszy t.j.: ${latest.displayAddress} (${latest.ELI}), obwieszczenie z ${latest.announcementDate || '?'}, ogł. ${latest.promulgation || '?'}` +
+      (localTj ? (tjStale ? `   ⚠ lokalnie mamy ${localTj} — NIEAKTUALNY` : '   ✓ zgodny z lokalnym') : '   (lokalnie brak)'));
+  } else {
+    out('   tekst jednolity: brak (obowiązuje brzmienie pierwotne + nowelizacje)');
+  }
+
+  const listAm = (title, arr) => {
+    if (!arr.length) return;
+    out(`   ${title}:`);
+    for (const a of arr) {
+      const future = a.inForceDates.some((d) => d > lex.today()) ? '  ⏳ jeszcze nie obowiązuje' : '';
+      out(`     • ${a.displayAddress} (${a.eli}), ogł. ${a.promulgation || '?'}, wejście w życie: ${fmtDates(a)}${future}`);
+      out(`       ${a.title}`);
+    }
+  };
+  listAm('Nowelizacje ogłoszone PO dacie obwieszczenia o t.j. (nie ma ich w tekście jednolitym — sprawdź też wykaz w obwieszczeniu)', ch.afterTj);
+  const pendingOnly = ch.pending.filter((a) => !ch.afterTj.includes(a));
+  listAm('Inne zmiany, które dopiero wejdą w życie', pendingOnly);
+  if (opts.since) {
+    const rest = ch.since.filter((a) => !ch.afterTj.includes(a) && !ch.pending.includes(a));
+    listAm(`Pozostałe zmiany ogłoszone / wchodzące w życie od ${opts.since}`, rest);
+    for (const t of ch.tkSince) out(`     ⚖ TK: ${t.title} (${t.displayAddress}, ${t.date})`);
+  }
+
+  if (opts.projects) await checkProjects(entry, ch, out);
+  return { changed: flags.length > 0 };
+}
+
+async function checkProjects(entry, ch, out) {
+  const phrase = entry.projectSearch || entry.expectTitle;
+  let res;
+  try {
+    res = await lex.searchProjectsDetailed(phrase, { onlyOpen: true });
+  } catch (err) {
+    out(`   ⚠ Projekty: błąd Sejm API (${err.message})`);
+    return;
+  }
+  const { list } = res;
+  if (!list.length) {
+    out(`   Projekty w Sejmie (tytuł zawiera „${phrase}"): brak w toku`);
+    return;
+  }
+  out(`   Projekty w Sejmie w toku (tytuł zawiera „${phrase}"): ${list.length}`);
+  for (const p of list.slice(0, 10)) {
+    const st = p.details?.lastStage;
+    out(`     ◦ druk nr ${p.number}, wpłynął ${p.processStartDate}${st ? ` | ostatni etap: ${st.stageName} (${st.date || '?'})` : ''}`);
+    out(`       ${p.title}`);
+    out(`       ${lex.processUrl(p.term, p.number)}`);
+  }
+  if (list.length > 10) out(`     … i ${list.length - 10} więcej (zawęź: node szukaj.js → opcja 3)`);
 }
 
 // ── Tryb --resolve ───────────────────────────────────────────────────────────
@@ -433,6 +524,19 @@ async function main() {
   const doResolve = argv.includes('--resolve');
   const doWrite = argv.includes('--write');
   const doDiag = argv.includes('--diag');
+  const argVal = (name) => {
+    const i = argv.indexOf(name);
+    return i >= 0 && argv[i + 1] && !argv[i + 1].startsWith('--') ? argv[i + 1] : null;
+  };
+  const since = argVal('--od');
+  if (since && !/^\d{4}-\d{2}-\d{2}$/.test(since)) {
+    console.error(`--od wymaga daty w formacie RRRR-MM-DD (podano: ${since})`);
+    process.exit(1);
+  }
+  const only = argVal('--tylko');
+  const checkOpts = { since, projects: argv.includes('--projekty') };
+  const report = [];
+  const out = (line) => { console.log(line); report.push(line); };
 
   if (doDiag) return diag();
 
@@ -471,10 +575,17 @@ async function main() {
     return;
   }
 
-  const pinned = config.filter(isPinned);
+  const matchesOnly = (e) => !only || lex.fold(`${e.label} ${e.category} ${e.expectTitle}`).includes(lex.fold(only));
+  const pinned = config.filter(isPinned).filter(matchesOnly);
+  if (checkOnly) {
+    out(`# Przegląd zmian w aktach (${lex.today()})`);
+    out(`Źródło: api.sejm.gov.pl/eli${checkOpts.projects ? ' + api.sejm.gov.pl/sejm (projekty)' : ''}` +
+      `${since ? `; okres od ${since}` : ''}${only ? `; filtr: „${only}"` : ''}`);
+  }
+  let changedCount = 0;
   const unpinned = config.filter((e) => !isPinned(e));
 
-  if (unpinned.length) {
+  if (unpinned.length && !only) {
     console.log(`ℹ Pomijam ${unpinned.length} wpisów bez adresu Dz.U. (świadomie — nie zgaduję numeru pozycji).`);
     console.log('  Rozwiąż je: node fetch-laws.js --resolve [--write]\n');
   }
@@ -488,6 +599,15 @@ async function main() {
         } else {
           await processEurlexAct(entry, manifest);
         }
+        continue;
+      }
+      if (checkOnly && entry.baseEli) {
+        const r = await checkBaseAct(entry, manifest, checkOpts, out);
+        if (r.changed) changedCount++;
+        continue;
+      }
+      if (!checkOnly && entry.baseEli && !hasTjPin(entry)) {
+        await processBaseAct(entry, manifest);
         continue;
       }
       if (checkOnly) {
@@ -520,7 +640,17 @@ async function main() {
     saveJSON(MANIFEST_PATH, manifest);
     console.log('\nGotowe. Manifest zaktualizowany.');
   } else {
-    console.log('\nSprawdzanie zakończone (tryb --check, nic nie zapisano).');
+    out(`\n---\nAkty z odnotowanymi zmianami: ${changedCount} z ${pinned.length}.`);
+    out(`Weryfikacja: ✅ [VER: api.sejm.gov.pl ELI /references, ${lex.today()}]`);
+    if (argv.includes('--raport')) {
+      const dir = path.join(__dirname, 'raporty');
+      fs.mkdirSync(dir, { recursive: true });
+      const file = path.join(dir, `zmiany_${lex.today()}${only ? '_' + safeName(only) : ''}.md`);
+      fs.writeFileSync(file, report.join('\n') + '\n', 'utf8');
+      console.log(`\n📄 Raport zapisany: ${path.relative(__dirname, file)}`);
+    } else {
+      console.log('\nSprawdzanie zakończone (tryb --check, nic nie zapisano).');
+    }
   }
   if (errors) {
     console.error(`\n⚠ Zakończono z ${errors} błędami.`);
